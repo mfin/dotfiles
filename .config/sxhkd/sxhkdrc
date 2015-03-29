@@ -90,10 +90,10 @@ super + alt + Return
 	~/.bin/notify.sh
 
 super + space
-	~/.bin/run_dmenu.sh
+	~/.bin/dmenu_run.sh
 
 super + p
-	xscreensaver-command -lock
+	~/.bin/dmenu_session.sh
 
 super + shift + p
 	cmus-remote -u
