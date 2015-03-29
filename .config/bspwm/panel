@@ -4,21 +4,22 @@ bspc config top_padding 20
 bspc config left_padding 10
 bspc config right_padding 10
 
-FONT='-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*'
+FONT1='-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*'
+FONT2='-*-stlarch-medium-*-*-*-10-*-*-*-*-*-*-*'
 
 workspace(){
 	SPACE_NUM=$(bspc query -D -d);
 		case "$SPACE_NUM" in
 			"1")
-				WORKSPACE=" + - - - - ";;
+				WORKSPACE=" %{Fred}$(printf '%b' "\ue098")%{F-} - - - - ";;
 			"2")
-				WORKSPACE=" - + - - - ";;
+				WORKSPACE=" - %{Fred}$(printf '%b' "\ue098")%{F-} - - - ";;
 			"3")
-				WORKSPACE=" - - + - - ";;
+				WORKSPACE=" - - %{Fred}$(printf '%b' "\ue098")%{F-} - - ";;
 			"4")
-				WORKSPACE=" - - - + - ";;
+				WORKSPACE=" - - - %{Fred}$(printf '%b' "\ue098")%{F-} - ";;
 			"5")
-				WORKSPACE=" - - - - + ";;
+				WORKSPACE=" - - - - %{Fred}$(printf '%b' "\ue098")%{F-} ";;
 		esac
 	echo $WORKSPACE
 }
@@ -28,22 +29,24 @@ cmus(){
 	if [ "$STATUS" == "playing" ]; then
 		ARTIST=$(cmus-remote -Q | sed -ne '/artist/s/tag artist //pg')
 		TITLE=$(cmus-remote -Q | sed -ne '/title/s/tag title //pg')
-		echo ">> $ARTIST - $TITLE"
+		echo "%{Fblue}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE >>"
 	fi
 }
 
 battery(){
 	CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
-	STATUS=$(cat /sys/class/power_supply/BAT0/status)
-	echo "$CAPACITY% $STATUS"
+	if [ $CAPACITY -lt 20 ]; then
+		echo "%{Fred}$(printf '%b' "\ue037") $CAPACITY%%{F-}"
+	else echo "%{Fblue}$(printf '%b' "\ue037")%{F-} $CAPACITY%"
+	fi
 }
 
 volume(){
 	VOLUME=$(pulseaudio-ctl current)
-	echo "$VOLUME"
+	echo "%{Fblue}$(printf '%b' "\ue050")%{F-} $VOLUME"
 }
 
 while :; do
-	echo  "%{l} bspwm <3 $(cmus)%{c}$(workspace)%{r}vol: $(volume), bat: $(battery), time: $(date +'%H:%M') "
+	echo  "%{l} %{Fred}$(printf '%b' "\ue00e")%{F-} $(hostname)%{c}$(workspace)%{r} $(cmus) $(volume) >> $(battery) >> %{Fblue}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
 	sleep 2 
-done | lemonbar -g 1346x20+10+0 -f "$FONT" -B black -F white
+done | lemonbar -g 1346x20+10+0 -f "$FONT1,$FONT2" -B black -F white
