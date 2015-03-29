@@ -1,0 +1,49 @@
+#!/bin/bash
+
+bspc config top_padding 20
+bspc config left_padding 10
+bspc config right_padding 10
+
+FONT='-*-terminus-medium-*-*-*-12-*-*-*-*-*-*-*'
+
+workspace(){
+	SPACE_NUM=$(bspc query -D -d);
+		case "$SPACE_NUM" in
+			"1")
+				WORKSPACE=" + - - - - ";;
+			"2")
+				WORKSPACE=" - + - - - ";;
+			"3")
+				WORKSPACE=" - - + - - ";;
+			"4")
+				WORKSPACE=" - - - + - ";;
+			"5")
+				WORKSPACE=" - - - - + ";;
+		esac
+	echo $WORKSPACE
+}
+
+cmus(){
+	STATUS=$(cmus-remote -Q | grep status | awk '{print $2}')
+	if [ "$STATUS" == "playing" ]; then
+		ARTIST=$(cmus-remote -Q | sed -ne '/artist/s/tag artist //pg')
+		TITLE=$(cmus-remote -Q | sed -ne '/title/s/tag title //pg')
+		echo ">> $ARTIST - $TITLE"
+	fi
+}
+
+battery(){
+	CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+	STATUS=$(cat /sys/class/power_supply/BAT0/status)
+	echo "$CAPACITY% $STATUS"
+}
+
+volume(){
+	VOLUME=$(pulseaudio-ctl current)
+	echo "$VOLUME"
+}
+
+while :; do
+	echo  "%{l} bspwm <3 $(cmus)%{c}$(workspace)%{r}vol: $(volume), bat: $(battery), time: $(date +'%H:%M') "
+	sleep 2 
+done | lemonbar -g 1346x20+10+0 -f "$FONT" -B black -F white
