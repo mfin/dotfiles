@@ -33,7 +33,7 @@ cmus(){
 	if [ "$STATUS" == "playing" ]; then
 		ARTIST=$(cmus-remote -Q | sed -ne '/artist/s/tag artist //pg')
 		TITLE=$(cmus-remote -Q | sed -ne '/title/s/tag title //pg')
-		echo "%{F$COLOR2}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE $SEP"
+		echo "$SEP %{F$COLOR2}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE"
 	fi
 }
 
@@ -51,6 +51,6 @@ volume(){
 }
 
 while :; do
-	echo  "%{l} %{F$COLOR1}$(printf '%b' "\ue027")%{F-} $(uname -r)%{c}$(workspace)%{r} $(cmus) $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
+	echo  "%{l} %{F$COLOR1}$(printf '%b' "\ue027")%{F-} $(uname -r) $(cmus)%{c}$(workspace)%{r} $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
 	sleep 2 
 done | lemonbar -g 1346x20+10+0 -f "$FONT1,$FONT2" -B '#ff1d1f21' -F '#ffc5c8c6'
