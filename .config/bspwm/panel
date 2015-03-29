@@ -9,31 +9,37 @@ FONT1='-*-termsyn-medium-*-*-*-13-*-*-*-*-*-*-*'
 FONT2='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1'
 COLOR1='#ffcc6666'
 COLOR2='#fff0c674'
-SEP='%{F#ff373b41}>>%{F-}'
+SEP="%{F#ff373b41}$(printf '%b' "\ue13f")%{F-}"
+CURRENT_DESKTOP="%{F$COLOR1}$(printf "%b" "\ue000")%{F-}"
+OTHER_DESKTOP="$(printf "%b" "\ue130")"
 
 workspace(){
 	SPACE_NUM=$(bspc query -D -d);
 		case "$SPACE_NUM" in
 			"1")
-				WORKSPACE=" %{F$COLOR1}$(printf '%b' "\ue000")%{F-} $(printf '%b' "\ue001") $(printf '%b' "\ue001") $(printf '%b' "\ue001") $(printf '%b' "\ue001") ";;
+				WORKSPACE=" $CURRENT_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP ";;
 			"2")
-				WORKSPACE=" $(printf '%b' "\ue001") %{F$COLOR1}$(printf '%b' "\ue000")%{F-} $(printf '%b' "\ue001") $(printf '%b' "\ue001") $(printf '%b' "\ue001") ";;
+				WORKSPACE=" $OTHER_DESKTOP $CURRENT_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP ";;
 			"3")
-				WORKSPACE=" $(printf '%b' "\ue001") $(printf '%b' "\ue001") %{F$COLOR1}$(printf '%b' "\ue000")%{F-} $(printf '%b' "\ue001") $(printf '%b' "\ue001") ";;
+				WORKSPACE=" $OTHER_DESKTOP $OTHER_DESKTOP $CURRENT_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP ";;
 			"4")
-				WORKSPACE=" $(printf '%b' "\ue001") $(printf '%b' "\ue001") $(printf '%b' "\ue001") %{F$COLOR1}$(printf '%b' "\ue000")%{F-} $(printf '%b' "\ue001") ";;
+				WORKSPACE=" $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $CURRENT_DESKTOP $OTHER_DESKTOP ";;
 			"5")
-				WORKSPACE=" $(printf '%b' "\ue001") $(printf '%b' "\ue001") $(printf '%b' "\ue001") $(printf '%b' "\ue001") %{F$COLOR1}$(printf '%b' "\ue000")%{F-} ";;
+				WORKSPACE=" $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $CURRENT_DESKTOP ";;
 		esac
 	echo $WORKSPACE
 }
 
 cmus(){
 	STATUS=$(cmus-remote -Q | grep status | awk '{print $2}')
-	if [ "$STATUS" == "playing" ]; then
+	if [ "$STATUS" == "playing" ] || [ "$STATUS" == "paused" ]; then
+		if [ "$STATUS" == "playing" ]; then
+			STAT_ICON="$(printf "%b" "\ue059")"
+		else STAT_ICON="$(printf "%b" "\ue058")"
+		fi
 		ARTIST=$(cmus-remote -Q | sed -ne '/artist/s/tag artist //pg')
 		TITLE=$(cmus-remote -Q | sed -ne '/title/s/tag title //pg')
-		echo "$SEP %{F$COLOR2}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE"
+		echo "$SEP %{F$COLOR2}$(printf '%b' "\ue05c") %{F$COLOR1}%{A:prev:}$(printf '%b' "\ue054")%{A} %{A:pause:}$STAT_ICON%{A} %{A:next:}$(printf '%b' "\ue05a")%{A}%{F-} $ARTIST - $TITLE"
 	fi
 }
 
@@ -46,11 +52,26 @@ battery(){
 }
 
 volume(){
-	VOLUME=$(pulseaudio-ctl current)
-	echo "%{F$COLOR2}$(printf '%b' "\ue050")%{F-} $VOLUME"
+	VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
+	MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
+	if [ "$MUTE" == "yes" ]; then
+		echo "%{F$COLOR1}$(printf '%b' "\ue04f") $VOLUME%%{F-}"
+	else echo "%{F$COLOR2}$(printf '%b' "\ue050")%{F-} $VOLUME%"
+	fi
 }
 
 while :; do
-	echo  "%{l} %{F$COLOR1}$(printf '%b' "\ue027")%{F-} $(uname -r) $(cmus)%{c}$(workspace)%{r} $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
+	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue0aa")%{F-}%{A} %{A:dmenu_run:}$(uname -r)%{A} $(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
 	sleep 2 
-done | lemonbar -g 1346x20+10+0 -f "$FONT1,$FONT2" -B '#ff1d1f21' -F '#ffc5c8c6'
+done | lemonbar -g 1346x20+10+0 -f "$FONT1,$FONT2" -B '#ff1d1f21' -F '#ffc5c8c6' | \
+
+while read -r line ; do
+    case $line in
+    	prev) cmus-remote --prev ;;
+		pause) cmus-remote --pause ;;
+        next) cmus-remote --next ;;
+		dmenu_session) ~/.bin/dmenu_session.sh ;;
+		dmenu_run) ~/.bin/dmenu_run.sh ;;
+		mute) pulseaudio-ctl mute ;;
+    esac
+done
