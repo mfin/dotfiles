@@ -3,6 +3,7 @@ xset m 0 &
 xset r rate 300 30 &
 xset b off &
 xsetroot -cursor_name left_ptr &
+xset +fp /usr/share/fonts/local &
 xset fp rehash &
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
 
