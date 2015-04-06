@@ -16,6 +16,15 @@ dunst &
 unclutter &
 udiskie &
 
+envfile="$HOME/.gnupg/gpg-agent.env"
+if [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null; then
+    eval "$(cat "$envfile")"
+else
+    eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
+fi
+export GPG_AGENT_INFO
+export SSH_AUTH_SOCK
+
 eval $(ssh-agent) &
 sxhkd -f 50 &
 exec bspwm
