@@ -1,0 +1,411 @@
+! special
+*.foreground:   #ffffff
+*.background:   #000000
+*.cursorColor:  #ffffff
+
+! black
+*.color0:       #151515
+*.color8:       #505450
+
+! red
+*.color1:       #bf7979
+*.color9:       #f4a45f
+
+! green
+*.color2:       #97b26b
+*.color10:      #c5f779
+
+! yellow
+*.color3:       #cdcda1
+*.color11:      #ffffaf
+
+! blue
+*.color4:       #4a5463
+*.color12:      #7d8794
+
+! magenta
+*.color5:       #9c3885
+*.color13:      #e628ba
+
+! cyan
+*.color6:       #88aadd
+*.color14:      #99ccff
+
+! white
+*.color7:       #ffffff
+*.color15:      #dedede
+
+! URxvt*termName:                       string
+! URxvt*geometry:                       geometry
+! URxvt*chdir:                          string
+! URxvt*reverseVideo:                   boolean
+! URxvt*loginShell:                     boolean
+! URxvt*multiClickTime:                 number
+! URxvt*jumpScroll:                     boolean
+! URxvt*skipScroll:                     boolean
+! URxvt*pastableTabs:                   boolean
+! URxvt*scrollstyle:                    mode
+URxvt*scrollBar:                      False
+! URxvt*scrollBar_right:                boolean
+! URxvt*scrollBar_floating:             boolean
+! URxvt*scrollBar_align:                mode
+! URxvt*thickness:                      number
+! URxvt*scrollTtyOutput:                boolean
+! URxvt*scrollTtyKeypress:              boolean
+! URxvt*scrollWithBuffer:               boolean
+! URxvt*inheritPixmap:                  boolean
+! URxvt*transparent:                    boolean
+! URxvt*tintColor:                      color
+! URxvt*shading:                        number
+! URxvt*blurRadius:                     HxV
+! URxvt*fading:                         number
+! URxvt*fadeColor:                      color
+! URxvt*utmpInhibit:                    boolean
+! URxvt*urgentOnBell:                   boolean
+! URxvt*visualBell:                     boolean
+! URxvt*mapAlert:                       boolean
+! URxvt*meta8:                          boolean
+! URxvt*mouseWheelScrollPage:           boolean
+! URxvt*tripleclickwords:               boolean
+! URxvt*insecure:                       boolean
+! URxvt*cursorUnderline:                boolean
+! URxvt*cursorBlink:                    boolean
+! URxvt*pointerBlank:                   boolean
+! URxvt*background:                     color
+! URxvt*foreground:                     color
+! URxvt*color0:                         color
+! URxvt*color1:                         color
+! URxvt*color2:                         color
+! URxvt*color3:                         color
+! URxvt*color4:                         color
+! URxvt*color5:                         color
+! URxvt*color6:                         color
+! URxvt*color7:                         color
+! URxvt*color16:                        color
+! URxvt*color17:                        color
+! URxvt*color18:                        color
+! URxvt*color19:                        color
+! URxvt*color20:                        color
+! URxvt*color21:                        color
+! URxvt*color22:                        color
+! URxvt*color23:                        color
+! URxvt*color24:                        color
+! URxvt*color25:                        color
+! URxvt*color26:                        color
+! URxvt*color27:                        color
+! URxvt*color28:                        color
+! URxvt*color29:                        color
+! URxvt*color30:                        color
+! URxvt*color31:                        color
+! URxvt*color32:                        color
+! URxvt*color33:                        color
+! URxvt*color34:                        color
+! URxvt*color35:                        color
+! URxvt*color36:                        color
+! URxvt*color37:                        color
+! URxvt*color38:                        color
+! URxvt*color39:                        color
+! URxvt*color40:                        color
+! URxvt*color41:                        color
+! URxvt*color42:                        color
+! URxvt*color43:                        color
+! URxvt*color44:                        color
+! URxvt*color45:                        color
+! URxvt*color46:                        color
+! URxvt*color47:                        color
+! URxvt*color48:                        color
+! URxvt*color49:                        color
+! URxvt*color50:                        color
+! URxvt*color51:                        color
+! URxvt*color52:                        color
+! URxvt*color53:                        color
+! URxvt*color54:                        color
+! URxvt*color55:                        color
+! URxvt*color56:                        color
+! URxvt*color57:                        color
+! URxvt*color58:                        color
+! URxvt*color59:                        color
+! URxvt*color60:                        color
+! URxvt*color61:                        color
+! URxvt*color62:                        color
+! URxvt*color63:                        color
+! URxvt*color64:                        color
+! URxvt*color65:                        color
+! URxvt*color66:                        color
+! URxvt*color67:                        color
+! URxvt*color68:                        color
+! URxvt*color69:                        color
+! URxvt*color70:                        color
+! URxvt*color71:                        color
+! URxvt*color72:                        color
+! URxvt*color73:                        color
+! URxvt*color74:                        color
+! URxvt*color75:                        color
+! URxvt*color76:                        color
+! URxvt*color77:                        color
+! URxvt*color78:                        color
+! URxvt*color79:                        color
+! URxvt*color80:                        color
+! URxvt*color81:                        color
+! URxvt*color82:                        color
+! URxvt*color83:                        color
+! URxvt*color84:                        color
+! URxvt*color85:                        color
+! URxvt*color86:                        color
+! URxvt*color87:                        color
+! URxvt*color88:                        color
+! URxvt*color89:                        color
+! URxvt*color90:                        color
+! URxvt*color91:                        color
+! URxvt*color92:                        color
+! URxvt*color93:                        color
+! URxvt*color94:                        color
+! URxvt*color95:                        color
+! URxvt*color96:                        color
+! URxvt*color97:                        color
+! URxvt*color98:                        color
+! URxvt*color99:                        color
+! URxvt*color100:                       color
+! URxvt*color101:                       color
+! URxvt*color102:                       color
+! URxvt*color103:                       color
+! URxvt*color104:                       color
+! URxvt*color105:                       color
+! URxvt*color106:                       color
+! URxvt*color107:                       color
+! URxvt*color108:                       color
+! URxvt*color109:                       color
+! URxvt*color110:                       color
+! URxvt*color111:                       color
+! URxvt*color112:                       color
+! URxvt*color113:                       color
+! URxvt*color114:                       color
+! URxvt*color115:                       color
+! URxvt*color116:                       color
+! URxvt*color117:                       color
+! URxvt*color118:                       color
+! URxvt*color119:                       color
+! URxvt*color120:                       color
+! URxvt*color121:                       color
+! URxvt*color122:                       color
+! URxvt*color123:                       color
+! URxvt*color124:                       color
+! URxvt*color125:                       color
+! URxvt*color126:                       color
+! URxvt*color127:                       color
+! URxvt*color128:                       color
+! URxvt*color129:                       color
+! URxvt*color130:                       color
+! URxvt*color131:                       color
+! URxvt*color132:                       color
+! URxvt*color133:                       color
+! URxvt*color134:                       color
+! URxvt*color135:                       color
+! URxvt*color136:                       color
+! URxvt*color137:                       color
+! URxvt*color138:                       color
+! URxvt*color139:                       color
+! URxvt*color140:                       color
+! URxvt*color141:                       color
+! URxvt*color142:                       color
+! URxvt*color143:                       color
+! URxvt*color144:                       color
+! URxvt*color145:                       color
+! URxvt*color146:                       color
+! URxvt*color147:                       color
+! URxvt*color148:                       color
+! URxvt*color149:                       color
+! URxvt*color150:                       color
+! URxvt*color151:                       color
+! URxvt*color152:                       color
+! URxvt*color153:                       color
+! URxvt*color154:                       color
+! URxvt*color155:                       color
+! URxvt*color156:                       color
+! URxvt*color157:                       color
+! URxvt*color158:                       color
+! URxvt*color159:                       color
+! URxvt*color160:                       color
+! URxvt*color161:                       color
+! URxvt*color162:                       color
+! URxvt*color163:                       color
+! URxvt*color164:                       color
+! URxvt*color165:                       color
+! URxvt*color166:                       color
+! URxvt*color167:                       color
+! URxvt*color168:                       color
+! URxvt*color169:                       color
+! URxvt*color170:                       color
+! URxvt*color171:                       color
+! URxvt*color172:                       color
+! URxvt*color173:                       color
+! URxvt*color174:                       color
+! URxvt*color175:                       color
+! URxvt*color176:                       color
+! URxvt*color177:                       color
+! URxvt*color178:                       color
+! URxvt*color179:                       color
+! URxvt*color180:                       color
+! URxvt*color181:                       color
+! URxvt*color182:                       color
+! URxvt*color183:                       color
+! URxvt*color184:                       color
+! URxvt*color185:                       color
+! URxvt*color186:                       color
+! URxvt*color187:                       color
+! URxvt*color188:                       color
+! URxvt*color189:                       color
+! URxvt*color190:                       color
+! URxvt*color191:                       color
+! URxvt*color192:                       color
+! URxvt*color193:                       color
+! URxvt*color194:                       color
+! URxvt*color195:                       color
+! URxvt*color196:                       color
+! URxvt*color197:                       color
+! URxvt*color198:                       color
+! URxvt*color199:                       color
+! URxvt*color200:                       color
+! URxvt*color201:                       color
+! URxvt*color202:                       color
+! URxvt*color203:                       color
+! URxvt*color204:                       color
+! URxvt*color205:                       color
+! URxvt*color206:                       color
+! URxvt*color207:                       color
+! URxvt*color208:                       color
+! URxvt*color209:                       color
+! URxvt*color210:                       color
+! URxvt*color211:                       color
+! URxvt*color212:                       color
+! URxvt*color213:                       color
+! URxvt*color214:                       color
+! URxvt*color215:                       color
+! URxvt*color216:                       color
+! URxvt*color217:                       color
+! URxvt*color218:                       color
+! URxvt*color219:                       color
+! URxvt*color220:                       color
+! URxvt*color221:                       color
+! URxvt*color222:                       color
+! URxvt*color223:                       color
+! URxvt*color224:                       color
+! URxvt*color225:                       color
+! URxvt*color226:                       color
+! URxvt*color227:                       color
+! URxvt*color228:                       color
+! URxvt*color229:                       color
+! URxvt*color230:                       color
+! URxvt*color231:                       color
+! URxvt*color232:                       color
+! URxvt*color233:                       color
+! URxvt*color234:                       color
+! URxvt*color235:                       color
+! URxvt*color236:                       color
+! URxvt*color237:                       color
+! URxvt*color238:                       color
+! URxvt*color239:                       color
+! URxvt*color240:                       color
+! URxvt*color241:                       color
+! URxvt*color242:                       color
+! URxvt*color243:                       color
+! URxvt*color244:                       color
+! URxvt*color245:                       color
+! URxvt*color246:                       color
+! URxvt*color247:                       color
+! URxvt*color248:                       color
+! URxvt*color249:                       color
+! URxvt*color250:                       color
+! URxvt*color251:                       color
+! URxvt*color252:                       color
+! URxvt*color253:                       color
+! URxvt*color254:                       color
+! URxvt*color255:                       color
+! URxvt*color8:                         color
+! URxvt*color9:                         color
+! URxvt*color10:                        color
+! URxvt*color11:                        color
+! URxvt*color12:                        color
+! URxvt*color13:                        color
+! URxvt*color14:                        color
+! URxvt*color15:                        color
+! URxvt*colorBD:                        color
+! URxvt*colorIT:                        color
+! URxvt*colorUL:                        color
+! URxvt*colorRV:                        color
+! URxvt*underlineColor:                 color
+! URxvt*scrollColor:                    color
+! URxvt*troughColor:                    color
+! URxvt*highlightColor:                 color
+! URxvt*highlightTextColor:             color
+! URxvt*cursorColor:                    color
+! URxvt*cursorColor2:                   color
+! URxvt*pointerColor:                   color
+! URxvt*pointerColor2:                  color
+! URxvt*borderColor:                    color
+! URxvt*path:                           search path
+! URxvt*backgroundPixmap:               file[;geom]
+! URxvt*iconFile:                       file
+URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+URxvt*boldFont:	-*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
+! URxvt*italicFont:                     fontname
+! URxvt*boldItalicFont:                 fontname
+! URxvt*intensityStyles:                boolean
+! URxvt*inputMethod:                    name
+! URxvt*preeditType:                    style
+! URxvt*imLocale:                       string
+! URxvt*imFont:                         fontname
+! URxvt*title:                          string
+! URxvt*iconName:                       string
+! URxvt*saveLines:                      number
+! URxvt*buffered:                       boolean
+! URxvt*depth:                          number
+! URxvt*visual:                         number
+! URxvt*transient-for:                  windowid
+! URxvt*override-redirect:              boolean
+! URxvt*hold:                           boolean
+URxvt*externalBorder:                0
+URxvt*internalBorder:                 5
+URxvt*borderLess:                     False
+! URxvt*lineSpace:                      number
+! URxvt*letterSpace:                    number
+! URxvt*skipBuiltinGlyphs:              boolean
+! URxvt*pointerBlankDelay:              number
+! URxvt*backspacekey:                   string
+! URxvt*deletekey:                      string
+! URxvt*print-pipe:                     string
+! URxvt*modifier:                       modifier
+! URxvt*cutchars:                       string
+! URxvt*answerbackString:               string
+! URxvt*secondaryScreen:                boolean
+! URxvt*secondaryScroll:                boolean
+! URxvt*perl-lib:                       string
+! URxvt*perl-eval:                      perl-eval
+! URxvt*perl-ext-common:                string
+! URxvt*perl-ext:                       string
+! URxvt*iso14755:                       boolean
+! URxvt*iso14755_52:                    boolean
+! URxvt*xrm:                            string
+! URxvt*keysym.sym:                     keysym
+! URxvt*background.border:              boolean
+! URxvt*background.expr:                string
+! URxvt*background.interval:            seconds
+! URxvt*bell-command:                   string
+! URxvt*kuake.hotkey:                   string
+! URxvt*matcher.button:                 string
+! URxvt*matcher.launcher:               string
+! URxvt*matcher.launcher.*:             string
+! URxvt*matcher.pattern.*:              string
+! URxvt*matcher.rend.*:                 string
+! URxvt*remote-clipboard.fetch:         string
+! URxvt*remote-clipboard.store:         string
+! URxvt*searchable-scrollback:          string
+! URxvt*selection-autotransform.*:      string
+! URxvt*selection-pastebin.cmd:         string
+! URxvt*selection-pastebin.url:         string
+! URxvt*selection.pattern-0:            string
+! URxvt*tab-bg:                         colour
+! URxvt*tab-fg:                         colour
+! URxvt*tabbar-bg:                      colour
+! URxvt*tabbar-fg:                      colour
+! URxvt*url-launcher:                   string
