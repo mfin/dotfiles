@@ -107,6 +107,12 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	pulseaudio-ctl mute
 
+#XF86MonBrightnessUp
+#	light -A 5
+
+#XF86MonBrightnessDown
+#	light -U 5
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
