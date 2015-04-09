@@ -6,9 +6,10 @@ else
 	DMENU='dmenu -i'
 fi
 
-choice=$(echo -e "lock\nexit\nshutdown\nreboot" | $DMENU)
+choice=$(echo -e "screenshot\nlock\nexit\nshutdown\nreboot" | $DMENU)
 
 case $choice in
+	screenshot) scrot ~/pics/screens/%Y-%m-%d-%T-screenshot.png & ;;
 	lock) xscreensaver-command -lock & ;;
 	exit) pkill -x panel; bspc quit & ;;
 	shutdown) sudo shutdown now & ;;
