@@ -1,3 +1,3 @@
-ARGS='-i -l 5 -x 10 -y 30 -h 12 -w 200 -fn '-*-terminus-medium-*-normal-*-12-*-*-*-*-*-*-*' -p 'Run:' -nb '#ffffff' -sb '#ffffff' -nf '#000000' -sf '#ff0000''
+ARGS='-i -h 20 -fn '-*-termsyn-medium-*-*-*-13-*-*-*-*-*-*-*' -p 'Run:' -nb '#000000' -sb '#000000' -nf '#ffffff' -sf '#ff0000''
 DMENU="dmenu $ARGS"
 DMENU_RUN="dmenu_run $ARGS"

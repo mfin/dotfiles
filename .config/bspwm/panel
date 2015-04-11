@@ -1,9 +1,9 @@
 #!/bin/bash
 
-bspc config top_padding 50
-bspc config left_padding 20
-bspc config right_padding 20
-bspc config bottom_padding 20
+bspc config top_padding 20
+#bspc config left_padding 10
+#bspc config right_padding 10
+#bspc config bottom_padding 10
 
 FONT1='-*-termsyn-medium-*-*-*-13-*-*-*-*-*-*-*'
 FONT2='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1'
@@ -11,14 +11,14 @@ FONT2='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1'
 #FRONTCOLOR='#ff1d1f21'
 #COLOR1='#ffcc6666'
 #COLOR2='#fff0c674'
-#SEP="%{F#ff373b41}$(printf '%b' "\ue13f")%{F-}"
+SEP="%{F#ff222222}$(printf '%b' "\ue13f")%{F-}"
 COLOR1='#ffff0000'
 CURRENT_DESKTOP="%{F$COLOR1}$(printf "%b" "\ue056")%{F-}"
-OTHER_DESKTOP="%{F#ffaaaaaa}$(printf "%b" "\ue0e6")%{F-}"
-BACKCOLOR='#ffffffff'
-FRONTCOLOR='#ff000000'
-COLOR2='#ff000000'
-SEP="%{F#ffeeeeee}$(printf '%b' "\ue13f")%{F-}"
+OTHER_DESKTOP="%{F#ff333333}$(printf "%b" "\ue0e6")%{F-}"
+BACKCOLOR='#ff000000'
+FRONTCOLOR='#ffffffff'
+COLOR2='#ffff0000'
+#SEP="%{F#ffeeeeee}$(printf '%b' "\ue13f")%{F-}"
 
 workspace(){
 	SPACE_NUM=$(bspc query -D -d);
@@ -68,9 +68,9 @@ volume(){
 }
 
 while :; do
-	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue00f")%{F-}%{A} %{A:dmenu_run:}$(uname -n)%{A} $(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
+	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue0a1")%{F-}%{A} %{A:dmenu_run:}$(uname -n)%{A} $(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
 	sleep 2 
-done | lemonbar -g 1366x30+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
+done | lemonbar -g 1366x20+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
 
 while read -r line ; do
     case $line in
