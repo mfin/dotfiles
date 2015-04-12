@@ -1,9 +1,9 @@
 #!/bin/bash
 
-bspc config top_padding 20
-#bspc config left_padding 10
-#bspc config right_padding 10
-#bspc config bottom_padding 10
+bspc config top_padding 50
+bspc config left_padding 20
+bspc config right_padding 20
+bspc config bottom_padding 20
 
 FONT1='-*-termsyn-medium-*-*-*-13-*-*-*-*-*-*-*'
 FONT2='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1'
@@ -11,10 +11,10 @@ FONT2='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1'
 #FRONTCOLOR='#ff1d1f21'
 #COLOR1='#ffcc6666'
 #COLOR2='#fff0c674'
-SEP="%{F#ff222222}$(printf '%b' "\ue13f")%{F-}"
+SEP="%{F#ff666666}$(printf '%b' "\ue13f")%{F-}"
 COLOR1='#ffff0000'
 CURRENT_DESKTOP="%{F$COLOR1}$(printf "%b" "\ue056")%{F-}"
-OTHER_DESKTOP="%{F#ff333333}$(printf "%b" "\ue0e6")%{F-}"
+OTHER_DESKTOP="%{F#ff666666}$(printf "%b" "\ue0e6")%{F-}"
 BACKCOLOR='#ff000000'
 FRONTCOLOR='#ffffffff'
 COLOR2='#ffff0000'
@@ -50,11 +50,16 @@ cmus(){
 	fi
 }
 
-battery(){
-	CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
-	if [ $CAPACITY -lt 20 ]; then
-		echo "%{F$COLOR1}$(printf '%b' "\ue037") $CAPACITY%%{F-}"
-	else echo "%{F$COLOR2}$(printf '%b' "\ue037")%{F-} $CAPACITY%"
+spotify(){
+	STATUS=$(playerctl status)
+	if [ "$STATUS" == "Playing" ] || [ "$STATUS" == "Paused" ]; then
+		if [ "$STATUS" == "Playing" ]; then
+			STAT_COLOR=""
+		else STAT_COLOR="$COLOR1"
+		fi
+		ARTIST=$(playerctl metadata xesam:artist)
+		TITLE=$(playerctl metadata xesam:title)
+		echo "$SEP %{F$COLOR2}%{A:pause_spotify:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
 	fi
 }
 
@@ -68,15 +73,16 @@ volume(){
 }
 
 while :; do
-	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue0a1")%{F-}%{A} %{A:dmenu_run:}$(uname -n)%{A} $(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
+	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue0a1")%{F-}%{A} %{A:dmenu_run:}$(uname -n)%{A} $(spotify)$(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
 	sleep 2 
-done | lemonbar -g 1366x20+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
+done | lemonbar -g 1920x30+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
 
 while read -r line ; do
     case $line in
     	pause) cmus-remote --pause ;;
+		pause_spotify) playerctl play-pause ;;
         dmenu_session) ~/.bin/dmenu_session.sh ;;
-	dmenu_run) ~/.bin/dmenu_run.sh ;;
-	mute) pulseaudio-ctl mute ;;
+		dmenu_run) ~/.bin/dmenu_run.sh ;;
+		mute) pulseaudio-ctl mute ;;
     esac
 done

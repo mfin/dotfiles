@@ -107,6 +107,24 @@ XF86AudioRaiseVolume
 XF86AudioMute
 	pulseaudio-ctl mute
 
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioStop
+	playerctl stop
+
+XF86HomePage
+	urxvt -e ranger
+
+XF86Mail
+	thunderbird
+
 #XF86MonBrightnessUp
 #	light -A 5
 

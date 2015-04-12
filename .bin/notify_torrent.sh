@@ -1,0 +1,1 @@
+notify-send "Download complete" "$@"
