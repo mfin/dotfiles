@@ -1,6 +1,6 @@
 #!/bin/bash
 
-bspc config top_padding 20
+bspc config top_padding 30
 #bspc config left_padding 10
 #bspc config right_padding 10
 #bspc config bottom_padding 10
@@ -70,7 +70,7 @@ volume(){
 while :; do
 	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue0a1")%{F-}%{A} %{A:dmenu_run:}$(uname -n)%{A} $(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
 	sleep 2 
-done | lemonbar -g 1366x20+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
+done | lemonbar -g 1366x30+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
 
 while read -r line ; do
     case $line in

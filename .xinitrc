@@ -7,7 +7,7 @@ xset +fp /usr/share/fonts/local &
 xset fp rehash &
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
 
-feh --bg-center ~/pics/wallpaper-2942186.png &
+nitrogen --restore &
 # fix dims on dmenu: compton -bcCG -e 0.5 --no-fading-openclose --sw-opti --inactive-dim 0.3 --use-ewmh-active-win &
 xscreensaver -no-splash &
 ( sleep 10 && xss-lock -- xscreensaver-command -lock ) &
