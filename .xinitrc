@@ -8,7 +8,7 @@ xset fp rehash &
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
 
 nitrogen --restore &
-# fix dims on dmenu: compton -bcCG -e 0.5 --no-fading-openclose --sw-opti --inactive-dim 0.3 --use-ewmh-active-win &
+# compton --sw-opti --use-ewmh-active-win &
 xautolock -detectsleep -time 5 -locker lock &
 pulseaudio --start &
 dunst &

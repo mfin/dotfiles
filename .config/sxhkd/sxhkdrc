@@ -95,6 +95,9 @@ super + space
 super + p
 	~/.bin/dmenu_session.sh
 
+super + alt + space
+	lighthouse | sh
+
 super + shift + p
 	cmus-remote -u
 

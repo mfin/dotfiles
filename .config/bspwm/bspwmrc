@@ -1,6 +1,6 @@
-#! /bin/sh
+#!/bin/sh
 
-bspc config border_width        2
+bspc config border_width        3
 bspc config window_gap         20
 
 bspc config split_ratio         0.6
@@ -13,4 +13,9 @@ bspc monitor -d 1 2 3 4 5
 bspc config normal_border_color '#1d1f21'
 bspc config focused_border_color '#ffffff'
 
+bspc rule -a vlc desktop=^4 follow=on
+bspc rule -a Steam desktop=^4
+bspc rule -a Spotify desktop=^5 floating=on
+
 ~/.config/bspwm/panel &
+( sleep 5 && stalonetray -s 20 -i 16 -t --grow-gravity W --geometry 1x1+5-5 ) &
