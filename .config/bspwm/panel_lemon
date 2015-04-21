@@ -13,9 +13,8 @@ while read -r line ; do
             # conky
             sys_infos="${line#?}"
             ;;
-        #A*)
-        #    # custom window title using xprop xwinfo
-        #    title="%{F$TITLE_FG B-}${PAD}$(xwinfo -c ${line#?} | sed 's@N/A@@')${PAD}%{F- B-}"
+        #M*)
+        #    spotify="${line#?}"
         #    ;;
         #C*)
             ##clock
@@ -68,5 +67,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{l} %{F$COLOR1}$(printf "%b" "\ue0a1")%{F-} $(uname -r)%{c} $wm_infos%{r}$sys_infos "
+    printf "%s\n" "%{l} %{F#fff0c674}$(printf "%b" "\ue0a1")%{F-} $(uname -r)%{c} $wm_infos%{r}$sys_infos "
 done

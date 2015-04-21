@@ -1,39 +1,40 @@
 ! special
-*.foreground:   #ffffff
-*.background:   #000000
-*.cursorColor:  #ffffff
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #f0c674
 
 ! black
-*.color0:       #151515
-*.color8:       #505450
+*.color0:       #1d1f21
+*.color8:       #969896
 
 ! red
-*.color1:       #bf7979
-*.color9:       #f4a45f
+*.color1:       #cc6666
+*.color9:       #cc6666
 
 ! green
-*.color2:       #97b26b
-*.color10:      #c5f779
+*.color2:       #b5bd68
+*.color10:      #b5bd68
 
 ! yellow
-*.color3:       #cdcda1
-*.color11:      #ffffaf
+*.color3:       #f0c674
+*.color11:      #f0c674
 
 ! blue
-*.color4:       #4a5463
-*.color12:      #7d8794
+*.color4:       #81a2be
+*.color12:      #81a2be
 
 ! magenta
-*.color5:       #9c3885
-*.color13:      #e628ba
+*.color5:       #b294bb
+*.color13:      #b294bb
 
 ! cyan
-*.color6:       #88aadd
-*.color14:      #99ccff
+*.color6:       #8abeb7
+*.color14:      #8abeb7
 
 ! white
-*.color7:       #ffffff
-*.color15:      #dedede
+*.color7:       #c5c8c6
+*.color15:      #ffffff
+
 
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /usr/bin/firefox
