@@ -1,82 +1,36 @@
-#!/bin/bash
+#! /bin/sh
 
 bspc config top_padding 30
-#bspc config left_padding 10
-#bspc config right_padding 10
-#bspc config bottom_padding 10
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
 
-FONT1='-*-termsyn-medium-*-*-*-13-*-*-*-*-*-*-*'
-FONT2='-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1'
-#BACKCOLOR='#ffc5c8c6'
-#FRONTCOLOR='#ff1d1f21'
-#COLOR1='#ffcc6666'
-#COLOR2='#fff0c674'
-SEP="%{F#ff222222}$(printf '%b' "\ue13f")%{F-}"
-COLOR1='#ffff0000'
-CURRENT_DESKTOP="%{F$COLOR1}$(printf "%b" "\ue056")%{F-}"
-OTHER_DESKTOP="%{F#ff333333}$(printf "%b" "\ue0e6")%{F-}"
-BACKCOLOR='#ff000000'
-FRONTCOLOR='#ffffffff'
-COLOR2='#ffff0000'
-#SEP="%{F#ffeeeeee}$(printf '%b' "\ue13f")%{F-}"
+source $(dirname $0)/panel_config
 
-workspace(){
-	SPACE_NUM=$(bspc query -D -d);
-		case "$SPACE_NUM" in
-			"1")
-				WORKSPACE=" $CURRENT_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP ";;
-			"2")
-				WORKSPACE=" $OTHER_DESKTOP $CURRENT_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP ";;
-			"3")
-				WORKSPACE=" $OTHER_DESKTOP $OTHER_DESKTOP $CURRENT_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP ";;
-			"4")
-				WORKSPACE=" $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $CURRENT_DESKTOP $OTHER_DESKTOP ";;
-			"5")
-				WORKSPACE=" $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $OTHER_DESKTOP $CURRENT_DESKTOP ";;
-		esac
-	echo $WORKSPACE
-}
+if [ $(pgrep -cx panel) -gt 1 ] ; then
+    printf "%s\n" "The panel is already running." >&2
+    exit 1
+fi
 
-cmus(){
-	STATUS=$(cmus-remote -Q | grep status | awk '{print $2}')
-	if [ "$STATUS" == "playing" ] || [ "$STATUS" == "paused" ]; then
-		if [ "$STATUS" == "playing" ]; then
-			STAT_COLOR=""
-		else STAT_COLOR="$COLOR1"
-		fi
-		ARTIST=$(cmus-remote -Q | sed -ne '/artist/s/tag artist //pg')
-		TITLE=$(cmus-remote -Q | sed -ne '/title/s/tag title //pg')
-		echo "$SEP %{F$COLOR2}%{A:pause:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
-	fi
-}
+trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-battery(){
-	CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
-	if [ $CAPACITY -lt 20 ]; then
-		echo "%{F$COLOR1}$(printf '%b' "\ue037") $CAPACITY%%{F-}"
-	else echo "%{F$COLOR2}$(printf '%b' "\ue037")%{F-} $CAPACITY%"
-	fi
-}
+[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
+mkfifo "$PANEL_FIFO"
 
-volume(){
-	VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
-	MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
-	if [ "$MUTE" == "yes" ]; then
-		echo "%{F$COLOR1}$(printf '%b' "\ue04f") $VOLUME%%{F-}"
-	else echo "%{F$COLOR2}$(printf '%b' "\ue050")%{F-} $VOLUME%"
-	fi
-}
+bspc control --subscribe > "$PANEL_FIFO" &
 
-while :; do
-	echo  "%{l} %{A:dmenu_session:}%{F$COLOR1}$(printf '%b' "\ue0a1")%{F-}%{A} %{A:dmenu_run:}$(uname -n)%{A} $(cmus)%{c}$(workspace)%{r} %{A:mute:}$(volume)%{A} $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M') "
-	sleep 2 
-done | lemonbar -g 1366x30+0+0 -f "$FONT1,$FONT2" -B $BACKCOLOR -F $FRONTCOLOR | \
+#clock -sf 'C%a %d-%b %H:%M' > "$PANEL_FIFO" &
+#xtitle -sf 'T%s' > "$PANEL_FIFO" &
+#xprop -spy -root _NET_ACTIVE_WINDOW | sed -un 's/.*\(0x.*\)/A\1/p' > "$PANEL_FIFO" &
+# create the toggle file before running this conky
+~/.config/bspwm/panel_status > "$PANEL_FIFO" &
 
-while read -r line ; do
-    case $line in
-    	pause) cmus-remote --pause ;;
-        dmenu_session) ~/.bin/dmenu_session.sh ;;
-	dmenu_run) ~/.bin/dmenu_run.sh ;;
-	mute) pulseaudio-ctl mute ;;
-    esac
-done
+~/.config/bspwm/panel_lemon < "$PANEL_FIFO" \
+     | lemonbar -p \
+           -g "$GEOMETRY" \
+           -f "$FONT1","$FONT2"\
+           -B "$BAR_BG" \
+           -F "$BAR_FG" \
+           | while read line; do eval "$line"; done &
+wait
+
