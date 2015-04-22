@@ -1,3 +1,12 @@
+#!/bin/sh
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?* ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
 setxkbmap si -option 'ctrl:nocaps' &
 xset m 0 &
 xset r rate 300 30 &
@@ -14,6 +23,8 @@ pulseaudio --start &
 dunst &
 unclutter &
 udiskie &
+
+eval $(gnome-keyring-daemon --start) &
 
 sxhkd -f 50 &
 exec bspwm

@@ -9,11 +9,7 @@ alias vct='veracrypt -t'
 . ~/.git-prompt.sh
 . ~/.bash-prompt.sh
 
-if [ -f "${HOME}/.gpg-agent-info" ]; then
-  . "${HOME}/.gpg-agent-info"
-  export GPG_AGENT_INFO
-  export SSH_AUTH_SOCK
-fi
+eval $(gnome-keyring-daemon --start) && export SSH_AUTH_SOCK GPG_AGENT_INFO
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
