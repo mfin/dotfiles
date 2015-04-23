@@ -24,7 +24,7 @@ dunst &
 unclutter &
 udiskie &
 
-eval $(gnome-keyring-daemon --start) &
+# eval $(gnome-keyring-daemon --start) &
 
 sxhkd -f 50 &
-exec bspwm
+exec $1
