@@ -22,9 +22,12 @@ while read -r line ; do
             #clock="${line#?}"
             #clock="%{F$CLOCK_BG}⮂%{F- B$CLOCK_BG A:dzen_popup_toggle.sh calendar:} ${clock} %{A B- F$CLOCK_BG}⮀%{F-}"
             #;;
-        #T*)
-        #    title=$(echo ${line#?} | sed 's^\(.\{40\}\).*^\1...^')
-        #    ;;
+        T*)
+            if [[ ${line#?} == "" ]]; then
+                title=""
+            else title="%{F$COLOR2}$(printf "%b" "\ue135")%{F-} %{A:bspc window -t floating:}$(echo ${line#?} | sed 's^\(.\{40\}\).*^\1...^')%{A}"
+            fi
+            ;;
         W*)
             wm_infos=""
             IFS=$FIELDIFS
@@ -37,30 +40,36 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F$COLOR1}$(printf "%b" "\ue056")%{F-}"
+                                desk="%{F$COLOR2}$(printf "%b" "\ue133")$(printf "%b" "\ue133")%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F$COLOR1}$(printf "%b" "\ue056")%{F-}"
+                                desk="%{F$COLOR1}$(printf "%b" "\ue133")$(printf "%b" "\ue133")%{F-}"
                                 ;;
                             U*)
                                 # focused urgent desktop
-                                desk="%{F$COLOR1}$(printf "%b" "\ue056")%{F-}"
+                                desk="%{F$COLOR2}$(printf "%b" "\ue133")$(printf "%b" "\ue133")%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F$COLOR3}$(printf "%b" "\ue056")%{F-}"
+                                desk="%{F$COLOR3}$(printf "%b" "\ue138")$(printf "%b" "\ue139")%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F$COLOR3}$(printf "%b" "\ue0e6")%{F-}"
+                                desk="%{F#ff555555}$(printf "%b" "\ue076")$(printf "%b" "\ue076")%{F-}"
                                 ;;
                             u*)
                                 # urgent desktop
-                                desk="%{F$COLOR3}$(printf "%b" "\ue056")%{F-}"
+                                desk="%{F$COLOR1}$(printf "%b" "\ue026")$(printf "%b" "\ue026")%{F-}"
                                 ;;
                         esac
                         wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}${desk}%{A} "
+                        ;;
+                    [L]*)
+                        if [[ ${item#?} == "T" ]]; then
+                            layout="%{F$COLOR1}%{B#ff2a2a2a}  $(printf "%b" "\ue137")  %{B F-}"
+                        else layout="%{F$COLOR1}%{B#ff2a2a2a}  $(printf "%b" "\ue130")  %{B F-}"
+                        fi
                         ;;
                 esac
                 shift
@@ -68,5 +77,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{l} %{F#fff0c674}$(printf "%b" "\ue0a1")%{F-} $(uname -n)%{c} $wm_infos %{r}$sys_infos "
+    printf "%s\n" "%{l}%{B#ff333333}  $wm_infos %{B-}$layout $title $sys_infos "
 done

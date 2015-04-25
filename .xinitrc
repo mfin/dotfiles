@@ -27,4 +27,8 @@ unclutter &
 udiskie &
 
 sxhkd -f 50 &
-exec bspwm
+
+case "$1" in
+	/usr/bin/openbox-session) exec openbox-session ;;
+	/usr/bin/bspwm-session) exec bspwm ;;
+esac

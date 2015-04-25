@@ -96,7 +96,7 @@ super + p
 	~/.bin/dmenu_session.sh
 
 super + shift + p
-	cmus-remote -u
+	playerctl play-pause
 
 XF86AudioLowerVolume
 	pulseaudio-ctl down

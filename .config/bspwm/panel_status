@@ -15,7 +15,7 @@ volume(){
     MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
     if [ "$MUTE" == "yes" ]; then
         echo "%{F$COLOR1}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
-    else echo "%{F$COLOR2}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue050")%{F-} $VOLUME%%{A}"
+    else echo "%{F$COLOR2}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
     fi
 }
 
@@ -23,16 +23,24 @@ spotify(){
     STATUS=$(playerctl status)
     if [ "$STATUS" == "Playing" ] || [ "$STATUS" == "Paused" ]; then
         if [ "$STATUS" == "Playing" ]; then
-            STAT_COLOR="$COLOR1"
-        else STAT_COLOR="$COLOR3"
+            STAT_COLOR="$COLOR2"
+        else STAT_COLOR="$COLOR1"
         fi
         ARTIST=$(playerctl metadata xesam:artist)
         TITLE=$(playerctl metadata xesam:title)
-        echo "%{F$COLOR2}%{A:playerctl play-pause:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A} $SEP"
+        echo "%{c}%{F$COLOR2}%{A:playerctl play-pause:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
+    fi
+}
+
+wifi_ssid(){
+    NAME=$(iwconfig wlp2s0 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+    if [ "$NAME" == "" ]; then
+        echo "%{F$COLOR1}$(printf '%b' "\ue048")%{F-} no conn"
+    else echo "%{F$COLOR2}$(printf '%b' "\ue048")%{F-} $NAME"
     fi
 }
 
 while :; do
-    echo "S$(spotify) $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue015")%{F-} $(date +'%H:%M')"
+    echo "S$(spotify)%{r} $(wifi_ssid) $SEP $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')"
     sleep 1
 done
