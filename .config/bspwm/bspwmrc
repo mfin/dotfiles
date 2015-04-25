@@ -18,4 +18,4 @@ bspc rule -a Steam desktop=^4
 bspc rule -a Spotify desktop=^5 floating=on
 
 ~/.config/bspwm/panel &
-( sleep 5 && stalonetray ) &
+( sleep 3 && stalonetray ) &
