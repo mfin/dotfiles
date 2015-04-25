@@ -27,4 +27,8 @@ udiskie &
 # eval $(gnome-keyring-daemon --start) &
 
 sxhkd -f 50 &
-exec $1
+
+case "$1" in
+	/usr/bin/openbox-session) exec openbox-session ;;
+	/usr/bin/bspwm-session) exec bspwm ;;
+esac
