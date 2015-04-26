@@ -9,3 +9,7 @@ Branches:
 
 Packages from AUR:
 * rxvt-unicode-256xresources, dmenu2, lemonbar-xft-git, stlarch_font
+
+Screenshot
+----------
+![Screenshot](http://i.imgur.com/FPQ4L6r.png)
