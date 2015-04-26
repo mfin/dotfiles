@@ -41,6 +41,6 @@ wifi_ssid(){
 }
 
 while :; do
-    echo "S$(spotify)%{r} $(wifi_ssid) $SEP $(volume) $SEP $(battery) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')"
+    echo "S$(spotify)%{r} $(wifi_ssid) $SEP $(volume) $SEP $(battery)  %{B#ff2a2a2a}  %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d')  %{B#ff333333}  %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')  %{B-}"
     sleep 1
 done

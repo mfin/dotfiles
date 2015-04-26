@@ -1,5 +1,5 @@
 GEOMETRY="1366x30+0+0"
-FONT1="-*-termsynu-medium-*-*-*-13-*-*-*-*-*-*-*"
+FONT1="-*-proggysquare-medium-*-*-*-11-*-*-*-*-*-*-*"
 FONT2="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 SEP="%{F#ff666666}$(printf '%b' "\ue0d6")%{F-}"
 

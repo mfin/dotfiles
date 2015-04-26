@@ -40,15 +40,15 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F$COLOR2}$(printf "%b" "\ue133")$(printf "%b" "\ue133")%{F-}"
+                                desk="%{F#ff8abeb7}$(printf "%b" "\ue010")$(printf "%b" "\ue010")%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F$COLOR1}$(printf "%b" "\ue133")$(printf "%b" "\ue133")%{F-}"
+                                desk="%{F$COLOR2}$(printf "%b" "\ue076")$(printf "%b" "\ue076")%{F-}"
                                 ;;
                             U*)
                                 # focused urgent desktop
-                                desk="%{F$COLOR2}$(printf "%b" "\ue133")$(printf "%b" "\ue133")%{F-}"
+                                desk="%{F$COLOR1}$(printf "%b" "\ue000")$(printf "%b" "\ue000")%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
@@ -60,15 +60,15 @@ while read -r line ; do
                                 ;;
                             u*)
                                 # urgent desktop
-                                desk="%{F$COLOR1}$(printf "%b" "\ue026")$(printf "%b" "\ue026")%{F-}"
+                                desk="%{F$COLOR1}$(printf "%b" "\ue000")$(printf "%b" "\ue000")%{F-}"
                                 ;;
                         esac
                         wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}${desk}%{A} "
                         ;;
                     [L]*)
                         if [[ ${item#?} == "T" ]]; then
-                            layout="%{F$COLOR1}%{B#ff2a2a2a}  $(printf "%b" "\ue137")  %{B F-}"
-                        else layout="%{F$COLOR1}%{B#ff2a2a2a}  $(printf "%b" "\ue130")  %{B F-}"
+                            layout="%{F#fff0c674}%{B#ff2a2a2a}  $(printf "%b" "\ue137")  %{B F-}"
+                        else layout="%{F#fff0c674}%{B#ff2a2a2a}  $(printf "%b" "\ue130")  %{B F-}"
                         fi
                         ;;
                 esac
@@ -77,5 +77,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{l}%{B#ff333333}  $wm_infos %{B-}$layout $title $sys_infos "
+    printf "%s\n" "%{l}%{B#ff333333}  $wm_infos %{B-}$layout  $title $sys_infos"
 done
