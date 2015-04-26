@@ -1,9 +1,9 @@
 #! /bin/sh
 
-bspc config top_padding 50
-bspc config left_padding 20
-bspc config right_padding 20
-bspc config bottom_padding 20
+bspc config top_padding 40
+bspc config left_padding 0
+bspc config right_padding 0
+bspc config bottom_padding 0
 
 source $(dirname $0)/panel_config
 

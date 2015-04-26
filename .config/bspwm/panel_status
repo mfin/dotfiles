@@ -20,11 +20,19 @@ spotify(){
         fi
         ARTIST=$(playerctl metadata xesam:artist)
         TITLE=$(playerctl metadata xesam:title)
-        echo "%{F$COLOR2}%{A:playerctl play-pause:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A} $SEP"
+        echo "%{c}%{F$COLOR2}%{A:playerctl play-pause:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
+    fi
+}
+
+wifi_ssid(){
+    NAME=$(iwconfig wlp0s29u1u4 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+    if [ "$NAME" == "" ]; then
+        echo "%{F$COLOR1}$(printf '%b' "\ue048")%{F-} no conn"
+    else echo "%{F$COLOR2}$(printf '%b' "\ue048")%{F-} $NAME"
     fi
 }
 
 while :; do
-    echo "S$(spotify) $(volume) $SEP %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d') $SEP %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')"
+    echo "S$(spotify) %{r}$(wifi_ssid) $SEP $(volume)  %{B#ff2a2a2a}  %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d')  %{B#ff333333}  %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')  %{B-}"
     sleep 1
 done

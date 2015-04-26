@@ -30,14 +30,14 @@
 
 # geometry <geometry>        # tray's geometry in standard X notation; width and
                              # height are specified in slot_size multiples
-geometry 1x1+5-5
+geometry 1x1-0-0
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by
                              # grow_gravity; if horizontal or vertical
                              # direction is not specified, tray will not grow in
                              # that direction
-grow_gravity W
+grow_gravity E
 
 # icon_gravity <gravity>     # icon placement gravity, one of NW, NE, SW, SE
 icon_gravity SW
@@ -104,6 +104,7 @@ transparent true
 
 # window_layer <layer>       # set the EWMH-compatible window layer; one of:
                              # bootom, normal, top
+# window_layer top
 
 # window_strut <mode>        # enable/disable window struts for tray window (to
                              # avoid converting of tray window by maximized
