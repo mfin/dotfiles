@@ -17,7 +17,7 @@ xset fp rehash &
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
 
 nitrogen --restore &
-# compton --sw-opti --use-ewmh-active-win &
+compton --sw-opti --use-ewmh-active-win &
 xautolock -detectsleep -time 5 -locker slimlock &
 pulseaudio --start &
 dunst &

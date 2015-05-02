@@ -2,17 +2,23 @@
 # ~/.bashrc
 #
 
-# TODO get aliases from .bash_aliases
-alias ls='ls --color=auto'
-alias la='ls -la'
-alias vct='veracrypt -t'
-alias ga='git add -A'
-alias gc='git commit -m'
-alias gp='git push'
+. ~/.bash_aliases
 
-# beautify the prompt (git instegration also)
-. ~/.git-prompt.sh
-. ~/.bash-prompt.sh
+# beaufify the prompt (with git)
+. /usr/share/git/completion/git-prompt.sh
+
+GIT_PS1_SHOWDIRTYSTATE=1
+GIT_PS1_SHOWSTASHSTATE=1
+GIT_PS1_SHOWUNTRACKEDFILES=1
+GIT_PS1_SHOWCOLORHINTS=1
+GIT_PS1_DESCRIBE_STYLE="branch"
+GIT_PS1_SHOWUPSTREAM="auto git"
+
+get_sha() {
+    git rev-parse --short HEAD 2>/dev/null
+}
+
+PROMPT_COMMAND='__git_ps1 "\[\033[1;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'
 
 # get gnome-keyring variables
 eval $(gnome-keyring-daemon --start) && export SSH_AUTH_SOCK GPG_AGENT_INFO
