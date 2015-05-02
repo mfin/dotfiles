@@ -6,8 +6,8 @@ volume(){
     VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
     MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
     if [ "$MUTE" == "yes" ]; then
-        echo "%{F$COLOR1}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
-    else echo "%{F$COLOR2}%{A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
+        echo "%{F$COLOR1 A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
+    else echo "%{F$COLOR2 A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
     fi
 }
 
@@ -20,7 +20,7 @@ spotify(){
         fi
         ARTIST=$(playerctl metadata xesam:artist)
         TITLE=$(playerctl metadata xesam:title)
-        echo "%{c}%{F$COLOR2}%{A:playerctl play-pause:}%{F$STAT_COLOR}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
+        echo "%{c F$STAT_COLOR A:playerctl play-pause:}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
     fi
 }
 
