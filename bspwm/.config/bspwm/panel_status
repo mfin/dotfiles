@@ -11,16 +11,11 @@ volume(){
     fi
 }
 
-spotify(){
-    STATUS=$(playerctl status)
-    if [ "$STATUS" == "Playing" ] || [ "$STATUS" == "Paused" ]; then
-        if [ "$STATUS" == "Playing" ]; then
-            STAT_COLOR="$COLOR2"
-        else STAT_COLOR="$COLOR1"
-        fi
-        ARTIST=$(playerctl metadata xesam:artist)
-        TITLE=$(playerctl metadata xesam:title)
-        echo "%{c F$STAT_COLOR A:playerctl play-pause:}$(printf '%b' "\ue05c")%{F-} $ARTIST - $TITLE%{A}"
+mopidy(){
+    STATUS=$(mpc current)
+    if [ "$STATUS" != "" ]; then
+        echo "%{c F$COLOR2 A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue05c")%{F-} $STATUS%{A A}"
+    else echo "%{c F$COLOR1 A:mpc toggle:}$(printf '%b' "\ue05c")%{F-} mopidy is stopped%{A}"
     fi
 }
 
@@ -33,6 +28,6 @@ wifi_ssid(){
 }
 
 while :; do
-    echo "S$(spotify) %{r}$(wifi_ssid) $SEP $(volume)  %{B#ff2a2a2a}  %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d')  %{B#ff333333}  %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')  %{B-}"
-    sleep 1
+    echo "S$(mopidy) %{r}$(wifi_ssid) $SEP $(volume)  %{B#ff2a2a2a}  %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d')  %{B#ff333333}  %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')  %{B-}"
+    sleep 2
 done

@@ -23,6 +23,7 @@ pulseaudio --start &
 dunst &
 unclutter &
 udiskie &
+mopidy &
 
 # eval $(gnome-keyring-daemon --start) &
 
