@@ -17,8 +17,11 @@ super + t
 super + b
 	bspc desktop -B
 
-super + {s,d,f}
-	bspc window -t {floating,sticky,fullscreen}
+super + {a,s,d}
+	bspc window -t {pseudo_tiled,floating,sticky}
+
+super + f
+	bspc desktop -l {monocle,tiled}
 
 super + {grave,Tab}
 	bspc {window,desktop} -f last
@@ -94,9 +97,6 @@ super + space
 
 super + p
 	~/.bin/dmenu_session.sh
-
-super + alt + space
-	lighthouse | sh
 
 super + shift + p
 	cmus-remote -u

@@ -12,6 +12,6 @@ case $choice in
 	screenshot) scrot ~/pics/screens/%Y-%m-%d-%T-screenshot.png & ;;
 	lock) slimlock & ;;
 	exit) pkill -x panel; bspc quit & ;;
-	shutdown) sudo shutdown now & ;;
-	reboot) sudo reboot & ;;
+	shutdown) systemctl poweroff & ;;
+	reboot) systemctl reboot & ;;
 esac

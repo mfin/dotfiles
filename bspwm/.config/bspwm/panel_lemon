@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# bar input parser for bspwm  Tuesday, 01 July 2014 22:57
+# bar input parser for bspwm
 
 NORMIFS=$IFS
 FIELDIFS=':'
@@ -39,7 +39,7 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#ff8abeb7}$(printf "%b" "\ue134")$(printf "%b" "\ue134")%{F-}"
+                                desk="%{F#ff8abeb7}$(printf "%b" "\ue010")$(printf "%b" "\ue010")%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
