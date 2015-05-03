@@ -9,7 +9,7 @@ fi
 choice=$(echo -e "lock\nexit\nshutdown\nreboot\nscreenshot" | $DMENU)
 
 case $choice in
-	screenshot) scrot ~/pics/screens/%Y-%m-%d-%T-screenshot.png & ;;
+	screenshot) sleep 1 && scrot ~/pics/screens/%Y-%m-%d-%T-screenshot.png & ;;
 	lock) slimlock & ;;
 	exit) pkill -x panel; bspc quit & ;;
 	shutdown) systemctl poweroff & ;;
