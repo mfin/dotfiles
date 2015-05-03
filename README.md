@@ -4,7 +4,7 @@ dotfiles - 1080p (desktop PC)
 Dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ```
-git clone https://github.com/mfin/dotfiles ~/.dotfiles
+git clone -b 1080p https://github.com/mfin/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 stow <folder name>
 ```
