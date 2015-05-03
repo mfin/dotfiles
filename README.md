@@ -14,4 +14,4 @@ Packages from AUR:
 
 Screenshot
 ----------
-![Screenshot](http://i.imgur.com/9Jt72MX.png "bspwm on Arch, 1920x1080")
+![Screenshot](http://i.imgur.com/ice8XyJ.png "bspwm on Arch, 1920x1080")
