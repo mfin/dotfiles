@@ -23,13 +23,7 @@ pulseaudio --start &
 dunst &
 unclutter &
 udiskie &
-mopidy &
-
-# eval $(gnome-keyring-daemon --start) &
 
 sxhkd -f 50 &
 
-case "$1" in
-	/usr/bin/openbox-session) exec openbox-session ;;
-	/usr/bin/bspwm-session) exec bspwm ;;
-esac
+exec bspwm
