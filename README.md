@@ -1,5 +1,11 @@
-dotfiles - 1080p (desktop PC)
-=============================
+```
+     __     __  ____ __      
+ ___/ /__  / /_/ _(_) /__ ___
+/ _  / _ \/ __/ _/ / / -_|_-<
+\_,_/\___/\__/_//_/_/\__/___/
+
+Desktop PC - 1080p
+```
 
 Dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
