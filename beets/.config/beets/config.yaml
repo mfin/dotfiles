@@ -1,0 +1,4 @@
+directory: ~/music
+library: ~/music/library.db
+plugins: fetchart embedart ftintitle lastgenre lyrics convert info
+
