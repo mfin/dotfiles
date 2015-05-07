@@ -89,17 +89,14 @@ super + @button{1-3}
 super + Return
 	urxvt
 
-super + alt + Return
-	~/.bin/notify.sh
-
 super + space
 	~/.bin/dmenu_run.sh
 
 super + p
 	~/.bin/dmenu_session.sh
 
-super + shift + p
-	cmus-remote -u
+super + alt + Return
+	{pkill -x panel; bspc config top_padding 0, ~/.config/bspwm/panel}
 
 XF86AudioLowerVolume
 	pulseaudio-ctl down
@@ -111,16 +108,16 @@ XF86AudioMute
 	pulseaudio-ctl mute
 
 XF86AudioPrev
-	playerctl previous
+	mpc prev
 
 XF86AudioNext
-	playerctl next
+	mpc next
 
 XF86AudioPlay
-	playerctl play-pause
+	mpc toggle
 
 XF86AudioStop
-	playerctl stop
+	mpc stop
 
 XF86HomePage
 	urxvt -e ranger
