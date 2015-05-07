@@ -37,7 +37,7 @@
 
 
 URxvt.perl-ext-common: default,matcher,clipboard
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/qutebrowser
 URxvt.matcher.button: 1
 
 ! URxvt*termName:                       string

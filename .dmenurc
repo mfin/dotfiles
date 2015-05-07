@@ -1,3 +1,3 @@
-ARGS='-i -h 30 -fn '-*-proggysquare-medium-*-*-*-11-*-*-*-*-*-*-*' -nb '#1d1f21' -sb '#1d1f21' -nf '#c5c8c6' -sf '#b5bd68''
+ARGS='-i -h 30 -fn '-*-termsynu-medium-*-*-*-13-*-*-*-*-*-*-*' -nb '#1d1f21' -sb '#1d1f21' -nf '#c5c8c6' -sf '#b5bd68''
 DMENU="dmenu $ARGS"
 DMENU_RUN="dmenu_run -p Run: $ARGS"

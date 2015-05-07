@@ -17,7 +17,7 @@ xset fp rehash &
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources &
 
 nitrogen --restore &
-# fix dims on dmenu: compton -bcCG -e 0.5 --no-fading-openclose --sw-opti --inactive-dim 0.3 --use-ewmh-active-win &
+compton --sw-opti --use-ewmh-active-win &
 #xscreensaver -no-splash &
 #( sleep 10 && xss-lock -- xscreensaver-command -lock ) &
 ( sleep 10 && xss-lock -- slimlock ) &
@@ -25,10 +25,9 @@ pulseaudio --start &
 dunst &
 unclutter &
 udiskie &
+mopidy &
 
 sxhkd -f 50 &
 
-case "$1" in
-	/usr/bin/openbox-session) exec openbox-session ;;
-	/usr/bin/bspwm-session) exec bspwm ;;
-esac
+exec bspwm
+

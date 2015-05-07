@@ -9,10 +9,10 @@ fi
 choice=$(echo -e "screenshot\nlock\nexit\nshutdown\nreboot" | $DMENU)
 
 case $choice in
-	screenshot) scrot ~/pics/screens/%Y-%m-%d-%T-screenshot.png & ;;
+	screenshot) sleep 1 && scrot ~/pics/screens/%Y-%m-%d-%T-screenshot.png & ;;
 #	lock) xscreensaver-command -lock & ;;
 	lock) slimlock & ;;
 	exit) pkill -x panel; bspc quit & ;;
-	shutdown) sudo shutdown now & ;;
-	reboot) sudo reboot & ;;
+	shutdown) systemctl poweroff & ;;
+	reboot) systemctl reboot & ;;
 esac

@@ -87,7 +87,7 @@ super + Return
 	urxvt
 
 super + alt + Return
-	~/.bin/notify.sh
+	{pkill -x panel; bspc config top_padding 0, ~/.config/bspwm/panel}
 
 super + space
 	~/.bin/dmenu_run.sh

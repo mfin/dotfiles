@@ -26,7 +26,7 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 ~/.config/bspwm/panel_status > "$PANEL_FIFO" &
 
 ~/.config/bspwm/panel_lemon < "$PANEL_FIFO" \
-     | lemonbar -p -o 1 \
+     | lemonbar -p \
            -g "$GEOMETRY" \
            -f "$FONT1","$FONT2"\
            -B "$BAR_BG" \
