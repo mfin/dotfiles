@@ -1,6 +1,0 @@
-#!/bin/bash
-
-for file in *.flf; do
-	figlet -f $file dotfiles
-	echo $file
-done
