@@ -1,11 +1,6 @@
-set nocp
 set laststatus=2
+set nocp
 set encoding=utf8
-set showmatch
-set shiftwidth=4
-set expandtab
-set tabstop=4
-set softtabstop=4
 set ffs=unix,dos,mac
 syntax on
 

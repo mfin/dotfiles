@@ -37,11 +37,11 @@
 
 
 URxvt.perl-ext-common: default,matcher,clipboard
-URxvt.url-launcher: /usr/bin/qutebrowser
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
 
 ! URxvt*termName:                       string
-URxvt*geometry:                       80x30
+! URxvt*geometry:                       geometry
 ! URxvt*chdir:                          string
 ! URxvt*reverseVideo:                   boolean
 ! URxvt*loginShell:                     boolean
@@ -350,9 +350,11 @@ URxvt*scrollBar:                      False
 ! URxvt*borderColor:                    color
 ! URxvt*path:                           search path
 ! URxvt*backgroundPixmap:               file[;geom]
-! URxvt*iconFile:                       gnome-terminal
+! URxvt*iconFile:                       file
+! URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
 URxvt*font: -*-termsynu-medium-*-*-*-14-*-*-*-*-*-*-*
-URxvt*boldFont:	-*-termsynu-bold-*-*-*-14-*-*-*-*-*-*-*
+! URxvt*boldFont:	-*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
+URxvt*boldFont: -*-termsynu-bold-*-*-*-14-*-*-*-*-*-*-*
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean

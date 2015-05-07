@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# bar input parser for bspwm  Tuesday, 01 July 2014 22:57
+# bar input parser for bspwm
 
 NORMIFS=$IFS
 FIELDIFS=':'
@@ -13,9 +13,8 @@ while read -r line ; do
             # conky
             sys_infos="${line#?}"
             ;;
-        #A*)
-        #    # custom window title using xprop xwinfo
-        #    title="%{F$TITLE_FG B-}${PAD}$(xwinfo -c ${line#?} | sed 's@N/A@@')${PAD}%{F- B-}"
+        #M*)
+        #    spotify="${line#?}"
         #    ;;
         #C*)
             ##clock
@@ -44,7 +43,7 @@ while read -r line ; do
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F$COLOR2}$(printf "%b" "\ue076")$(printf "%b" "\ue076")%{F-}"
+                                desk="%{F#ff8abeb7}$(printf "%b" "\ue076")$(printf "%b" "\ue076")%{F-}"
                                 ;;
                             U*)
                                 # focused urgent desktop
@@ -52,7 +51,7 @@ while read -r line ; do
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F$COLOR3}$(printf "%b" "\ue138")$(printf "%b" "\ue139")%{F-}"
+                                desk="%{F$COLOR3}$(printf "%b" "\ue005")$(printf "%b" "\ue002")%{F-}"
                                 ;;
                             f*)
                                 # free desktop
@@ -67,8 +66,8 @@ while read -r line ; do
                         ;;
                     [L]*)
                         if [[ ${item#?} == "T" ]]; then
-                            layout="%{F#fff0c674}%{B#ff2a2a2a}  $(printf "%b" "\ue137")  %{B F-}"
-                        else layout="%{F#fff0c674}%{B#ff2a2a2a}  $(printf "%b" "\ue130")  %{B F-}"
+                            layout="%{F#fff0c674 B#ff2a2a2a A:bspc desktop -l monocle: A3:bspc desktop -R 90:}  $(printf "%b" "\ue137")  %{A A B F-}"
+                        else layout="%{F#fff0c674 B#ff2a2a2a A:bspc desktop -l tiled:}  $(printf "%b" "\ue130")  %{A B F-}"
                         fi
                         ;;
                 esac
@@ -77,5 +76,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{l}%{B#ff333333}  $wm_infos %{B-}$layout  $title $sys_infos"
+    printf "%s\n" "%{l B#ff333333}  $wm_infos %{B-}$layout  $title $sys_infos"
 done

@@ -17,8 +17,11 @@ super + t
 super + b
 	bspc desktop -B
 
-super + {s,f}
-	bspc window -t {floating,fullscreen}
+super + {a,s,d}
+	bspc window -t {pseudo_tiled,floating,sticky}
+
+super + f
+	bspc desktop -l {monocle,tiled}
 
 super + {grave,Tab}
 	bspc {window,desktop} -f last
@@ -87,7 +90,7 @@ super + Return
 	urxvt
 
 super + alt + Return
-	{pkill -x panel; bspc config top_padding 0, ~/.config/bspwm/panel}
+	~/.bin/notify.sh
 
 super + space
 	~/.bin/dmenu_run.sh
@@ -96,7 +99,7 @@ super + p
 	~/.bin/dmenu_session.sh
 
 super + shift + p
-	playerctl play-pause
+	cmus-remote -u
 
 XF86AudioLowerVolume
 	pulseaudio-ctl down
@@ -106,6 +109,24 @@ XF86AudioRaiseVolume
 
 XF86AudioMute
 	pulseaudio-ctl mute
+
+XF86AudioPrev
+	playerctl previous
+
+XF86AudioNext
+	playerctl next
+
+XF86AudioPlay
+	playerctl play-pause
+
+XF86AudioStop
+	playerctl stop
+
+XF86HomePage
+	urxvt -e ranger
+
+XF86Mail
+	thunderbird
 
 #XF86MonBrightnessUp
 #	light -A 5

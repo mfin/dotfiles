@@ -1,15 +1,17 @@
-dotfiles
-========
+dotfiles - 1080p (desktop PC)
+=============================
 
-I'm using bspwm on Arch Linux and this is very WIP.
+Dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-Branches:
-* master: my netbook dotfiles (1366x768)
-* 1080p: my desktop PC dotfiles (1080p)
+```
+git clone -b 1080p https://github.com/mfin/dotfiles ~/.dotfiles
+cd ~/.dotfiles
+stow <folder name>
+```
 
 Packages from AUR:
 * rxvt-unicode-256xresources, dmenu2, lemonbar-xft-git, stlarch_font
 
 Screenshot
 ----------
-![Screenshot](http://i.imgur.com/FPQ4L6r.png)
+![Screenshot](http://i.imgur.com/ice8XyJ.png "bspwm on Arch, 1920x1080")

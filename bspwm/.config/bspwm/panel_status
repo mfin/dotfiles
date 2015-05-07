@@ -1,0 +1,33 @@
+#! /bin/sh
+
+source $(dirname $0)/panel_config
+
+volume(){
+    VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
+    MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
+    if [ "$MUTE" == "yes" ]; then
+        echo "%{F$COLOR1 A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
+    else echo "%{F$COLOR2 A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
+    fi
+}
+
+mopidy(){
+    STATUS=$(mpc current)
+    if [ "$STATUS" != "" ]; then
+        echo "%{c F$COLOR2 A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue05c")%{F-} $STATUS%{A A}"
+    else echo "%{c F$COLOR1 A:mpc toggle:}$(printf '%b' "\ue05c")%{F-} mopidy is stopped%{A}"
+    fi
+}
+
+wifi_ssid(){
+    NAME=$(iwconfig wlp0s29u1u4 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+    if [ "$NAME" == "" ]; then
+        echo "%{F$COLOR1}$(printf '%b' "\ue048")%{F-} no conn"
+    else echo "%{F$COLOR2}$(printf '%b' "\ue048")%{F-} $NAME"
+    fi
+}
+
+while :; do
+    echo "S$(mopidy) %{r}$(wifi_ssid) $SEP $(volume)  %{B#ff2a2a2a}  %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%a %b %d')  %{B#ff333333}  %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')  %{B-}"
+    sleep 2
+done

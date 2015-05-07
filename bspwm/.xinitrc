@@ -1,10 +1,10 @@
 #!/bin/sh
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+    for f in /etc/X11/xinit/xinitrc.d/?* ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 setxkbmap si -option 'ctrl:nocaps' &
@@ -18,16 +18,18 @@ xset fp rehash &
 
 nitrogen --restore &
 compton --sw-opti --use-ewmh-active-win &
-#xscreensaver -no-splash &
-#( sleep 10 && xss-lock -- xscreensaver-command -lock ) &
-( sleep 10 && xss-lock -- slimlock ) &
+xautolock -detectsleep -time 5 -locker slimlock &
 pulseaudio --start &
 dunst &
 unclutter &
 udiskie &
 mopidy &
 
+# eval $(gnome-keyring-daemon --start) &
+
 sxhkd -f 50 &
 
-exec bspwm
-
+case "$1" in
+	/usr/bin/openbox-session) exec openbox-session ;;
+	/usr/bin/bspwm-session) exec bspwm ;;
+esac
