@@ -1,16 +1,10 @@
-```
-     __     __  ____ __      
- ___/ /__  / /_/ _(_) /__ ___
-/ _  / _ \/ __/ _/ / / -_|_-<
-\_,_/\___/\__/_//_/_/\__/___/
-
-Desktop PC - 1080p
-```
+dotfiles
+========
 
 Dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
 ```
-git clone -b 1080p https://github.com/mfin/dotfiles ~/.dotfiles
+git clone https://github.com/mfin/dotfiles ~/.dotfiles
 cd ~/.dotfiles
 stow <folder name>
 ```
