@@ -1,4 +1,6 @@
 directory: ~/music
 library: ~/music/library.db
 plugins: fetchart embedart ftintitle lastgenre lyrics convert info
-
+convert:
+    command: ffmpeg -i $source -y -vn -aq 0 $dest
+    extension: mp3
