@@ -6,43 +6,43 @@ volume(){
     VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
     MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
     if [ "$MUTE" == "yes" ]; then
-        echo "%{F$COLOR1 A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
-    else echo "%{F$COLOR2 A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
+        echo "%{F$RED_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
+    else echo "%{F$GREEN_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
     fi
 }
 
-mopidy(){
+mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
-        echo "%{c F$COLOR2 A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue05c")%{F-} $STATUS%{A A}"
-    else echo "%{c F$COLOR1 A:mpc toggle:}$(printf '%b' "\ue05c")%{F-} mopidy is stopped%{A}"
+        echo "%{c F$GREEN_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue05c")%{F-} $STATUS%{A A}"
+    else echo ""
     fi
 }
 
 wifi_ssid(){
     NAME=$(iwconfig wlp0s29u1u4 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
     if [ "$NAME" == "" ]; then
-        echo "%{F$COLOR1}$(printf '%b' "\ue048")%{F-} no conn"
-    else echo "%{F$COLOR2}$(printf '%b' "\ue048")%{F-} $NAME"
+        echo "%{F$RED_COLOR}$(printf '%b' "\ue048")%{F-} no conn"
+    else echo "%{F$GREEN_COLOR}$(printf '%b' "\ue048")%{F-} $NAME"
     fi
 }
 
 temperature() {
     CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
-    echo "%{F$COLOR2}$(printf '%b' "\ue01c")%{F-} $CPU_TEMP%"
+    echo "%{F$GREEN_COLOR}$(printf '%b' "\ue01c")%{F-} $CPU_TEMP%"
 }
 
 load_avg() {
     AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F$COLOR2}$(printf '%b' "\ue021")%{F-} $AVGLOAD"
+    echo "%{F$GREEN_COLOR}$(printf '%b' "\ue021")%{F-} $AVGLOAD"
 }
 
 transmission() {
     ACTIVETORR=$(transmission-remote -l | egrep '(Downloading|Up & Down)' | wc -l)
-    echo "%{F$COLOR2}$(printf '%b' "\ue061")%{F-} $ACTIVETORR"
+    echo "%{F$GREEN_COLOR}$(printf '%b' "\ue061")%{F-} $ACTIVETORR"
 }
 
 while :; do
-    echo "S$(mopidy)%{r}$(load_avg) $SEP $(temperature) $SEP $(transmission) $SEP $(wifi_ssid) $SEP $(volume)  %{B#ff2a2a2a}  %{F$COLOR2}$(printf '%b' "\ue01f")%{F-} $(date +'%A, %b %d')  %{B#ff333333}  %{F$COLOR2}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')  %{B-}"
+    echo "S$(mpd)%{r}$(load_avg) $SEP $(temperature) $SEP $(transmission) $SEP $(wifi_ssid) $SEP $(volume)  %{B$YELLOW_COLOR}  %{F$BACKGROUND_COLOR}$(printf '%b' "\ue01f") $(date +'%A, %b %d')  %{B$GREEN_COLOR}  $(printf '%b' "\ue016") $(date +'%H:%M')  %{B F-}"
     sleep 2
 done

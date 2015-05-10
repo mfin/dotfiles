@@ -27,10 +27,10 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 
 ~/.config/bspwm/panel_lemon < "$PANEL_FIFO" \
      | lemonbar -p \
-           -g "$GEOMETRY" \
+           -g "$PANEL_GEOMETRY" \
            -f "$FONT1","$FONT2"\
-           -B "$BAR_BG" \
-           -F "$BAR_FG" \
+           -B "$FOREGROUND_COLOR" \
+           -F "$BACKGROUND_COLOR" \
            | while read line; do eval "$line"; done &
 wait
 
