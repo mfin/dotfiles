@@ -22,7 +22,7 @@ xautolock -detectsleep -time 5 -locker slimlock &
 pulseaudio --start &
 dunst &
 unclutter &
-udiskie &
+udiskie -2 &
 
 sxhkd -f 50 &
 
