@@ -1,4 +1,4 @@
-#include ".colors/tomorrow-dark"
+#include ".colors/fresh"
 
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /usr/bin/firefox
