@@ -1,6 +1,13 @@
 directory: ~/music
 library: ~/music/library.db
-plugins: fetchart embedart ftintitle lastgenre lyrics convert info
+plugins: fetchart embedart ftintitle lastgenre lyrics convert info mpdupdate mpdstats
+
 convert:
+    auto: yes
+    max_bitrate: 320
     command: ffmpeg -i $source -y -vn -aq 0 $dest
     extension: mp3
+
+mpd:
+    host: localhost
+    port: 6600
