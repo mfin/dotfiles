@@ -1,0 +1,25 @@
+! Background color
+*.background: #282522
+
+! Font color
+*.foreground: #B5B2AF
+
+*.cursorColor: #8C4C4C
+
+! Other colors
+*.color0: #282522
+*.color1: #8C4C4C
+*.color2: #746C48
+*.color3: #907245
+*.color4: #4C626D
+*.color5: #604C5F
+*.color6: #4B5E57
+*.color7: #A69181
+*.color8: #484542
+*.color9: #AE5D5D
+*.color10: #838A60
+*.color11: #B7A78B
+*.color12: #6A7A8F
+*.color13: #7D6A79
+*.color14: #607F69
+*.color15: #B5B2AF
