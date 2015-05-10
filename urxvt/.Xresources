@@ -1,4 +1,4 @@
-#include ".colors/fresh"
+#include ".colors/hamsterslayer"
 
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /usr/bin/firefox
