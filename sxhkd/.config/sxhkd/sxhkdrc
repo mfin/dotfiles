@@ -70,6 +70,16 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
 
+super + ctrl + {y,x}
+        PADDING=$(bspc config -m DVI-D-0 left_padding); \
+        NEW_PADDING=$(echo "$PADDING {-,+} 5" | bc); \
+        TOP_PADDING=$(echo "$NEW_PADDING + 30" | bc); \
+        bspc config top_padding $TOP_PADDING; \
+        for p in bottom left right; \
+        do \
+        	bspc config $p"_padding" $NEW_PADDING; \
+        done
+
 ~button1
 	bspc pointer -g focus
 
