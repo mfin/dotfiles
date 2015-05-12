@@ -7,14 +7,14 @@ volume(){
     MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
     if [ "$MUTE" == "yes" ]; then
         echo "%{F$RED_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
-    else echo "%{F$GREEN_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
+    else echo "%{F$BLUE_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
     fi
 }
 
 mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
-        echo "%{c F$GREEN_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue05c")%{F-} $STATUS%{A A}"
+        echo "%{c F$BLUE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue05c")%{F-} $STATUS%{A A}"
     else echo ""
     fi
 }
@@ -23,23 +23,23 @@ wifi_ssid(){
     NAME=$(iwconfig wlp0s29u1u4 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
     if [ "$NAME" == "" ]; then
         echo "%{F$RED_COLOR}$(printf '%b' "\ue048")%{F-} no conn"
-    else echo "%{F$GREEN_COLOR}$(printf '%b' "\ue048")%{F-} $NAME"
+    else echo "%{F$BLUE_COLOR}$(printf '%b' "\ue048")%{F-} $NAME"
     fi
 }
 
 temperature() {
     CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
-    echo "%{F$GREEN_COLOR}$(printf '%b' "\ue01c")%{F-} $CPU_TEMP%"
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\ue01c")%{F-} $CPU_TEMP%"
 }
 
 load_avg() {
     AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F$GREEN_COLOR}$(printf '%b' "\ue021")%{F-} $AVGLOAD"
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\ue021")%{F-} $AVGLOAD"
 }
 
 transmission() {
     ACTIVETORR=$(transmission-remote -l | egrep '(Downloading|Up & Down)' | wc -l)
-    echo "%{F$GREEN_COLOR}$(printf '%b' "\ue061")%{F-} $ACTIVETORR"
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\ue061")%{F-} $ACTIVETORR"
 }
 
 while :; do
