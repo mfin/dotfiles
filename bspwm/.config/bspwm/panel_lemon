@@ -46,11 +46,11 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F$FOREGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
+                                desk="%{F$YELLOW_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F$FOREGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
+                                desk="%{F$YELLOW_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
                                 ;;
                             U*)
                                 # focused urgent desktop
@@ -58,11 +58,11 @@ while read -r line ; do
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F$YELLOW_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
+                                desk="%{F$FOREGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F$YELLOW_COLOR}$DESK_ICON $(printf '%b' "\ue0e6")%{F-}"
+                                desk="%{F$FOREGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue0e6")%{F-}"
                                 ;;
                             u*)
                                 # urgent desktop
