@@ -4,6 +4,9 @@
 
 . ~/.bash_aliases
 
+# send pass copied passwords to primary
+export PASSWORD_STORE_X_SELECTION=primary
+
 # make man pages colorful
 export PAGER="/usr/bin/most -s"
 
