@@ -62,7 +62,7 @@ while read -r line ; do
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F$RED2_COLOR}$DESK_ICON $(printf '%b' "\ue0e6")%{F-}"
+                                desk="%{F$BLACK2_COLOR}$DESK_ICON $(printf '%b' "\ue0e6")%{F-}"
                                 ;;
                             u*)
                                 # urgent desktop
@@ -73,8 +73,8 @@ while read -r line ; do
                         ;;
                     [L]*)
                         if [[ ${item#?} == "T" ]]; then
-                            layout="%{F$BACKGROUND_COLOR B$YELLOW_COLOR A:bspc desktop -l monocle: A3:bspc desktop -R 90:}  $(printf "%b" "\ue257")  %{A A B F-}"
-                        else layout="%{F$BACKGROUND_COLOR B$YELLOW_COLOR A:bspc desktop -l tiled:}  $(printf "%b" "\ue255")  %{A B F-}"
+                            layout="%{F$FOREGROUND_COLOR B$BLACK2_COLOR A:bspc desktop -l monocle: A3:bspc desktop -R 90:}  $(printf "%b" "\ue257")  %{A A B F-}"
+                        else layout="%{F$FOREGROUND_COLOR B$BLACK2_COLOR A:bspc desktop -l tiled:}  $(printf "%b" "\ue255")  %{A B F-}"
                         fi
                         ;;
                 esac

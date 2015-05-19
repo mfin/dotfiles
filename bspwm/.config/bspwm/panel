@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc config top_padding 30
+bspc config top_padding 25
 bspc config left_padding 0
 bspc config right_padding 0
 bspc config bottom_padding 0
@@ -26,7 +26,7 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
 ~/.config/bspwm/panel_status > "$PANEL_FIFO" &
 
 ~/.config/bspwm/panel_lemon < "$PANEL_FIFO" \
-     | lemonbar -p \
+     | lemonbar -p -o 2 \
            -g "$PANEL_GEOMETRY" \
            -f "$FONT1","$FONT2"\
            -B "$FOREGROUND_COLOR" \
