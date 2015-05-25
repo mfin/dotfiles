@@ -1,6 +1,6 @@
 PANEL_WIDTH=$(sres -W)
 PANEL_GEOMETRY="${PANEL_WIDTH}x25+0+0"
-FONT1="-*-drift-medium-*-*-*-10-*-*-*-*-*-*-*"
+FONT1="-*-termsynu-medium-*-*-*-13-*-*-*-*-*-*-*"
 FONT2="-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 #FONT2="-misc-stlarch-medium-r-normal--10-100-75-75-c-80-iso10646-1"
 
