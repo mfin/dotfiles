@@ -11,4 +11,4 @@ export PATH="$PYENV_ROOT/bin:$HOME/.rbenv/bin:$HOME/.go/bin:$HOME/.bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(dircolors -b $HOME/.dircolors)"
-#eval "$(gpg-agent --daemon)"
+

@@ -12,10 +12,6 @@ getXresColor() {
 BACKGROUND_COLOR="#FF$(getXresColor background)"
 FOREGROUND_COLOR="#FF$(getXresColor foreground)"
 
-COLOR1="#ffcc6666"
-COLOR2="#ffb5bd68"
-COLOR3="#ff969896"
-
 BLACK_COLOR="#FF$(getXresColor color0)"
 BLACK2_COLOR="#FF$(getXresColor color8)"
 RED_COLOR="#FF$(getXresColor color1)"
@@ -32,8 +28,5 @@ CYAN_COLOR="#FF$(getXresColor color6)"
 CYAN2_COLOR="#FF$(getXresColor color14)"
 WHITE_COLOR="#FF$(getXresColor color7)"
 WHITE2_COLOR="#FF$(getXresColor color15)"
-
-GRAY1_COLOR="#FF969896"
-GRAY2_COLOR="#FF555555"
 
 SEP=""
