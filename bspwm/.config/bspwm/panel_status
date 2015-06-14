@@ -14,8 +14,8 @@ volume(){
 mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
-        echo "%{c F$BLUE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue205")%{F-} $STATUS%{A A}"
-    else echo "%{c F$RED_COLOR A:mpc toggle:}$(printf '%b' "\ue205")%{F-} mpd stopped%{A}"
+        echo "%{F$BLUE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue205")%{F-} $STATUS%{A A}"
+    else echo "%{F$RED_COLOR A:mpc toggle:}$(printf '%b' "\ue205")%{F-} mpd stopped%{A}"
     fi
 }
 
@@ -43,6 +43,6 @@ transmission() {
 }
 
 while :; do
-    echo "S$(mpd)%{r}$(load_avg) $SEP $(temperature) $SEP $(transmission) $SEP $(wifi_ssid) $SEP $(volume)  %{B$YELLOW_COLOR}  %{F$BACKGROUND_COLOR}$(printf '%b' "\ue1a2") $(date +'%A, %b %d')  %{B$GREEN_COLOR}  $(printf '%b' "\ue016") $(date +'%H:%M')  %{B F-}"
+    echo "S$(mpd) $SEP $(load_avg) $SEP $(wifi_ssid) $SEP $(volume) $SEP $(printf '%b' "\ue1a2") $(date +'%A, %b %d') $SEP $(printf '%b' "\ue016") $(date +'%H:%M') "
     sleep 2
 done
