@@ -25,5 +25,3 @@ unclutter &
 udiskie -2 &
 
 sxhkd -f 50 &
-
-exec bspwm
