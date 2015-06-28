@@ -29,8 +29,8 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
      | lemonbar -p \
            -g "$PANEL_GEOMETRY" \
            -f "$FONT1" -f "$FONT2"\
-           -B "$FOREGROUND_COLOR" \
-           -F "$BACKGROUND_COLOR" \
+           -B "$BACKGROUND_COLOR" \
+           -F "$FOREGROUND_COLOR" \
            | while read line; do eval "$line"; done &
 wait
 
