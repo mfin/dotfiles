@@ -23,8 +23,8 @@ while read -r line ; do
             #;;
         T*)
             if [[ ${line#?} == "" ]]; then
-                title="%{F$RED_COLOR}$(printf "%b" "\ue00f")%{F-} bspwm"
-            else title="%{F$RED_COLOR}$(printf "%b" "\ue135")%{F-} %{A:bspc window -t floating:}$(echo ${line#?} | sed 's^\(.\{40\}\).*^\1...^')%{A}"
+                title=""
+            else title="%{F$RED_COLOR}$(printf "%b" "\ue135")%{F-} %{A:bspc window -t floating: A3:bspc desktop -R 90:}$(echo ${line#?} | sed 's^\(.\{40\}\).*^\1...^')%{A A-}"
             fi
             ;;
         W*)
@@ -83,5 +83,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{l} $title %{c}$wm_infos %{r}$sys_infos "
+    printf "%s\n" "%{l}$wm_infos $layout $title %{r}$sys_infos "
 done

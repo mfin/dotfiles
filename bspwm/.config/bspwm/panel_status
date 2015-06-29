@@ -14,8 +14,8 @@ volume(){
 mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
-        echo "%{F$BLUE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue205")%{F-} $STATUS%{A A}"
-    else echo "%{F$RED_COLOR A:mpc toggle:}$(printf '%b' "\ue205")%{F-} mpd stopped%{A}"
+        echo "%{F$GREEN_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue205")%{F-} $STATUS%{A A}"
+    else echo ""
     fi
 }
 
@@ -29,7 +29,7 @@ wifi_ssid(){
 
 temperature() {
     CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
-    echo "%{F$BLUE_COLOR}$(printf '%b' "\ue0c9")%{F-} $CPU_TEMP'C"
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\ue0c9")%{F-} $CPU_TEMP°C"
 }
 
 load_avg() {
@@ -43,6 +43,6 @@ transmission() {
 }
 
 while :; do
-    echo "S$(load_avg) $SEP $(wifi_ssid) $SEP $(volume) $SEP %{F$BLUE_COLOR}$(printf '%b' "\ue1a2")%{F-} $(date +'%A, %b %d') $SEP %{F$BLUE_COLOR}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M') "
+    echo "S%{c}$(mpd) %{r}$(load_avg) $SEP $(temperature) $SEP $(wifi_ssid) $SEP $(volume) $SEP %{F$BLUE_COLOR}$(printf '%b' "\ue1a2")%{F-} $(date +'%A, %b %d') $SEP %{F$BLUE_COLOR}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M') "
     sleep 2
 done
