@@ -2,7 +2,20 @@ set laststatus=2
 set nocp
 set encoding=utf8
 set ffs=unix,dos,mac
+set nocompatible
+filetype off
 syntax on
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'fatih/vim-go'
+Plugin 'tpope/vim-fugitive'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 hi User1 ctermfg=black ctermbg=white guifg=black guibg=white
 
