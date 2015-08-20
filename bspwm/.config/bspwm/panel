@@ -1,6 +1,6 @@
 #! /bin/sh
 
-bspc config top_padding 20
+bspc config top_padding 30
 bspc config left_padding 0
 bspc config right_padding 0
 bspc config bottom_padding 0
@@ -29,8 +29,8 @@ xtitle -sf 'T%s' > "$PANEL_FIFO" &
      | lemonbar -p \
            -g "$PANEL_GEOMETRY" \
            -f "$FONT1" -f "$FONT2"\
-           -B "$BACKGROUND_COLOR" \
-           -F "$FOREGROUND_COLOR" \
+           -B "#FF$BACKGROUND_COLOR" \
+           -F "#FF$FOREGROUND_COLOR" \
            | while read line; do eval "$line"; done &
 wait
 
