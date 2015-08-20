@@ -23,7 +23,7 @@ super + {a,s,d}
 super + f
 	bspc desktop -l {monocle,tiled}
 
-super + {grave,Tab}
+super + {cedilla,Tab}
 	bspc {window,desktop} -f last
 
 super + apostrophe
