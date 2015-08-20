@@ -316,9 +316,9 @@ URxvt*scrollBar:                      False
 ! URxvt*backgroundPixmap:               file[;geom]
 ! URxvt*iconFile:                       file
 ! URxvt*font: -*-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
-URxvt*font: -*-termsynu-medium-*-*-*-13-*-*-*-*-*-*-*
+URxvt*font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-*-*
 ! URxvt*boldFont:	-*-terminus-bold-r-*-*-14-*-*-*-*-*-*-*
-URxvt*boldFont: -*-termsynu-bold-*-*-*-13-*-*-*-*-*-*-*
+URxvt*boldFont: -*-terminus-bold-*-*-*-16-*-*-*-*-*-*-*
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean
