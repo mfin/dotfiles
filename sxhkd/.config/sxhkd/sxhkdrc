@@ -40,7 +40,7 @@ super + y
 super + m
 	bspc window -s biggest
 
-super + {_,shift + }{Left,Down,Up,Right}
+super + {_,shift + }{h,j,k,l}
 	bspc window -{f,s} {left,down,up,right}
 
 super + {_,shift + }c
@@ -52,16 +52,16 @@ super + {comma,period}
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
-super + ctrl + {Left,Down,Up,Right}
+super + ctrl + {h,j,k,l}
 	bspc window -p {left,down,up,right}
 
 super + ctrl + {_,shift + }space
 	bspc {window -p cancel,desktop -c}
 
-super + alt + {Left,Down,Up,Right}
+super + alt + {h,j,k,l}
 	bspc window -e {left -10,down +10,up -10,right +10}
 
-super + alt + shift + {Left,Down,Up,Right}
+super + alt + shift + {h,j,k,l}
 	bspc window -e {right -10,up +10,down -10,left +10}
 
 super + ctrl + {1-9}
@@ -105,6 +105,9 @@ super + space
 super + p
 	~/.bin/dmenu_session.sh
 
+super + ctrl + BackSpace
+	bspc desktop -R 90
+
 super + alt + Return
 	{pkill -x panel; bspc config top_padding 0, ~/.config/bspwm/panel}
 
@@ -118,22 +121,31 @@ XF86AudioMute
 	pulseaudio-ctl mute
 
 XF86AudioPrev
-	mpc prev
+	playerctl previous
 
 XF86AudioNext
-	mpc next
+	playerctl next
 
 XF86AudioPlay
-	mpc toggle
+	playerctl play-pause
 
 XF86AudioStop
-	mpc stop
+	playerctl stop
 
 XF86HomePage
 	urxvt -e ranger
 
 XF86Mail
 	thunderbird
+
+super + ctrl + a
+	firefox
+
+super + ctrl + s
+	thunar
+
+super + ctrl + d
+	subl3
 
 #XF86MonBrightnessUp
 #	light -A 5
