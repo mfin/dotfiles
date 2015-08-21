@@ -47,6 +47,6 @@ datetime() {
 }
 
 while :; do
-    echo "S%{c}$(mpd)%{r}$(load_avg) $SEP $(temperature) $SEP $(wifi_ssid) $SEP $(volume) $SEP $(datetime)"
+    echo "S$(mpd)%{r}$(wifi_ssid) $SEP $(volume) $SEP $(datetime)"
     sleep 2
 done
