@@ -12,3 +12,4 @@ eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(dircolors -b $HOME/.dircolors)"
 
+[[ -s "/home/mfin/.gvm/scripts/gvm" ]] && source "/home/mfin/.gvm/scripts/gvm"

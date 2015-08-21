@@ -20,8 +20,8 @@ GIT_PS1_SHOWCOLORHINTS=1
 GIT_PS1_DESCRIBE_STYLE="branch"
 GIT_PS1_SHOWUPSTREAM="auto git"
 
-get_sha() { 
-	git rev-parse --short HEAD 2>/dev/null 
+get_sha() {
+	git rev-parse --short HEAD 2>/dev/null
 }
 
 PROMPT_COMMAND='__git_ps1 "\[\033[1;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'

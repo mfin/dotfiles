@@ -6,16 +6,14 @@ set nocompatible
 filetype off
 syntax on
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'fatih/vim-go'
-Plugin 'tpope/vim-fugitive'
+Plug 'VundleVim/Vundle.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'fatih/vim-go'
+Plug 'tpope/vim-fugitive'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end()
 
 hi User1 ctermfg=black ctermbg=white guifg=black guibg=white
 
