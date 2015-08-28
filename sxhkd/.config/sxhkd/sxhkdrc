@@ -73,12 +73,15 @@ super + {_,shift + }{1-9,0}
 super + ctrl + {y,x}
         PADDING=$(bspc config -m DVI-D-0 left_padding); \
         NEW_PADDING=$(echo "$PADDING {-,+} 5" | bc); \
+        bspc config left_padding $NEW_PADDING; \
+        bspc config right_padding $NEW_PADDING;
+
+super + shift + {y,x}
+        PADDING=$(bspc config -m DVI-D-0 bottom_padding); \
+        NEW_PADDING=$(echo "$PADDING {-,+} 5" | bc); \
         TOP_PADDING=$(echo "$NEW_PADDING + 30" | bc); \
         bspc config top_padding $TOP_PADDING; \
-        for p in bottom left right; \
-        do \
-        	bspc config $p"_padding" $NEW_PADDING; \
-        done
+        bspc config bottom_padding $NEW_PADDING;
 
 ~button1
 	bspc pointer -g focus
@@ -109,7 +112,7 @@ super + ctrl + BackSpace
 	bspc desktop -R 90
 
 super + alt + Return
-	{pkill -x panel; bspc config top_padding 0, ~/.config/bspwm/panel}
+	{pkill -x panel; bspc config top_padding 0; bspc config bottom_padding 0; bspc config left_padding 0; bspc config right_padding 0, ~/.config/bspwm/panel}
 
 XF86AudioLowerVolume
 	pulseaudio-ctl down
