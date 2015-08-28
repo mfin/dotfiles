@@ -11,10 +11,12 @@ volume(){
     fi
 }
 
-mpd(){
-    STATUS=$(mpc current)
-    if [ "$STATUS" != "" ]; then
-        echo "%{F#FF$GREEN_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue205")%{F-} $STATUS%{A A}"
+spotify(){
+    STATUS=$(playerctl status)
+    if [ "$STATUS" == "Playing" ]; then
+        echo "%{F#FF$GREEN_COLOR A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\ue205")%{F-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+    elif [ "$STATUS" == "Paused" ]; then
+        echo "%{F#FF$RED_COLOR A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\ue205") $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A F-} $SEP "
     else echo ""
     fi
 }
@@ -47,6 +49,6 @@ datetime() {
 }
 
 while :; do
-    echo "S$(mpd)%{r}$(wifi_ssid) $SEP $(volume) $SEP $(datetime)"
+    echo "S%{r}$(spotify)$(wifi_ssid) $SEP $(volume) $SEP $(datetime)"
     sleep 2
 done
