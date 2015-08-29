@@ -16,7 +16,7 @@ spotify(){
     if [ "$STATUS" == "Playing" ]; then
         echo "%{F#FF$GREEN_COLOR A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\ue205")%{F-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
     elif [ "$STATUS" == "Paused" ]; then
-        echo "%{F#FF$RED_COLOR A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\ue205") $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A F-} $SEP "
+        echo "%{F#FF$YELLOW_COLOR A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\ue205")%{F-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
     else echo ""
     fi
 }
