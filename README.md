@@ -21,4 +21,4 @@ rxvt-unicode-256xresources, dmenu2, lemonbar-xft-git, stlarch_font
 
 screenshot
 ----------
-![Screenshot](http://i.imgur.com/kdX2K1o.jpg "bspwm on Arch, 1920x1080")
+![Screenshot](http://i.imgur.com/EBcb8n5.jpg "bspwm on Arch, 1920x1080")
