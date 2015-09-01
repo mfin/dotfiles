@@ -21,6 +21,4 @@ bspc rule -a vlc desktop=^5 floating=on
 bspc rule -a Steam desktop=^4
 bspc rule -a Spotify desktop=^5 floating=on
 
-~/.xinitrc &
 ~/.config/bspwm/panel &
-( sleep 3 && stalonetray ) &
