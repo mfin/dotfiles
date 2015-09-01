@@ -141,14 +141,9 @@ XF86HomePage
 XF86Mail
 	thunderbird
 
-super + ctrl + a
-	firefox
-
-super + ctrl + s
-	thunar
-
-super + ctrl + d
-	subl3
+super + q; {w,f,e}
+	{firefox,thunar,subl3}
+}
 
 #XF86MonBrightnessUp
 #	light -A 5
