@@ -11,6 +11,14 @@ volume(){
     fi
 }
 
+mpd(){
+    STATUS=$(mpc current)
+    if [ "$STATUS" != "" ]; then
+        echo "%{F#FF$GREEN_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\ue205")%{F-} $STATUS%{A A} $SEP "
+    else echo ""
+    fi
+}
+
 spotify(){
     STATUS=$(playerctl status)
     if [ "$STATUS" == "Playing" ]; then
