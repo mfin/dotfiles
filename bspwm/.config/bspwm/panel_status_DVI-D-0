@@ -1,0 +1,12 @@
+#! /bin/sh
+
+source $(dirname $0)/panel_config
+
+datetime() {
+    echo "%{F#FF$BLUE_COLOR}$(printf '%b' "\ue1a2")%{F-} $(date +'%A, %b %d') $SEP %{F#FF$BLUE_COLOR}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')"
+}
+
+while :; do
+    echo "S%{r}$(datetime)"
+    sleep 2
+done

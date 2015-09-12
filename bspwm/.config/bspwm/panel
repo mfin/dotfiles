@@ -1,11 +1,11 @@
 #! /bin/sh
 
-bspc config top_padding 30
+source $(dirname $0)/panel_config
+
+bspc config top_padding $PANEL_HEIGHT
 bspc config left_padding 0
 bspc config right_padding 0
 bspc config bottom_padding 0
-
-source $(dirname $0)/panel_config
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
     printf "%s\n" "The panel is already running." >&2
@@ -14,23 +14,44 @@ fi
 
 trap 'trap - TERM; kill 0' INT TERM QUIT EXIT
 
-[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-mkfifo "$PANEL_FIFO"
+# Set X offset of the bar
+CUR_X_OFFSET=0
 
-bspc control --subscribe > "$PANEL_FIFO" &
+# How many monitors are we displaying bar on?
+num_mon=$(bspc query -M)
 
-#clock -sf 'C%a %d-%b %H:%M' > "$PANEL_FIFO" &
-xtitle -sf 'T%s' > "$PANEL_FIFO" &
-#xprop -spy -root _NET_ACTIVE_WINDOW | sed -un 's/.*\(0x.*\)/A\1/p' > "$PANEL_FIFO" &
-# create the toggle file before running this conky
-~/.config/bspwm/panel_status > "$PANEL_FIFO" &
+for i in $num_mon; do
 
-~/.config/bspwm/panel_lemon < "$PANEL_FIFO" \
-     | lemonbar -p \
-           -g "$PANEL_GEOMETRY" \
-           -f "$FONT1" -f "$FONT2"\
-           -B "#FF$BACKGROUND_COLOR" \
-           -F "#FF$FOREGROUND_COLOR" \
-           | while read line; do eval "$line"; done &
+    # Remove old panel_fifo and create a new one
+    [ -e "$PANEL_FIFO_$i" ] && rm "$PANEL_FIFO_$i"
+    mkfifo "$PANEL_FIFO_$i"
+
+    xtitle -sf 'T%s' > "$PANEL_FIFO_$i" &
+
+    # Get bspwm information for current monitor
+    bspc control --subscribe |\
+        grep -oE "[Mm]$i[^TM]*[TML]" --line-buffered |\
+        while read line; do echo W$line; done \
+            > "$PANEL_FIFO_$i" &
+
+    # Output extra scripts to the panel_fifo
+    ~/.config/bspwm/panel_status_$i > "$PANEL_FIFO_$i" &
+
+    # Get current monitor width
+    CUR_MON_WIDTH=$(bspc query -T -m $i | grep -oE "[0-9]{2,6}" | head -n 1)
+    PANEL_GEO="${CUR_MON_WIDTH}x${PANEL_HEIGHT}+${CUR_X_OFFSET}+0"
+
+
+    # Running bar
+    cat "$PANEL_FIFO_$i" | ~/.config/bspwm/panel_lemon_$i |\
+        lemonbar -g $PANEL_GEO \
+        -F "#FF$FOREGROUND_COLOR" -B "#FF$BACKGROUND_COLOR" -f "$FONT1" -f "$FONT2" \
+        | while read line; do eval "$line"; done &
+
+    # New X Offset
+    CUR_X_OFFSET=$(expr $CUR_X_OFFSET + $CUR_MON_WIDTH)
+
+
+done
+
 wait
-

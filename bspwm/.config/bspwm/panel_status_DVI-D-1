@@ -52,11 +52,7 @@ transmission() {
     echo "%{F#FF$BLUE_COLOR}$(printf '%b' "\ue0d5")%{F-} $ACTIVETORR"
 }
 
-datetime() {
-    echo "%{F#FF$BLUE_COLOR}$(printf '%b' "\ue1a2")%{F-} $(date +'%A, %b %d') $SEP %{F#FF$BLUE_COLOR}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')"
-}
-
 while :; do
-    echo "S%{r}$(spotify)$(wifi_ssid) $SEP $(volume) $SEP $(datetime)"
+    echo "S%{r}$(mpd)$(wifi_ssid) $SEP $(volume)"
     sleep 2
 done
