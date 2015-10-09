@@ -49,11 +49,11 @@ while read -r line ; do
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F#FF$FOREGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
+                                desk="%{F#FF$BACKGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue056")%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F#FF$FOREGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue0e6")%{F-}"
+                                desk="%{F#FF$BACKGROUND_COLOR}$DESK_ICON $(printf '%b' "\ue0e6")%{F-}"
                                 ;;
                             u*)
                                 # urgent desktop
