@@ -11,6 +11,8 @@ song_status_format = "$8%a$9 - $8%t$9"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"
 
+media_library_primary_tag = album_artist
+
 autocenter_mode = "yes"
 statusbar_visibility = "no"
 main_window_highlight_color = "white"
