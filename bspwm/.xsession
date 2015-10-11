@@ -1,6 +1,6 @@
 xrdb -merge ~/.Xresources
 xset +fp /usr/share/fonts/local
-xset +fp /usr/share/fonts/envypn
+xset +fp /home/mfin/.local/share/fonts/bitmap/envypn-font
 xset fp rehash
 xset m 0
 xset r rate 300 30
