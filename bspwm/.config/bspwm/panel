@@ -47,7 +47,7 @@ for i in $num_mon; do
     # Running bar
     cat "$PANEL_FIFO$i" | ~/.config/bspwm/panel_lemon_$i |\
         lemonbar -g $PANEL_GEO \
-        -B "#FF$FOREGROUND_COLOR" -F "#FF$BACKGROUND_COLOR" -f "$FONT1" -f "$FONT2" \
+        -B "#ee$FOREGROUND_COLOR" -F "#FF$BACKGROUND_COLOR" -f "$FONT1" -f "$FONT2" \
         | while read line; do eval "$line"; done &
 
     # New X Offset
