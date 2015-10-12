@@ -44,5 +44,11 @@ export HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
+# include dotfiles in wildcard expansion
+shopt -s dotglob
+
+# match expansion case-insensitively
+shopt -s nocaseglob
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
