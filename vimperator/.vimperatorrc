@@ -1,0 +1,17 @@
+colorscheme twily
+
+set maxitems=20
+set titlestring=
+
+map <silent> <C-F9> :emenu Tools.Web Developer.Web Console<CR>
+map <silent> <C-F8> :js toggle_bottombar()<CR>
+
+:js << EOF
+function toggle_bottombar() {
+    var bb = document.getElementById('liberator-bottombar');
+    if (!bb)
+        return;
+    bb.style.height = (bb.style.height == '') ? '0px' : '';
+    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
+    }
+EOF
