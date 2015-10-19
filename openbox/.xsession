@@ -12,6 +12,7 @@ xsetroot -cursor_name left_ptr &
 nitrogen --restore &
 xautolock -detectsleep -time 5 -locker slimlock &
 pulseaudio --start &
+compton &
 dunst &
 unclutter &
 udiskie -2 &

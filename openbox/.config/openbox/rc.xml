@@ -39,8 +39,8 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Simple-mfin</name>
-    <titleLayout>LIMC</titleLayout>
+    <name>ono-theme</name>
+    <titleLayout>CILM</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -72,7 +72,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>Roboto Ultra-Light</name>
+      <name>envypn</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -81,7 +81,7 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>Roboto Ultra-Light</name>
+      <name>envypn</name>
       <size>9</size>
       <!-- font size in points -->
       <weight>Normal</weight>
@@ -120,10 +120,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <!-- set names up here if you want to, like this:
-    <name>desktop 1</name>
-    <name>desktop 2</name>
-    -->
+      <name>home</name>
+      <name>term</name>
+      <name>web</name>
+      <name>fun</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -151,7 +151,7 @@
      cases. -->
   <margins>
     <top>0</top>
-    <bottom>30</bottom>
+    <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
   </margins>

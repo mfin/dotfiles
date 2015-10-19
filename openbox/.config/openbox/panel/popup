@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+MUSIC_PATH="/home/mfin/music"
+COVER_NAME="cover_mini.png"
+GET_PATH=$(mpc -f "%albumartist%/%album%" current)
+
+n30f -x 20 -y 20 $MUSIC_PATH/$GET_PATH/$COVER_NAME
