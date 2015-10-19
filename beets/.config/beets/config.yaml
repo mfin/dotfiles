@@ -1,6 +1,6 @@
 directory: ~/music
 library: ~/.config/beets/library.db
-plugins: fetchart embedart ftintitle lastgenre lyrics convert info mpdupdate mpdstats
+plugins: fetchart embedart ftintitle lastgenre lyrics convert info mpdupdate mpdstats thumbnails
 
 convert:
     auto: yes
@@ -11,3 +11,6 @@ convert:
 mpd:
     host: localhost
     port: 6600
+
+thumbnails:
+    auto: yes
