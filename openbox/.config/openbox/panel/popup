@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-MUSIC_PATH="/home/mfin/music"
-COVER_NAME="cover_mini.png"
-GET_PATH=$(mpc -f "%albumartist%/%album%" current)
-
-n30f -x 20 -y 20 $MUSIC_PATH/$GET_PATH/$COVER_NAME
+(echo ""; sleep 3) | lemonbar -g 120x20+20+20 & \
+(echo " $@"; sleep 3) | lemonbar -g 120x20+20+40 & \
+(echo ""; sleep 3) | lemonbar -g 120x20+20+60

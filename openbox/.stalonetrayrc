@@ -112,6 +112,7 @@ transparent true
                              # will be attached; it can be either top, bottom,
                              # left, right, none or auto (default)
 
+window_strut none
 # window_type <type>         # set the EWMH-compatible window type; one of:
                              # desktop, dock, normal, toolbar, utility
 
