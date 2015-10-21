@@ -1,17 +1,55 @@
+" Matts's vimperatorrc for colemak
 colorscheme twily
+" rebind to wasd like scrolling
+nnoremap u 4k
+nnoremap e 4j
+nnoremap U 15k
+nnoremap E 15j
+nnoremap n 2h
+nnoremap i 2l
+" back/forward in browser history
+nnoremap N :back<CR>
+nnoremap I :forward<CR>
+" close to the left
+nnoremap , D
+" close to the right
+nnoremap . d
+" copy current page link
+nnoremap ; y
+" access the command line
+nnoremap \' :
+nnoremap \" ;
+" Set scroll size
+set scroll=20
+" move to the tab left/right of the current one
+nnoremap l <C-p>
+nnoremap y <C-n>
+" search function
+nnoremap <C-f> /
+" undo closed tab
+nnoremap <C-t> u
+" Find next
+nnoremap k n
+" Find previous
+nnoremap K N
+set hintchars=arstqwfpzxcvgdb
+" quick page up/down
+nnoremap j <PageUp>
+nnoremap h <PageDown>
 
-set maxitems=20
-set titlestring=
-
-map <silent> <C-F9> :emenu Tools.Web Developer.Web Console<CR>
-map <silent> <C-F8> :js toggle_bottombar()<CR>
-
-:js << EOF
-function toggle_bottombar() {
-    var bb = document.getElementById('liberator-bottombar');
-    if (!bb)
-        return;
-    bb.style.height = (bb.style.height == '') ? '0px' : '';
-    bb.style.overflow = (bb.style.height == '') ? '' : 'hidden';
-    }
-EOF
+" Left-hand-only browsinvim or wasd bindings
+nnoremap w 4k
+nnoremap r 4j
+nnoremap s 2l
+nnoremap a 2h
+" keep winopen functionality
+nnoremap W w
+" back in browser history
+nnoremap A :back<CR>
+nnoremap S :forward<CR>
+" close to left and right (note: z doesn't work because it closes browser)
+nnoremap X D
+nnoremap C d
+" move to the tab left/right of the current one
+nnoremap x <C-p>
+nnoremap c <C-n>
