@@ -1,0 +1,43 @@
+#!/usr/bin/bash
+
+case $1 in
+    up)
+        pulseaudio-ctl up $2
+        VOLUME="$(pulseaudio-ctl full-status | cut -d " " -f 1)%"
+        notify-send.sh --replace=1 "Volume" "$VOLUME"
+        ;;
+
+    down)
+        pulseaudio-ctl down $2
+        VOLUME="$(pulseaudio-ctl full-status | cut -d " " -f 1)%"
+        notify-send.sh --replace=1 "Volume" "$VOLUME"
+        ;;
+
+    mute)
+        pulseaudio-ctl mute
+        if [[ $(pulseaudio-ctl full-status | cut -d " " -f 2) == "yes" ]]; then
+            notify-send.sh --replace=1 "Volume" "MUTE"
+        else
+            notify-send.sh --replace=1 "Volume" "UNMUTE"
+        fi
+        ;;
+
+    next)
+        mpc -q next
+        notify-send.sh --replace=2 "Now playing" "$(mpc current)"
+        ;;
+
+    prev)
+        mpc -q prev
+        notify-send.sh --replace=2 "Now playing" "$(mpc current)"
+        ;;
+
+    play)
+        mpc -q toggle
+        ;;
+
+    stop)
+        mpc -q stop
+        notify-send.sh --replace=2 "Now playing" "STOPPED"
+        ;;
+esac
