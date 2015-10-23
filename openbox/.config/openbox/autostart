@@ -1,2 +1,3 @@
 ~/.config/openbox/panel/desktop &
-stalonetray &
+tint2 &
+volumeicon &
