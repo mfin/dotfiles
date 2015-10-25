@@ -388,6 +388,16 @@
         <command>volume mute</command>
       </action>
     </keybind>
+    <keybind key="Print">
+      <action name="Execute">
+        <command>scrot -q 100 ~/pics/screens/%Y-%m-%d-%T-screenshot.png</command>
+      </action>
+    </keybind>
+    <keybind key="W-Print">
+      <action name="Execute">
+        <command>scrot -q 100 -s -b ~/pics/screens/%Y-%m-%d-%T-screenshot.png</command>
+      </action>
+    </keybind>
   </keyboard>
   <mouse>
     <dragThreshold>1</dragThreshold>

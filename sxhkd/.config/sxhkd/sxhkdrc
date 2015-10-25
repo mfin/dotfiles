@@ -152,6 +152,12 @@ XF86HomePage
 XF86Mail
 	thunderbird
 
+Print
+	scrot -q 100 ~/pics/screens/%Y-%m-%d-%T-screenshot.png
+
+super + Print
+	scrot -q 100 -s -b ~/pics/screens/%Y-%m-%d-%T-screenshot.png
+
 super + q; {w,f,e}
 	{firefox,thunar,subl3}
 }

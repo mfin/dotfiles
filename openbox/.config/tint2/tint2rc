@@ -8,7 +8,7 @@
 # ID 1
 rounded = 0
 border_width = 0
-background_color = #1d1f21 100
+background_color = #232826 100
 border_color = #FFFFFF 5
 
 # ID 2
@@ -26,7 +26,7 @@ border_color = #FFFFFF 60
 # ID 4
 rounded = 0
 border_width = 0
-background_color = #cc6666 100
+background_color = #EF5847 100
 border_color = #FFFFFF 100
 
 # Panel
@@ -74,9 +74,9 @@ task_iconified_icon_asb = 100 0 0
 # Fonts
 task_font = envypn, Regular 8
 task_font_color = #c5c8c6 100
-task_active_font_color = #c5c8c6 100
+task_active_font_color = #E8DFD6 100
 task_urgent_font_color = #cc6666 100
-task_iconified_font_color = #c5c8c6 100
+task_iconified_font_color = #E8DFD6 100
 font_shadow = 0
 
 # System Tray
@@ -90,7 +90,7 @@ systray_icon_asb = 100 0 0
 # Clock
 time1_format = %a %d %b %H:%M
 time1_font = envypn, Regular 9
-clock_font_color = #c5c8c6 100
+clock_font_color = #E8DFD6 100
 clock_padding = 10 0
 clock_background_id = 4
 
