@@ -6,7 +6,7 @@ else
 	DMENU='dmenu -i'
 fi
 
-choice=$(echo -e "lock\nnmcli\nexit\nshutdown\nreboot" | $DMENU)
+choice=$(echo -e "lock\npass\nnmcli\nexit\nshutdown\nreboot" | $DMENU)
 
 case $choice in
 	lock) slimlock & ;;
@@ -14,4 +14,5 @@ case $choice in
 	shutdown) systemctl poweroff & ;;
 	reboot) systemctl reboot & ;;
 	nmcli) nmcli_dmenu & ;;
+    pass) passmenu $ARGS & ;;
 esac

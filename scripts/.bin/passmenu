@@ -2,9 +2,13 @@
 
 shopt -s nullglob globstar
 
-typeit=0
-if [[ $1 == "--type" ]]; then
-	typeit=1
+if [ -f $HOME/.dmenurc ]; then
+    . $HOME/.dmenurc
+fi
+
+typeit=1
+if [[ $1 == "--no-type" ]]; then
+	typeit=0
 	shift
 fi
 
