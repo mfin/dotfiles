@@ -1,4 +1,4 @@
-#include ".colors/hamsterslayer"
+#include ".colors/hybrid"
 
 URxvt.perl-ext-common: default,matcher,clipboard
 URxvt.url-launcher: /usr/bin/firefox
@@ -317,7 +317,7 @@ URxvt*scrollBar:                      False
 ! URxvt*iconFile:                       file
  URxvt*font: -*-termsynu-medium-r-*-*-14-*-*-*-*-*-*-*
 !URxvt*font: -*-envypn-medium-*-*-*-13-*-*-*-*-*-*-*
- URxvt*boldFont:	-*-termsynu-bold-r-*-*-14-*-*-*-*-*-*-*
+ URxvt*boldFont:	-*-termsynu-medium-r-*-*-14-*-*-*-*-*-*-*
 !URxvt*boldFont: -*-envypn-medium-*-*-*-13-*-*-*-*-*-*-*
 ! URxvt*italicFont:                     fontname
 ! URxvt*boldItalicFont:                 fontname
