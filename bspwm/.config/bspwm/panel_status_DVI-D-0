@@ -3,10 +3,20 @@
 source $(dirname $0)/panel_config
 
 datetime() {
-    echo "%{F#FF$BLUE_COLOR}$(printf '%b' "\ue1a2")%{F-} $(date +'%A, %b %d') $SEP %{F#FF$BLUE_COLOR}$(printf '%b' "\ue016")%{F-} $(date +'%H:%M')"
+    echo "%{F#FF$WHITE_COLOR}date %{F}$(date +'%A, %b %d')  %{B#FF$RED_COLOR}  $(date +'%H:%M')  %{B-}"
+}
+
+temperature() {
+    CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
+    echo "%{F#FF$WHITE_COLOR}temp %{F}$CPU_TEMP°C"
+}
+
+load_avg() {
+    AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
+    echo "%{F#FF$WHITE_COLOR}load %{F}$AVGLOAD"
 }
 
 while :; do
-    echo "S%{r}$(datetime)"
+    echo "S%{r}$(load_avg) $SEP $(temperature) $SEP $(datetime)"
     sleep 2
 done
