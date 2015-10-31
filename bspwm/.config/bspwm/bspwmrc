@@ -22,4 +22,6 @@ bspc rule -a vlc desktop=^5 floating=on
 bspc rule -a Steam desktop=^4
 bspc rule -a Spotify desktop=^6 floating=on
 bspc rule -a mpv floating=on
+bspc rule -a pinentry-gtk-2 floating=on
+
 ~/.config/bspwm/panel &
