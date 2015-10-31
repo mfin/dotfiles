@@ -21,4 +21,4 @@ rxvt-unicode-256xresources, dmenu2, lemonbar-xft-git, stlarch_font
 
 screenshot
 ----------
-![Screenshot](http://i.imgur.com/HC8xZNe.jpg "bspwm on Arch, dual monitors")
+![Screenshot](screenshot.png "bspwm on Arch")
