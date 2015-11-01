@@ -23,9 +23,9 @@ URxvt*scrollBar:                      False
 ! URxvt*scrollTtyKeypress:              boolean
 ! URxvt*scrollWithBuffer:               boolean
 ! URxvt*inheritPixmap:                  boolean
-! URxvt*transparent:                    boolean
+! URxvt*transparent:                    true
 ! URxvt*tintColor:                      color
-! URxvt*shading:                        number
+! URxvt*shading:                        5
 ! URxvt*blurRadius:                     HxV
 ! URxvt*fading:                         number
 ! URxvt*fadeColor:                      color
@@ -330,7 +330,7 @@ URxvt*scrollBar:                      False
 ! URxvt*iconName:                       string
 ! URxvt*saveLines:                      number
 ! URxvt*buffered:                       boolean
-! URxvt*depth:                          number
+URxvt*depth:                          32
 ! URxvt*visual:                         number
 ! URxvt*transient-for:                  windowid
 ! URxvt*override-redirect:              boolean
