@@ -11,5 +11,6 @@ export PATH=$(cope_path):"$PYENV_ROOT/bin:$HOME/.rbenv/bin:$HOME/.go/bin:$HOME/.
 eval "$(pyenv init -)"
 eval "$(rbenv init -)"
 eval "$(dircolors -b)"
+eval "$(thefuck --alias)"
 
 [[ -s "/home/mfin/.gvm/scripts/gvm" ]] && source "/home/mfin/.gvm/scripts/gvm"
