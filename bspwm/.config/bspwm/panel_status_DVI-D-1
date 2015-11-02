@@ -45,6 +45,6 @@ transmission() {
 }
 
 while :; do
-    echo "S%{r}$(mpd)$(volume) %{B-}"
+    echo "S%{r}$(mpd)$(wifi_ssid) $SEP $(volume) %{B-}"
     sleep 2
 done
