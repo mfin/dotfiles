@@ -30,7 +30,7 @@
 
 # geometry <geometry>        # tray's geometry in standard X notation; width and
                              # height are specified in slot_size multiples
-geometry 1x1+0+0
+geometry 1x1+0+1030
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by
@@ -70,7 +70,8 @@ kludges force_icons_size
 
 # parent_bg [<bool>]         # whether to use pseudo-transparency
                              # (looks better when reparented into smth like FvwmButtons)
-
+parent_bg true
+                             
 # pixmap_bg <path_to_xpm>    # use pixmap from specified xpm file for (tiled) background
 
 # scrollbars <mode>          # enable/disable scrollbars; mode is either
@@ -97,7 +98,7 @@ slot_size 20
 
 # transparent [<bool>]       # whether to use root-transparency (background
                              # image must be set with Esetroot or compatible utility)
-transparent true
+# transparent true
 
 # vertical [<bool>]          # whether to use vertical layout (horisontal layout
                              # is used by default)
