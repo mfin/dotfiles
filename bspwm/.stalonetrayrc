@@ -30,14 +30,14 @@
 
 # geometry <geometry>        # tray's geometry in standard X notation; width and
                              # height are specified in slot_size multiples
-geometry 1x1-0-0
+geometry 1x1+0+0
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by
                              # grow_gravity; if horizontal or vertical
                              # direction is not specified, tray will not grow in
                              # that direction
-grow_gravity E
+grow_gravity W
 
 # icon_gravity <gravity>     # icon placement gravity, one of NW, NE, SW, SE
 icon_gravity SW
@@ -112,6 +112,7 @@ transparent true
                              # will be attached; it can be either top, bottom,
                              # left, right, none or auto (default)
 
+window_strut none
 # window_type <type>         # set the EWMH-compatible window type; one of:
                              # desktop, dock, normal, toolbar, utility
 
