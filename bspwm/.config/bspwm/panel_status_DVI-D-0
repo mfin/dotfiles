@@ -21,7 +21,21 @@ syncthing() {
     echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
 }
 
+diskspace() {
+    SPACE_AVAIL=$(df -h $1 | tail -1 | sed 's/ \+ / /g' | cut -d " " -f 4)
+    DISK_NAME=$(df -h $1 | tail -1 | cut -d " " -f 1 | cut -d "/" -f 4)
+    echo "%{F#FF$WHITE_COLOR}$DISK_NAME %{F}$SPACE_AVAIL"
+}
+
+mpd(){
+    STATUS=$(mpc current)
+    if [ "$STATUS" != "" ]; then
+        echo "%{F#FF$WHITE_COLOR A:mpc toggle: A3:mpc stop:}mpd %{F}$STATUS%{A A}"
+    else echo ""
+    fi
+}
+
 while :; do
-    echo "S%{r}$(load_avg) $SEP $(temperature) $SEP $(syncthing) $SEP $(datetime)"
+    echo "S$(mpd)%{r}$(diskspace "/dev/mapper/main-home") $SEP $(syncthing) $SEP $(temperature) $SEP $(load_avg) $SEP $(datetime)"
     sleep 2
 done

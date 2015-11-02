@@ -13,14 +13,6 @@ volume(){
     fi
 }
 
-mpd(){
-    STATUS=$(mpc current)
-    if [ "$STATUS" != "" ]; then
-        echo "%{F#FF$WHITE_COLOR A:mpc toggle: A3:mpc stop:}mpd %{F}$STATUS%{A A} $SEP "
-    else echo ""
-    fi
-}
-
 spotify(){
     STATUS=$(playerctl status)
     if [ "$STATUS" == "Playing" ]; then
@@ -45,6 +37,6 @@ transmission() {
 }
 
 while :; do
-    echo "S%{r}$(mpd)$(wifi_ssid) $SEP $(volume) %{B-}"
+    echo "S%{r}$(wifi_ssid) $SEP $(volume) %{B-}"
     sleep 2
 done
