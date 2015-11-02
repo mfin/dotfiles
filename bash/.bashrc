@@ -44,8 +44,5 @@ export HISTCONTROL=ignoreboth
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# colors please
-export TERM=xterm-256color
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
