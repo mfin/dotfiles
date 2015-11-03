@@ -16,17 +16,6 @@ load_avg() {
     echo "%{F#FF$WHITE_COLOR}load %{F}$AVGLOAD"
 }
 
-syncthing() {
-    SYNC_STATUS=$(systemctl status syncthing@mfin | grep active | cut -d: -f 2 | cut -d " " -f 2)
-    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
-}
-
-diskspace() {
-    SPACE_AVAIL=$(df -h $1 | tail -1 | sed 's/ \+ / /g' | cut -d " " -f 4)
-    DISK_NAME=$(df -h $1 | tail -1 | cut -d " " -f 1 | cut -d "/" -f 4)
-    echo "%{F#FF$WHITE_COLOR}$DISK_NAME %{F}$SPACE_AVAIL"
-}
-
 mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
@@ -36,6 +25,6 @@ mpd(){
 }
 
 while :; do
-    echo "S$(mpd)%{r}$(diskspace "/dev/mapper/main-home") $SEP $(syncthing) $SEP $(temperature) $SEP $(load_avg) $SEP $(datetime)"
+    echo "S$(mpd)%{r}$(temperature) $SEP $(load_avg) $SEP $(datetime)"
     sleep 2
 done

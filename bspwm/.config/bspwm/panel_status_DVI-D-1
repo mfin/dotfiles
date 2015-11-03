@@ -36,7 +36,26 @@ transmission() {
     echo "%{F#FF$WHITE_COLOR}dl %{F}$ACTIVETORR"
 }
 
+check_htpc() {
+    IS_RUNNING=$(curl -Is dnevna.local:32400 | head -1 | cut -d " " -f 3)
+    if [ "$IS_RUNNING" == "" ]; then
+        echo "%{F#FF$WHITE_COLOR}htpc %{F}OFF"
+    else echo "%{F#FF$WHITE_COLOR}htpc %{F}ON"
+    fi
+}
+
+syncthing() {
+    SYNC_STATUS=$(systemctl status syncthing@mfin | grep active | cut -d: -f 2 | cut -d " " -f 2)
+    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
+}
+
+diskspace() {
+    SPACE_AVAIL=$(df -h $1 | tail -1 | sed 's/ \+ / /g' | cut -d " " -f 4)
+    DISK_NAME=$(df -h $1 | tail -1 | cut -d " " -f 1 | cut -d "/" -f 4)
+    echo "%{F#FF$WHITE_COLOR}$DISK_NAME %{F}$SPACE_AVAIL"
+}
+
 while :; do
-    echo "S%{r}$(wifi_ssid) $SEP $(volume) %{B-}"
+    echo "S%{r}$(diskspace /dev/mapper/main-home) $SEP $(check_htpc) $SEP $(syncthing) $SEP $(wifi_ssid) $SEP $(volume) %{B-}"
     sleep 2
 done
