@@ -27,3 +27,8 @@ alias ln='ln -v'
 alias psg='ps -A | grep'
 alias e='vim'
 alias se='sudo vim'
+
+# function for font testing
+function pchar {
+    echo $(printf '%b' "\u$1")
+}
