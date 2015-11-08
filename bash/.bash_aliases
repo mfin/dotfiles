@@ -27,6 +27,7 @@ alias ln='ln -v'
 alias psg='ps -A | grep'
 alias e='vim'
 alias se='sudo vim'
+alias tcopy='tmux show-buffer | xclip -selection clipboard'
 
 # function for font testing
 function pchar {
