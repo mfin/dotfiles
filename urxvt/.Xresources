@@ -1,4 +1,4 @@
-#include ".colors/hybrid"
+#include ".colors/muzieca"
 
 URxvt.perl-ext-common:      default,matcher,clipboard,keyboard-select
 URxvt.url-launcher:         /usr/bin/firefox
