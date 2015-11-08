@@ -6,7 +6,7 @@ mpd_music_dir = "/home/mfin/music"
 ##### song format #####
 
 playlist_display_mode = "classic"
-song_list_format = "$6{%A}|{%a}$8 $4-$8 $3%t$8"
+song_list_format = "$7%a$9 $4-$9 $3%t$9 $R$8%l"
 song_status_format = "$8%a$9 - $8%t$9"
 now_playing_prefix = "$b"
 now_playing_suffix = "$/b"
@@ -16,10 +16,10 @@ media_library_primary_tag = album_artist
 autocenter_mode = "yes"
 statusbar_visibility = "no"
 main_window_highlight_color = "white"
-discard_colors_if_item_is_selected = "no"
+discard_colors_if_item_is_selected = "yes"
 ##### various settings #####
-progressbar_look = "━━"
-#progressbar_look = "─⊙╶"
+#progressbar_look = "━━"
+progressbar_look = "─⊙─"
 #progressbar_look = "─╶ "
 
 header_visibility = "no"
@@ -40,13 +40,16 @@ volume_color                   = "yellow"
 state_line_color               = "black"
 state_flags_color              = "red"
 
-progressbar_color              = "blue"
-statusbar_color                = "green"
+progressbar_color              = "black"
+progressbar_elapsed_color      = "magenta"
+statusbar_color                = "white"
 
 #alternative_ui_separator_color = "black"
 #main_window_highlight_color    = "red"
 active_column_color            = "green"
 window_border_color            = "red"
+
+search_engine_display_mode = "classic" (classic/columns)
 
 ##### Visualizer
 visualizer_fifo_path = "/home/mfin/.mpd/mpd.fifo"
