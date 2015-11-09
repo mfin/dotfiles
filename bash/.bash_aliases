@@ -33,3 +33,9 @@ alias tcopy='tmux show-buffer | xclip -selection clipboard'
 function pchar {
     echo $(printf '%b' "\u$1")
 }
+
+# convert an image into a blurry one
+function blur_image {
+    convert $1 -channel RGBA -blur 0x20 blur-$1
+    echo "converted $1 successfully"
+}
