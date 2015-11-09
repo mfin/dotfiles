@@ -19,7 +19,7 @@ load_avg() {
 mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
-        echo "%{F#FF$WHITE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\u266b") %{F}$STATUS%{A A}"
+        echo "%{F#FF$WHITE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\u266a") %{F}$STATUS%{A A}"
     else echo ""
     fi
 }
