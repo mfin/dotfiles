@@ -1,6 +1,6 @@
 # Some clarification about colors. There's a function called getXresColor in here. This function parses all the colors from xrdb (from your .Xresources or .Xdefaults file) for use in panel. CAUTION: All the colors need to be defined like *.foreground: #000000, *.color0: #000000 and not like URxvt.foreground or *foregreound, or the function will not work.
 
-PANEL_HEIGHT=15
+PANEL_HEIGHT=20
 PANEL_WIDTH=$(sres -W)
 PANEL_GEOMETRY="${PANEL_WIDTH}x30+0+0"
 FONT="-*-candy-medium-*-*-*-11-*-*-*-*-*-*-*"

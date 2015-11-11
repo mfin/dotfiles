@@ -1,3 +1,3 @@
-ARGS='-i -h 15 -fn '-*-candy-medium-*-*-*-11-*-*-*-*-*-*-*' -nb '#010101' -sb '#010101' -nf '#ffffff' -sf '#f92672' -s 0'
+ARGS='-i -h 20 -fn '-*-candy-medium-*-*-*-11-*-*-*-*-*-*-*' -nb '#010101' -sb '#010101' -nf '#ffffff' -sf '#f92672' -s 0'
 DMENU="dmenu $ARGS"
 DMENU_RUN="dmenu_run -p Run: $ARGS"
