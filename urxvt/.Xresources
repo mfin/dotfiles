@@ -1,4 +1,4 @@
-#include ".colors/nancy"
+#include ".colors/derp"
 
 URxvt.perl-ext-common:      default,matcher,clipboard,keyboard-select
 URxvt.url-launcher:         /usr/bin/firefox
