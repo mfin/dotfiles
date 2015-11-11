@@ -18,7 +18,7 @@ xset b off
 setxkbmap si -option 'ctrl:nocaps' &
 xsetroot -cursor_name left_ptr &
 
-nitrogen --restore &
+~/.fehbg &
 compton --sw-opti --use-ewmh-active-win &
 xautolock -detectsleep -time 5 -locker slimlock &
 pulseaudio --start &
