@@ -36,6 +36,6 @@ function pchar {
 
 # convert an image into a blurry one
 function blur_image {
-    convert $1 -channel RGBA -blur 0x20 blur-$1
+    convert $1 -channel RGBA -blur 0x10 blur-$1
     echo "converted $1 successfully"
 }
