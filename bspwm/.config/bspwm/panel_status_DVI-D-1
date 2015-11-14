@@ -56,6 +56,6 @@ diskspace() {
 }
 
 while :; do
-    echo "S%{r}$(diskspace /dev/mapper/main-home) $SEP $(check_htpc) $SEP $(syncthing) $SEP $(wifi_ssid) $SEP $(volume) %{B-}"
+    echo "S%{r}$(diskspace /dev/mapper/main-home) $SEP $(syncthing) $SEP $(wifi_ssid) $SEP $(volume) %{B-}"
     sleep 2
 done
