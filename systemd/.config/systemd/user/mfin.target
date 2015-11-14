@@ -1,0 +1,6 @@
+[Unit]
+Description=Custom systemd stuff
+
+[Install]
+Alias=default.target
+

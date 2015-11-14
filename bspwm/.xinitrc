@@ -23,7 +23,6 @@ compton --sw-opti --use-ewmh-active-win &
 xautolock -detectsleep -time 5 -locker slimlock &
 dunst &
 unclutter &
-udiskie -2 &
 ( sleep 3 && stalonetray ) &
 
 sxhkd -f 50 &

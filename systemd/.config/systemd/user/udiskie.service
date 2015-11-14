@@ -1,0 +1,9 @@
+[Unit]
+Description=UDiskie Automounter
+
+[Service]
+ExecStart=/usr/bin/udiskie -2
+ExecStop=/usr/bin/pkill udiskie
+
+[Install]
+WantedBy=mfin.target

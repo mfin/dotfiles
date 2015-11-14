@@ -1,0 +1,14 @@
+[Unit]
+Description=rtorrent Service
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+KillMode=None
+ExecStart=/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent
+ExecStop=/usr/bin/stmux send-keys -t rt:rtorrent C-q
+WorkingDirectory=/home/%I/
+
+[Install]
+WantedBy=mfin.target

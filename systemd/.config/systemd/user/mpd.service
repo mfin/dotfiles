@@ -1,0 +1,12 @@
+[Unit]
+Description=Music Player Daemon
+Requires=pulse.service
+After=pulse.service
+
+[Service]
+ExecStart=/usr/bin/mpd --no-daemon
+ExecStop=/usr/bin/mpd --kill
+
+[Install]
+WantedBy=mfin.target
+Also=mpd.socket

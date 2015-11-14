@@ -1,0 +1,8 @@
+[Unit]
+Description=Music Player Daemon Sockets
+
+[Socket]
+ListenStream=6600
+
+[Install]
+WantedBy=sockets.target
