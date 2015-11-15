@@ -70,26 +70,26 @@ super + ctrl + {1-9}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,window -d} ^{1-9,10}
 
-super + ctrl + {y,x}
+super + {F3,F1}
 	CUR_DESKTOP=$(bspc query -d -D); \
     PADDING=$(bspc config -d $CUR_DESKTOP left_padding); \
     NEW_PADDING=$(echo "$PADDING {-,+} 5" | bc); \
     bspc config -d $CUR_DESKTOP left_padding $NEW_PADDING; \
     bspc config -d $CUR_DESKTOP right_padding $NEW_PADDING;
 
-super + shift + {y,x}
+super + {F4,F2}
 	CUR_DESKTOP=$(bspc query -d -D); \
     PADDING=$(bspc config -d $CUR_DESKTOP top_padding); \
     NEW_PADDING=$(echo "$PADDING {-,+} 5" | bc); \
     bspc config -d $CUR_DESKTOP top_padding $NEW_PADDING; \
     bspc config -d $CUR_DESKTOP bottom_padding $NEW_PADDING;
 
-super + ctrl + a
+super + F5
 	CUR_DESKTOP=$(bspc query -d -D); \
 	bspc config -d $CUR_DESKTOP right_padding 0; \
 	bspc config -d $CUR_DESKTOP left_padding 0;
 
-super + shift + a
+super + F6
 	CUR_DESKTOP=$(bspc query -d -D); \
 	bspc config -d $CUR_DESKTOP top_padding 0; \
 	bspc config -d $CUR_DESKTOP bottom_padding 0;
@@ -146,11 +146,11 @@ XF86AudioPlay
 XF86AudioStop
 	~/.bin/volume stop
 
-XF86HomePage
-	urxvt -e ranger
+super + F7
+	mpc seek -5
 
-XF86Mail
-	thunderbird
+super + F12
+	mpc seek +5
 
 Print
 	scrot -q 100 ~/pics/screens/%Y-%m-%d-%T-screenshot.png
@@ -158,8 +158,8 @@ Print
 super + Print
 	scrot -q 100 -s -b ~/pics/screens/%Y-%m-%d-%T-screenshot.png
 
-super + q; {w,f,e}
-	{firefox,thunar,subl3}
+super + q; {w,f,e,s}
+	{firefox,thunar,subl3,xfce4-screenshooter}
 }
 
 #XF86MonBrightnessUp
