@@ -1,0 +1,20 @@
+!!URxvt Color Scheme
+*.background:  #080608
+*.foreground:  #E8EAEC
+
+*.color0:  #525252
+*.color1:  #A35656
+*.color2:  #A3A356
+*.color3:  #DD7733
+*.color4:  #567DA3
+*.color5:  #908C9C
+*.color6:  #56A3A3
+*.color7:  #E8E5DC
+*.color8:  #707070
+*.color9:  #BE6C6C
+*.color10: #B6B65A
+*.color11: #EECC55
+*.color12: #6C95BE
+*.color13: #AAA7B4
+*.color14: #6CBEBE
+*.color15: #F5F5EB
