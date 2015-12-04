@@ -40,7 +40,7 @@ for i in $num_mon; do
     ~/.config/bspwm/panel_status_$i > "$PANEL_FIFO$i" &
 
     # Get current monitor width
-    CUR_MON_WIDTH=$(bspc query -T -m $i | grep -oE "[0-9]{2,6}" | head -n 1)
+    CUR_MON_WIDTH=$(bspc query -T -m $i | jq -r .rectangle.width)
     PANEL_GEO="${CUR_MON_WIDTH}x${PANEL_HEIGHT}+${CUR_X_OFFSET}+0"
 
 
