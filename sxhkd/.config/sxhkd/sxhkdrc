@@ -11,14 +11,11 @@ super + shift + Escape
 super + w
 	bspc window -c
 
-super + t
-	bspc desktop -l next
-
 super + b
 	bspc desktop -B
 
-super + {a,s,d}
-	bspc window -t {pseudo_tiled,floating,sticky}
+super + {t,a,s,d}
+	bspc window -t {tiled,pseudo_tiled,floating,sticky}
 
 super + f
 	bspc desktop -l {monocle,tiled}
