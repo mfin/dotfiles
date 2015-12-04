@@ -94,6 +94,10 @@ super + F6
 	bspc config -d $CUR_DESKTOP top_padding 0; \
 	bspc config -d $CUR_DESKTOP bottom_padding 0;
 
+super + shift + {F1,F2}
+	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
+}
+
 ~button1
 	bspc pointer -g focus
 
