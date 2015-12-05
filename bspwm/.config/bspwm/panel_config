@@ -3,7 +3,7 @@
 PANEL_HEIGHT=20
 PANEL_WIDTH=$(sres -W)
 PANEL_GEOMETRY="${PANEL_WIDTH}x30+0+0"
-FONT="-*-candy-medium-*-*-*-11-*-*-*-*-*-*-*"
+FONT="-*-termsynu-medium-*-*-*-14-*-*-*-*-*-*-*"
 
 getXresColor() {
    echo -n "$( xrdb -query | grep "\*.$1:" | grep -oE "#[a-zA-Z0-9]{6}" | cut -c 2- )";
