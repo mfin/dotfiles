@@ -33,7 +33,7 @@ get_sha() {
 	git rev-parse --short HEAD 2>/dev/null
 }
 
-PROMPT_COMMAND='__git_ps1 "\[\033[1;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'
+PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
