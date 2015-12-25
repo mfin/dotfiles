@@ -27,3 +27,6 @@ set statusline +=%1*%=%5l%*             "current line
 set statusline +=%1*/%L%*               "total lines
 set statusline +=%1*%4v\ %*             "virtual column number
 set statusline +=%1*0x%04B\ %*          "character under cursor
+
+command Paste w | !paste.sh %
+command PublicPaste w | !paste.sh -p %
