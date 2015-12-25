@@ -251,7 +251,7 @@
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
-    <keybind key="A-Escape">
+    <keybind key="A-F5">
       <action name="Lower"/>
       <action name="FocusToBottom"/>
       <action name="Unfocus"/>
@@ -390,12 +390,12 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>scrot -q 100 ~/pics/screens/%Y-%m-%d-%T-screenshot.png</command>
+        <command>gnome-screenshot</command>
       </action>
     </keybind>
     <keybind key="W-Print">
       <action name="Execute">
-        <command>scrot -q 100 -s -b ~/pics/screens/%Y-%m-%d-%T-screenshot.png</command>
+        <command>gnome-screenshot --interactive</command>
       </action>
     </keybind>
   </keyboard>
