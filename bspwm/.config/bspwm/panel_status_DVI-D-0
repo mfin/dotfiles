@@ -20,7 +20,7 @@ mpd(){
     STATUS=$(mpc current)
     if [ "$STATUS" != "" ]; then
         DONE_PERCENTAGE=$(expr $(mpc | grep playing | cut -d "(" -f 2 | sed 's/%)//g') / 10)
-        TEN_PERC="$(printf '%b' "\u37f")"
+        TEN_PERC="$(printf '%b' "\ub7")"
         PROGRESS_BAR=""
         for (( i = 0; i < 10; i++ )); do
             MPC_SKIP=$(expr $i*10)
