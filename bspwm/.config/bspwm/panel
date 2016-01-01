@@ -31,7 +31,7 @@ for i in $num_mon; do
     xtitle -sf 'T%s' > "$PANEL_FIFO$i" &
 
     # Get bspwm information for current monitor
-    bspc control --subscribe |\
+    bspc subscribe |\
         grep -oE "[Mm]$i[^TM]*[TML]" --line-buffered |\
         while read line; do echo W$line; done \
             > "$PANEL_FIFO$i" &
