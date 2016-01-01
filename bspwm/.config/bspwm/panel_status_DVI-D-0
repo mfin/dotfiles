@@ -3,7 +3,7 @@
 source $(dirname $0)/panel_config
 
 datetime() {
-    echo "%{F#FF$WHITE_COLOR}date %{F}$(date +'%A, %b %d')  %{B#FF$RED_COLOR}  $(date +'%H:%M')  %{B-}"
+    echo "%{F#FF$WHITE_COLOR}date %{F}$(date +'%A, %b %d')  %{B#FF$YELLOW2_COLOR F#FF$BLACK_COLOR}  $(date +'%H:%M')  %{F- B-}"
 }
 
 temperature() {
@@ -34,7 +34,21 @@ mpd(){
     fi
 }
 
+volume(){
+    VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
+    MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
+    if [ "$MUTE" == "yes" ]; then
+        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}vol $VOLUME%%{A F-}"
+    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}vol %{F}$VOLUME%%{A}"
+    fi
+}
+
+syncthing() {
+    SYNC_STATUS=$(systemctl status syncthing@mfin | grep active | cut -d: -f 2 | cut -d " " -f 2)
+    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
+}
+
 while :; do
-    echo "S$(mpd)%{r}$(temperature) $SEP $(load_avg) $SEP $(datetime)"
+    echo "S$(mpd)%{r}$(syncthing) $SEP $(temperature) $SEP $(load_avg) $SEP $(volume) $SEP $(datetime)"
     sleep 2
 done

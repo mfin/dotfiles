@@ -4,15 +4,6 @@
 
 source $(dirname $0)/panel_config
 
-volume(){
-    VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
-    MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
-    if [ "$MUTE" == "yes" ]; then
-        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}vol $VOLUME%%{A F-}"
-    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}vol %{F}$VOLUME%%{A}"
-    fi
-}
-
 spotify(){
     STATUS=$(playerctl status)
     if [ "$STATUS" == "Playing" ]; then
@@ -44,11 +35,6 @@ check_htpc() {
     fi
 }
 
-syncthing() {
-    SYNC_STATUS=$(systemctl status syncthing@mfin | grep active | cut -d: -f 2 | cut -d " " -f 2)
-    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
-}
-
 diskspace() {
     SPACE_AVAIL=$(df -h $1 | tail -1 | sed 's/ \+ / /g' | cut -d " " -f 4)
     DISK_NAME=$(df -h $1 | tail -1 | cut -d " " -f 1 | cut -d "/" -f 4)
@@ -56,6 +42,6 @@ diskspace() {
 }
 
 while :; do
-    echo "S%{r}$(diskspace /dev/mapper/main-home) $SEP $(syncthing) $SEP $(wifi_ssid) $SEP $(volume) %{B-}"
+    echo "S%{r}%{B-}"
     sleep 2
 done

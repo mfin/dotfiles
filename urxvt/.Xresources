@@ -16,3 +16,10 @@ URxvt*boldFont:             -*-candy-medium-r-*-*-11-*-*-*-*-*-*-*
 URxvt*externalBorder:       0
 URxvt*internalBorder:       5
 URxvt*borderLess:           False
+Xft.antialias:  1
+Xft.autohint:   0
+Xft.dpi:        96
+Xft.hinting:    1
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcdlight
+Xft.rgba:       rgb

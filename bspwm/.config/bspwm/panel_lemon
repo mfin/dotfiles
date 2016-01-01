@@ -30,15 +30,15 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#FF$FOREGROUND_COLOR B#FF$RED_COLOR} $name %{B- F-}"
+                                desk="%{F#FF$FOREGROUND_COLOR B#FF$CYAN2_COLOR} $name %{B- F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F#FF$FOREGROUND_COLOR B#FF$RED_COLOR} $name %{B- F-}"
+                                desk="%{F#FF$FOREGROUND_COLOR B#FF$CYAN2_COLOR} $name %{B- F-}"
                                 ;;
                             U*)
                                 # focused urgent desktop
-                                desk="%{F#FF$FOREGROUND_COLOR B#FF$YELLOW_COLOR} $name %{B- F-}"
+                                desk="%{F#FF$FOREGROUND_COLOR B#FF$RED_COLOR} $name %{B- F-}"
                                 ;;
                             o*)
                                 # occupied desktop
