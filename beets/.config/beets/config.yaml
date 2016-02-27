@@ -1,4 +1,4 @@
-directory: ~/music
+directory: ~/Music
 library: ~/.config/beets/library.db
 plugins: fetchart embedart ftintitle lastgenre lyrics convert info mpdupdate mpdstats
 

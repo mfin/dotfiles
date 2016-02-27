@@ -30,7 +30,7 @@ Color = always
 
 # Absolute path to download and extract to. Parameter and tilde expansions are
 # honored here.
-TargetDir = $HOME/builds
+TargetDir = $HOME/Builds
 
 # Max number of threads cower will use. This is synonymous with the max number
 # of concurrent connections that will be opened to the AUR.
