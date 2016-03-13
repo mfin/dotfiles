@@ -9,5 +9,6 @@
 	last = show -1
 	unstage = reset HEAD --
 	cached = diff --cached
+	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [color]
 	ui = auto
