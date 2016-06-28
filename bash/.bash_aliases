@@ -26,8 +26,8 @@ alias mv='mv -v'
 alias rm='rm -v'
 alias ln='ln -v'
 alias psg='ps -A | grep'
-alias e='vim'
-alias se='sudo vim'
+alias e='micro'
+alias se='sudo micro'
 alias tcopy='tmux show-buffer | xclip -selection clipboard'
 
 # function for font testing
