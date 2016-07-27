@@ -147,6 +147,9 @@ XF86AudioPlay
 XF86AudioStop
 	$HOME/.bin/volume stop
 
+super + alt + p
+	playerctl play-pause
+
 super + F7
 	mpc seek -5
 
