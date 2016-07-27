@@ -1,0 +1,55 @@
+#! /bin/sh
+
+source $(dirname $0)/panel_config
+
+datetime() {
+    echo "%{B#FF$BLACK2_COLOR F#FF$FOREGROUND_COLOR}  $(date +'%H:%M')  %{F- B-}"
+}
+
+battery(){
+    CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
+    if [ $CAPACITY -lt 20 ]; then
+        echo "%{F#FF$RED_COLOR T2}bat $CAPACITY%%{F T-}"
+    else echo "%{F#FF$WHITE_COLOR T2}bat %{F T-}$CAPACITY%"
+    fi
+}
+
+volume(){
+    VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
+    MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
+    if [ "$MUTE" == "yes" ]; then
+        echo "%{F#FF$RED_COLOR T2 A:pulseaudio-ctl mute:}vol $VOLUME%%{A F- T-}"
+    else echo "%{F#FF$WHITE_COLOR T2 A:pulseaudio-ctl mute:}vol %{F T-}$VOLUME%%{A}"
+    fi
+}
+
+spotify(){
+    STATUS=$(playerctl status)
+    if [ "$STATUS" == "Playing" ]; then
+        echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+    elif [ "$STATUS" == "Paused" ]; then
+        echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+    else echo ""
+    fi
+}
+
+wifi_ssid(){
+    NAME=$(iw wlp3s0 link | grep SSID | cut -d' ' -f2)
+    if [ "$NAME" == "" ]; then
+        echo "%{F#FF$RED_COLOR T2}wifi no conn%{F T-}"
+    else echo "%{F#FF$WHITE_COLOR T2}wifi %{F T-}$NAME"
+    fi
+}
+
+vpn(){
+    STATUS=$(ip address | grep tun0 | head -1 | cut -d',' -f4)
+    if [ "$STATUS" == "UP" ]; then
+        echo "%{F#FF$GREEN_COLOR T2}VPN%{F T-}"
+    else echo "%{F#FF$RED_COLOR T2}VPN%{F T-}"
+    fi
+}
+
+while :; do
+    echo "S$(spotify)%{r}$(vpn) $SEP $(wifi_ssid) $SEP $(battery) $SEP $(volume) $SEP $(datetime)"
+    sleep 2
+done
