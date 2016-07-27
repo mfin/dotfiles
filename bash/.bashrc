@@ -33,7 +33,9 @@ man() {
 # 	git rev-parse --short HEAD 2>/dev/null
 # }
 
-# PROMPT_COMMAND='__git_ps1 "\[\033[0;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'
+# PROMPT_COMMAND='__git_ps1 "${PYTHON_VIRTUALENV}\[\033[0;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'
+
+source $HOME/.bash_prompt
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
@@ -59,7 +61,7 @@ export HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # liquid prompt!
-source $HOME/.liquidprompt/liquidprompt
+#source $HOME/.liquidprompt/liquidprompt
 
 # source autoenv
 source $(which activate.sh)
