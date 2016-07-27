@@ -1,5 +1,5 @@
 [user]
-	email = matjaz.finzgar@gmail.com
+	email = matjaz@finzgar.net
 	name = Matjaž Finžgar
 [push]
 	default = simple
@@ -12,3 +12,5 @@
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [color]
 	ui = auto
+[commit]
+	gpgsign = true
