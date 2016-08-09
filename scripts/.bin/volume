@@ -23,21 +23,21 @@ case $1 in
         ;;
 
     next)
-        mpc -q next
+        playerctl next
         notify-send.sh --replace=2 "Now playing" "$(mpc current)"
         ;;
 
     prev)
-        mpc -q prev
+        playerctl previous
         notify-send.sh --replace=2 "Now playing" "$(mpc current)"
         ;;
 
     play)
-        mpc -q toggle
+        playerctl play-pause
         ;;
 
     stop)
-        mpc -q stop
+        playerctl stop
         notify-send.sh --replace=2 "Now playing" "STOPPED"
         ;;
 esac
