@@ -90,6 +90,9 @@ super + Return
 super + space
 	$HOME/.bin/dmenu_run.sh
 
+super + shift + Return
+	dm-tool lock
+
 super + shift + space
 	$HOME/.bin/dmenu_session.sh
 
@@ -147,20 +150,8 @@ XF86AudioPlay
 XF86AudioStop
 	$HOME/.bin/volume stop
 
-super + alt + p
-	playerctl play-pause
-
-super + F7
-	mpc seek -5
-
-super + F12
-	mpc seek +5
-
 Print
-	scrot -q 100 ~/pics/screens/%Y-%m-%d-%T-screenshot.png
-
-super + Print
-	scrot -q 100 -s -b ~/pics/screens/%Y-%m-%d-%T-screenshot.png
+	xfce4-screenshooter
 
 super + q; {w,f,e,s}
 	{firefox,thunar,subl3,xfce4-screenshooter}
