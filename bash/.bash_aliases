@@ -18,16 +18,12 @@ alias ..='cd ..'
 alias ...='../..'
 alias ....='../../..'
 alias grep='grep --color=auto'
-alias pac='pacman --color=auto'
-alias spac='sudo pacman --color=auto'
 alias df='df -h'
 alias cp='cp -v'
 alias mv='mv -v'
 alias rm='rm -v'
 alias ln='ln -v'
 alias psg='ps -A | grep'
-alias e='micro'
-alias se='sudo micro'
 alias tcopy='tmux show-buffer | xclip -selection clipboard'
 
 # function for font testing
@@ -39,4 +35,9 @@ function pchar {
 function blur_image {
     convert $1 -channel RGBA -blur 0x10 blur-$1
     echo "converted $1 successfully"
+}
+
+# display weather for city
+function wttr {
+    curl http://wttr.in/"$1$2$3"?m
 }
