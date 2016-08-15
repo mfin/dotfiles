@@ -124,7 +124,7 @@ super + shift + {F1,F2}
 	bspc config -d focused window_gap $((`bspc config -d focused window_gap` {+,-} 2 ))
 
 super + ctrl + BackSpace
-	bspc desktop -R 90
+	bspc node @/ -R 90
 
 super + alt + Return
 	{pkill -x panel; bspc config top_padding 0; bspc config bottom_padding 0; bspc config left_padding 0; bspc config right_padding 0, ~/.config/bspwm/panel}
