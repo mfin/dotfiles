@@ -14,6 +14,7 @@ xset fp rehash
 xset m 3/2
 xset r rate 300 30
 xset b off
+xset s 120 180
 
 setxkbmap si -option 'ctrl:nocaps' &
 xsetroot -cursor_name left_ptr &
