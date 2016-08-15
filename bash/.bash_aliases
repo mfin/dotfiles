@@ -2,9 +2,10 @@
 # ~/.bash_aliases
 #
 
+alias l='ls -a'
 alias ls='ls --color=auto --group-directories-first'
-alias ll='ls -lh --color=auto --group-directories-first'
-alias la='ls -lah --color=auto --group-directories-first'
+alias ll='ls -lah --color=auto --group-directories-first'
+alias la='ls -lh --color=auto --group-directories-first'
 alias vct='veracrypt -t'
 alias ga='git add'
 alias gc='git commit -S -m'
