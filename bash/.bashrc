@@ -64,7 +64,7 @@ shopt -s histappend
 #source $HOME/.liquidprompt/liquidprompt
 
 # source autoenv
-source $(which activate.sh)
+#source $(which activate.sh)
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
