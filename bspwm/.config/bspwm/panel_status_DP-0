@@ -49,7 +49,17 @@ vpn(){
     fi
 }
 
+temperature() {
+    CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
+    echo "%{F#FF$WHITE_COLOR}temp %{F}$CPU_TEMP°C"
+}
+
+load_avg() {
+    AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
+    echo "%{F#FF$WHITE_COLOR}load %{F}$AVGLOAD"
+}
+
 while :; do
-    echo "S$(spotify)%{r}$(vpn) $SEP $(wifi_ssid) $SEP $(battery) $SEP $(volume) $SEP $(datetime)"
+    echo "S%{r}$(vpn) $SEP $(load_avg) $SEP $(temperature) $SEP $(volume) $SEP $(datetime)"
     sleep 2
 done
