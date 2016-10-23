@@ -21,7 +21,7 @@ xsetroot -cursor_name left_ptr &
 
 ~/.fehbg &
 compton --sw-opti --use-ewmh-active-win &
-xautolock -detectsleep -time 5 -locker slimlock &
+light-locker &
 dunst &
 unclutter &
 clipster -d &

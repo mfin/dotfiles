@@ -91,7 +91,7 @@ super + space
 	$HOME/.bin/dmenu_run.sh
 
 super + shift + Return
-	dm-tool lock
+	light-locker-command -l
 
 super + shift + space
 	$HOME/.bin/dmenu_session.sh
