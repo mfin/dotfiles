@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+
+# Fetch the next 3 TROLA's!
+
+import re
+import urllib.request
+from bs4 import BeautifulSoup
+
+trola = urllib.request.urlopen("http://www.trola.si/204111")
+body = BeautifulSoup(trola, 'html.parser')
+
+print(body.find('td', string=re.compile('Gameljne')).find_next_sibling('td').text)

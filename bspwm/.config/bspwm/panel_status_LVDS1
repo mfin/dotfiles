@@ -49,6 +49,11 @@ vpn(){
     fi
 }
 
+trola(){
+    SCHEDULE=$($HOME/.bin/trola)
+    echo "%{F#FF$WHITE_COLOR T2}trola %{F T-}$SCHEDULE"
+}
+
 while :; do
     echo "S$(spotify)%{r}$(vpn) $SEP $(wifi_ssid) $SEP $(battery) $SEP $(volume) $SEP $(datetime)"
     sleep 2
