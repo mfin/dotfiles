@@ -1,7 +1,6 @@
 #!/bin/sh
 
 bspc config border_width        5
-bspc config window_gap         10
 
 bspc config split_ratio         0.5
 bspc config borderless_monocle  true
@@ -10,9 +9,11 @@ bspc config focus_by_distance   true
 
 if [[ $(hostname) == 'Mimic' ]]; then
     bspc monitor LVDS1 -d 1 2 3 4 5
+    bspc config window_gap 10
 elif [[ $(hostname) == 'Magneto' ]]; then
     bspc monitor DP-0 -d 1 2 3 4 5
     bspc monitor HDMI-0 -d 6 7 8
+    bspc config window_gap 20
 fi
 
 bspc config normal_border_color '#111111'
@@ -26,4 +27,4 @@ bspc rule -a Spotify desktop=^4 state=floating
 bspc rule -a mpv state=floating
 bspc rule -a Pinentry-gtk-2 state=floating
 
-~/.config/bspwm/panel &
+$HOME/.config/bspwm/panel &
