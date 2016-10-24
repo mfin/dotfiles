@@ -41,14 +41,6 @@ wifi_ssid(){
     fi
 }
 
-vpn(){
-    STATUS=$(ip address | grep tun0 | head -1 | cut -d',' -f4)
-    if [ "$STATUS" == "UP" ]; then
-        echo "%{F#FF$GREEN_COLOR T2}VPN%{F T-}"
-    else echo "%{F#FF$RED_COLOR T2}VPN%{F T-}"
-    fi
-}
-
 temperature() {
     CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
     echo "%{F#FF$WHITE_COLOR}temp %{F}$CPU_TEMP°C"

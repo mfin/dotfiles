@@ -7,7 +7,7 @@ bspc config left_padding 0
 bspc config right_padding 0
 bspc config bottom_padding 0
 
-PANEL_FIFO=~/.config/bspwm/fifo_
+PANEL_FIFO=$HOME/.config/bspwm/fifo_
 
 if [ $(pgrep -cx panel) -gt 1 ] ; then
     printf "%s\n" "The panel is already running." >&2
@@ -23,29 +23,30 @@ CUR_X_OFFSET=0
 num_mon=$(bspc query -M)
 
 for i in $num_mon; do
+    MONITOR=$(bspc query -T -m $i | jq -r .name)
 
     # Remove old panel_fifo and create a new one
-    [ -e "$PANEL_FIFO$i" ] && rm "$PANEL_FIFO$i"
-    mkfifo "$PANEL_FIFO$i"
+    [ -e "$PANEL_FIFO$MONITOR" ] && rm "$PANEL_FIFO$MONITOR"
+    mkfifo "$PANEL_FIFO$MONITOR"
 
-    xtitle -sf 'T%s' > "$PANEL_FIFO$i" &
+    xtitle -sf 'T%s' > "$PANEL_FIFO$MONITOR" &
 
     # Get bspwm information for current monitor
     bspc subscribe |\
-        grep -oE "[Mm]$i[^TM]*[TML]" --line-buffered |\
+        grep -oE "[Mm]$MONITOR[^TM]*[TML]" --line-buffered |\
         while read line; do echo W$line; done \
-            > "$PANEL_FIFO$i" &
+            > "$PANEL_FIFO$MONITOR" &
 
     # Output extra scripts to the panel_fifo
-    ~/.config/bspwm/panel_status_$i > "$PANEL_FIFO$i" &
+    ~/.config/bspwm/panel_status_$MONITOR > "$PANEL_FIFO$MONITOR" &
 
     # Get current monitor width
-    CUR_MON_WIDTH=$(bspc query -T -m $i | jq -r .rectangle.width)
+    CUR_MON_WIDTH=$(bspc query -T -m $MONITOR | jq -r .rectangle.width)
     PANEL_GEO="${CUR_MON_WIDTH}x${PANEL_HEIGHT}+${CUR_X_OFFSET}+0"
 
 
     # Running bar
-    cat "$PANEL_FIFO$i" | ~/.config/bspwm/panel_lemon |\
+    cat "$PANEL_FIFO$MONITOR" | ~/.config/bspwm/panel_lemon |\
         lemonbar -g $PANEL_GEO \
         -F "#FF$FOREGROUND_COLOR" -B "#FF$BACKGROUND_COLOR" -f "$FONT" -f "$FONT2"\
         | while read line; do eval "$line"; done &

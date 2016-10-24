@@ -72,7 +72,7 @@ super + {Left,Down,Up,Right}
 	xdo move {-x -20,-y +20,-y -20,-x +20}
 
 ~button1
-	bspc pointer -g focus
+	bspc node -f pointed
 
 super + button{1-3}
 	; bspc pointer -g {move,resize_side,resize_corner}
