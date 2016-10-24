@@ -16,6 +16,7 @@ alias visualizer='cava -c green -f 30 -i fifo -s 600 -p /home/mfin/.mpd/mpd.fifo
 alias lyrics='beet lyrics -p $(mpc -f "%artist% %title%" current)'
 alias subs='subliminal download -l'
 alias val202='mpv http://mp3.rtvslo.si:80/val202'
+alias rockradio='mpv http://stream.rockradio.si:9034'
 alias ..='cd ..'
 alias ...='../..'
 alias ....='../../..'
