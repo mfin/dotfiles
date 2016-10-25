@@ -3,7 +3,7 @@
 source $(dirname $0)/panel_config
 
 datetime() {
-    echo "%{F#FF$FOREGROUND_COLOR}  $(date +'%H:%M')  %{F-}"
+    echo "%{F#FF$FOREGROUND_COLOR}$(date +'%A, %d.%m.%Y, %H:%M')%{F-}"
 }
 
 battery(){
@@ -60,6 +60,6 @@ load_avg() {
 }
 
 while :; do
-    echo "S%{r}$(load_avg) $SEP $(temperature) $SEP $(volume) $(datetime)"
+    echo "S%{l} $(datetime) %{r}$(load_avg) $SEP $(temperature) $SEP $(volume) %{B-}"
     sleep 2
 done
