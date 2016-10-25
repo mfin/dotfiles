@@ -1,0 +1,58 @@
+#! /bin/sh
+
+# for icons $(printf '%b' "\ue0e1")
+
+source $(dirname $0)/panel_config
+
+spotify(){
+    STATUS=$(playerctl status)
+    if [ "$STATUS" == "Playing" ]; then
+        echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+    elif [ "$STATUS" == "Paused" ]; then
+        echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+    else echo ""
+    fi
+}
+
+wifi_ssid(){
+    NAME=$(iwconfig wlp0s29u1u4 | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+    if [ "$NAME" == "" ]; then
+        echo "%{F#FF$RED_COLOR}wifi no conn%{F}"
+    else echo "%{F#FF$WHITE_COLOR}wifi %{F}$NAME"
+    fi
+}
+
+transmission() {
+    ACTIVETORR=$(transmission-remote -l | egrep '(Downloading|Up & Down)' | wc -l)
+    echo "%{F#FF$WHITE_COLOR}dl %{F}$ACTIVETORR"
+}
+
+check_htpc() {
+    IS_RUNNING=$(curl -Is dnevna.local:32400 | head -1 | cut -d " " -f 3)
+    if [ "$IS_RUNNING" == "" ]; then
+        echo "%{F#FF$WHITE_COLOR}htpc %{F}OFF"
+    else echo "%{F#FF$WHITE_COLOR}htpc %{F}ON"
+    fi
+}
+
+diskspace() {
+    SPACE_AVAIL=$(df -h $1 | tail -1 | sed 's/ \+ / /g' | cut -d " " -f 4)
+    DISK_NAME=$(df -h $1 | tail -1 | cut -d " " -f 1 | cut -d "/" -f 4)
+    echo "%{F#FF$WHITE_COLOR}$DISK_NAME %{F}$SPACE_AVAIL"
+}
+
+syncthing() {
+    SYNC_STATUS=$(systemctl --user status syncthing | grep active | cut -d: -f 2 | cut -d " " -f 2)
+    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
+}
+
+trola(){
+    SCHEDULE=$($HOME/.bin/trola)
+    echo "%{F#FF$WHITE_COLOR T2}trola %{F T-}$SCHEDULE"
+}
+
+
+while :; do
+    echo "S$(spotify)%{r}$(trola) $SEP $(syncthing) %{B-}"
+    sleep 2
+done
