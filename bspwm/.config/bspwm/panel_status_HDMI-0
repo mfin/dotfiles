@@ -10,7 +10,7 @@ spotify(){
         echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
     elif [ "$STATUS" == "Paused" ]; then
         echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
-    else echo ""
+    else echo "$(uname -r)"
     fi
 }
 
@@ -56,6 +56,6 @@ vpn(){
 
 
 while :; do
-    echo "S$(spotify)%{r}$(vpn) $SEP $(syncthing) %{B-}"
+    echo "S%{l} $(spotify) %{r}$(vpn) $SEP $(syncthing) %{B-}"
     sleep 2
 done
