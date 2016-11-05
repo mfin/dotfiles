@@ -111,7 +111,7 @@ hue_lights(){
     else LIGHT2="%{F#FF$RED_COLOR T2 A:hue lights 2 on: A3:hue lights 2 -50:}off%{A A T- F-}"
     fi
 
-    echo "%{F#FF$WHITE_COLOR}hue $LIGHT1 $LIGHT2"
+    echo "%{F#FF$WHITE_COLOR}lights $LIGHT1 $LIGHT2"
 }
 
 battery(){
