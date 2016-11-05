@@ -15,7 +15,7 @@ elif [[ $(hostname) == 'mfinzgar' ]]; then
     bspc monitor DP-2 -d 6 7 8
     bspc config window_gap 15
 elif [[ $(hostname) == 'Magneto' ]]; then
-    bspc monitor DP-0 -d 1 2 3 4 5
+    bspc monitor DVI-I-1 -d 1 2 3 4 5
     bspc monitor HDMI-0 -d 6 7 8
     bspc config window_gap 20
 fi
