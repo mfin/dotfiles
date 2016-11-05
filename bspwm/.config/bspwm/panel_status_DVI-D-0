@@ -1,52 +1,6 @@
 #! /bin/sh
 
-source $(dirname $0)/panel_config
-
-datetime() {
-    echo "%{F#FF$WHITE_COLOR}date %{F}$(date +'%A, %b %d')  %{B#FF$YELLOW2_COLOR F#FF$BLACK_COLOR}  $(date +'%H:%M')  %{F- B-}"
-}
-
-temperature() {
-    CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
-    echo "%{F#FF$WHITE_COLOR}temp %{F}$CPU_TEMP°C"
-}
-
-load_avg() {
-    AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F#FF$WHITE_COLOR}load %{F}$AVGLOAD"
-}
-
-mpd(){
-    STATUS=$(mpc current)
-    if [ "$STATUS" != "" ]; then
-        DONE_PERCENTAGE=$(expr $(mpc | grep playing | cut -d "(" -f 2 | sed 's/%)//g') / 10)
-        TEN_PERC="$(printf '%b' "\ub7")"
-        PROGRESS_BAR=""
-        for (( i = 0; i < 10; i++ )); do
-            MPC_SKIP=$(expr $i*10)
-            if [ $i -lt $DONE_PERCENTAGE ]; then
-                PROGRESS_BAR="$PROGRESS_BAR$TEN_PERC"
-            else PROGRESS_BAR="$PROGRESS_BAR%{F#FF$WHITE_COLOR}$TEN_PERC%{F-}"
-            fi
-        done
-        echo "%{F#FF$WHITE_COLOR A:mpc toggle: A3:mpc stop:}$(printf '%b' "\u266a") %{F}$STATUS%{A A} $PROGRESS_BAR"
-    else echo ""
-    fi
-}
-
-volume(){
-    VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
-    MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
-    if [ "$MUTE" == "yes" ]; then
-        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}vol $VOLUME%%{A F-}"
-    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}vol %{F}$VOLUME%%{A}"
-    fi
-}
-
-syncthing() {
-    SYNC_STATUS=$(systemctl status syncthing@mfin | grep active | cut -d: -f 2 | cut -d " " -f 2)
-    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
-}
+source $(dirname $0)/panel_functions
 
 while :; do
     echo "S$(mpd)%{r}$(syncthing) $SEP $(temperature) $SEP $(load_avg) $SEP $(volume) $SEP $(datetime)"
