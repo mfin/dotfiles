@@ -155,3 +155,12 @@ Print
 
 super + q; {w,f,e,s}
 	{firefox,thunar,subl3,xfce4-screenshooter}
+
+super + alt + minus
+	{hue lights 2 on, hue lights 2 off}
+
+super + alt + comma
+	hue lights 2 -50
+
+super + alt + period
+	hue lights 2 +50
