@@ -3,6 +3,6 @@
 source $(dirname $0)/panel_functions
 
 while :; do
-    echo "S%{l} $(datetime) %{r}$(vpn) $SEP $(wifi_ssid) $SEP $(battery) $SEP $(volume) %{B-}"
+    echo "S%{l} $(datetime_right) %{r}$(vpn) $SEP $(wifi_ssid) $SEP $(battery) $SEP $(volume) %{B-}"
     sleep 2
 done

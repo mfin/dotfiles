@@ -48,11 +48,15 @@ syncthing() {
 
 trola(){
     SCHEDULE=$($HOME/.bin/trola)
-    echo "%{F#FF$WHITE_COLOR T2}trola %{F T-}$SCHEDULE"
+    echo "%{F#FF$WHITE_COLOR}trola %{F}$SCHEDULE"
 }
 
-datetime() {
+datetime_right() {
     echo "%{F#FF$FOREGROUND_COLOR B#FF$CYAN_COLOR} $(date +'%d.%m.%Y, %H:%M') %{B F-}"
+}
+
+datetime_left() {
+    echo "%{F#FF$WHITE_COLOR}d%{F} $(date +'%d.%m.%Y') $SEP %{F#FF$WHITE_COLOR}h%{F} $(date +'%H:%M')%{B F-}"
 }
 
 temperature() {
