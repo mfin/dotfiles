@@ -1,3 +1,3 @@
-ARGS='-i -h 25 -fn '-*-gohufont-medium-r-*-*-14-*-*-*-*-*-*-*' -nb '#000000' -sb '#000000' -nf '#ffffff' -sf '#d36265' -s 0'
+ARGS='-i -h 25 -fn '-*-termsynu-medium-r-*-*-14-*-*-*-*-*-*-*' -nb '#000000' -sb '#000000' -nf '#ffffff' -sf '#d36265' -s 0'
 DMENU="dmenu $ARGS"
 DMENU_RUN="dmenu_run -p Run: $ARGS"
