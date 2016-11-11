@@ -52,7 +52,7 @@ trola(){
 }
 
 datetime_right() {
-    echo "%{F#FF$FOREGROUND_COLOR B#FF$CYAN_COLOR} $(date +'%d.%m.%Y, %H:%M') %{B F-}"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue01f")%{F} $(date +'%d.%m.%Y') $SEP %{F#FF$WHITE_COLOR}$(printf '%b' "\ue016")%{F} $(date +'%H:%M') %{B F-}"
 }
 
 datetime_left() {
@@ -61,12 +61,12 @@ datetime_left() {
 
 temperature() {
     CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
-    echo "%{F#FF$WHITE_COLOR}temp %{F}$CPU_TEMP°C"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue0c9") %{F}$CPU_TEMP°C"
 }
 
 load_avg() {
     AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F#FF$WHITE_COLOR}load %{F}$AVGLOAD"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue0c5") %{F}$AVGLOAD"
 }
 
 mpd(){
@@ -91,31 +91,34 @@ volume(){
     VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
     MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
     if [ "$MUTE" == "yes" ]; then
-        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}vol $VOLUME%%{A F-}"
-    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}vol %{F}$VOLUME%%{A}"
+        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d") $VOLUME%%{A F-}"
+    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d") %{F}$VOLUME%%{A}"
     fi
 }
 
 syncthing() {
     SYNC_STATUS=$(systemctl --user status syncthing | grep active | cut -d: -f 2 | cut -d " " -f 2)
-    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue083") %{F}$SYNC_STATUS"
 }
 
 hue_lights(){
     STATUS1=$(hue lights 1 | cut -d' ' -f5)
     STATUS2=$(hue lights 2 | cut -d' ' -f5)
+    LIGHTS_ICON_ON=$(printf '%b' "\ue098")
+    LIGHTS_ICON_OFF=$(printf '%b' "\ue098")
+
 
     if [ "$STATUS1" == "on" ]; then
-        LIGHT1="%{F#FF$GREEN_COLOR T2 A:hue lights 1 off: A3:hue lights 1 -50:}on%{A A T- F-}"
-    else LIGHT1="%{F#FF$RED_COLOR T2 A:hue lights 1 on:}off%{A T- F-}"
+        LIGHT1="%{F#FF$YELLOW_COLOR A:hue lights 1 off: A3:hue lights 1 -50:}$LIGHTS_ICON_ON%{A A F-}"
+    else LIGHT1="%{F#FF$BLACK2_COLOR A:hue lights 1 on:}$LIGHTS_ICON_OFF%{A F-}"
     fi
 
     if [ "$STATUS2" == "on" ]; then
-        LIGHT2="%{F#FF$GREEN_COLOR T2 A:hue lights 2 off: A3:hue lights 2 -50:}on%{A A T- F-}"
-    else LIGHT2="%{F#FF$RED_COLOR T2 A:hue lights 2 on: A3:hue lights 2 -50:}off%{A A T- F-}"
+        LIGHT2="%{F#FF$YELLOW_COLOR A:hue lights 2 off: A3:hue lights 2 -50:}$LIGHTS_ICON_ON%{A A F-}"
+    else LIGHT2="%{F#FF$BLACK2_COLOR A:hue lights 2 on: A3:hue lights 2 -50:}$LIGHTS_ICON_OFF%{A A F-}"
     fi
 
-    echo "%{F#FF$WHITE_COLOR}lights $LIGHT1 $LIGHT2"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue0cc") $LIGHT1$LIGHT2"
 }
 
 battery(){

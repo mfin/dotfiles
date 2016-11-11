@@ -3,6 +3,6 @@
 source $(dirname $0)/panel_functions
 
 while :; do
-    echo "S%{l} $(hue_lights) %{r}$(load_avg) $SEP $(temperature) $SEP $(volume) $(datetime_right)"
+    echo "S%{l} $(hue_lights) %{r}$(load_avg) $SEP $(temperature) $SEP $(volume) $SEP $(datetime_right)"
     sleep 2
 done
