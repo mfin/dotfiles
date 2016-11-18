@@ -14,6 +14,7 @@ elif [[ $(hostname) == 'mfinzgar' ]]; then
     bspc monitor HDMI-1 -d 1 2 3 4 5
     bspc monitor DP-2 -d 6 7 8
     bspc config window_gap 15
+    bspc rule -a Firefox state=floating
 elif [[ $(hostname) == 'Magneto' ]]; then
     bspc monitor DVI-I-1 -d 1 2 3 4 5
     bspc monitor HDMI-0 -d 6 7 8
@@ -30,5 +31,6 @@ bspc config urgent_border_color '#b76969'
 bspc rule -a Spotify desktop=^4 state=floating
 bspc rule -a mpv state=floating
 bspc rule -a Pinentry-gtk-2 state=floating
+bspc rule -a Shutter state=floating
 
 $HOME/.config/bspwm/panel &
