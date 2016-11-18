@@ -151,10 +151,10 @@ XF86AudioStop
 	$HOME/.bin/volume stop
 
 Print
-	xfce4-screenshooter
+	shutter -s
 
 super + q; {w,f,e,s}
-	{firefox,thunar,subl3,xfce4-screenshooter}
+	{firefox,thunar,subl3,shutter -s}
 
 super + alt + minus
 	{hue lights 2 on, hue lights 2 off}
