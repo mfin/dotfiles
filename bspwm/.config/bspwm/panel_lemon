@@ -30,27 +30,27 @@ while read -r line ; do
                         case $item in
                             O*)
                                 # focused occupied desktop
-                                desk="%{F#FF$FOREGROUND_COLOR}$(printf '%b' "\uf22d")%{F-}"
+                                desk="%{F#FF$FOREGROUND_COLOR}${name}%{F-}"
                                 ;;
                             F*)
                                 # focused free desktop
-                                desk="%{F#FF$FOREGROUND_COLOR}$(printf '%b' "\uf22d")%{F-}"
+                                desk="%{F#FF$FOREGROUND_COLOR}${name}%{F-}"
                                 ;;
                             U*)
                                 # focused urgent desktop
-                                desk="%{F#FF$RED_COLOR}$(printf '%b' "\uf22d")%{F-}"
+                                desk="%{F#FF$RED_COLOR}${name}%{F-}"
                                 ;;
                             o*)
                                 # occupied desktop
-                                desk="%{F#FF$BLUE_COLOR}$(printf '%b' "\uf22d")%{F-}"
+                                desk="%{F#FF$BLUE_COLOR}${name}%{F-}"
                                 ;;
                             f*)
                                 # free desktop
-                                desk="%{F#FF$BLACK2_COLOR}$(printf '%b' "\uf22d")%{F-}"
+                                desk="%{F#FF$BLACK2_COLOR}${name}%{F-}"
                                 ;;
                             u*)
                                 # urgent desktop
-                                desk="%{B#FF$RED_COLOR F#FF$BLACK_COLOR}$(printf '%b' "\uf22d")%{F- B-}"
+                                desk="%{B#FF$RED_COLOR F#FF$BLACK_COLOR}${name}%{F- B-}"
                                 ;;
                         esac
                         wm_infos="${wm_infos}%{A:bspc desktop -f ${name}:}${desk} %{A}"

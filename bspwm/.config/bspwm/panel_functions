@@ -8,10 +8,10 @@ source $(dirname $0)/panel_config
 spotify(){
     STATUS=$(playerctl status)
     if [ "$STATUS" == "Playing" ]; then
-        echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\uf1bc")%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+        echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\uf1bc")%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A}"
     elif [ "$STATUS" == "Paused" ]; then
-        echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\uf1bc")%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
-    else echo "$(uname -r)"
+        echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\uf1bc")%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A}"
+    else echo "%{F#FF$RED_COLOR}$(printf '%b' "\uf1bc")%{F-} Spotify OFF"
     fi
 }
 
