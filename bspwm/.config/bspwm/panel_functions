@@ -1,15 +1,16 @@
 #!/bin/sh
 
 # Panel functions
+# icons: $(printf '%b' "\ue01f")
 
 source $(dirname $0)/panel_config
 
 spotify(){
     STATUS=$(playerctl status)
     if [ "$STATUS" == "Playing" ]; then
-        echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+        echo "%{F#FF$GREEN_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\uf1bc")%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
     elif [ "$STATUS" == "Paused" ]; then
-        echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}spotify%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
+        echo "%{F#FF$YELLOW_COLOR T2 A:playerctl play-pause: A3:playerctl stop:}$(printf '%b' "\uf1bc")%{F- T-} $(playerctl metadata xesam:artist) - $(playerctl metadata xesam:title)%{A A} $SEP "
     else echo "$(uname -r)"
     fi
 }
@@ -17,8 +18,8 @@ spotify(){
 wifi_ssid(){
     NAME=$(iw wlp3s0 link | grep SSID | cut -d' ' -f2)
     if [ "$NAME" == "" ]; then
-        echo "%{F#FF$RED_COLOR T2}wifi no conn%{F T-}"
-    else echo "%{F#FF$WHITE_COLOR T2}wifi %{F T-}$NAME"
+        echo "%{F#FF$RED_COLOR T2}$(printf '%b' "\uf1eb") no conn%{F T-}"
+    else echo "%{F#FF$WHITE_COLOR T2}$(printf '%b' "\uf1eb") %{F T-}$NAME"
     fi
 }
 
@@ -43,25 +44,25 @@ diskspace() {
 
 syncthing() {
     SYNC_STATUS=$(systemctl --user status syncthing | grep active | cut -d: -f 2 | cut -d " " -f 2)
-    echo "%{F#FF$WHITE_COLOR}sync %{F}$SYNC_STATUS"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf021") %{F}$SYNC_STATUS"
 }
 
 trola(){
     SCHEDULE=$($HOME/.bin/trola)
-    echo "%{F#FF$WHITE_COLOR}trola %{F}$SCHEDULE"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf207") %{F}$SCHEDULE"
 }
 
 datetime_right() {
-    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue01f")%{F} $(date +'%d.%m.%Y') $SEP %{F#FF$WHITE_COLOR}$(printf '%b' "\ue016")%{F} $(date +'%H:%M') %{B F-}"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf073")%{F} $(date +'%d.%m.%Y') $SEP %{F#FF$WHITE_COLOR}$(printf '%b' "\uf017")%{F} $(date +'%H:%M') %{B F-}"
 }
 
 datetime_left() {
-    echo "%{F#FF$WHITE_COLOR}d%{F} $(date +'%d.%m.%Y') $SEP %{F#FF$WHITE_COLOR}h%{F} $(date +'%H:%M')%{B F-}"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf073")%{F} $(date +'%d.%m.%Y') $SEP %{F#FF$WHITE_COLOR}$(printf '%b' "\uf017")%{F} $(date +'%H:%M')%{B F-}"
 }
 
 temperature() {
     CPU_TEMP=$(sensors | grep "Core 0" | cut -d+ -f2 | cut -d. -f1)
-    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue0c9") %{F}$CPU_TEMP°C"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf2c7") %{F}$CPU_TEMP°C"
 }
 
 load_avg() {
@@ -91,21 +92,16 @@ volume(){
     VOLUME=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[1]}')
     MUTE=$(pulseaudio-ctl full-status | awk '{split($0, array, " ")} END{print array[2]}')
     if [ "$MUTE" == "yes" ]; then
-        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d") $VOLUME%%{A F-}"
-    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\ue05d") %{F}$VOLUME%%{A}"
+        echo "%{F#FF$RED_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\uf028") $VOLUME%%{A F-}"
+    else echo "%{F#FF$WHITE_COLOR A:pulseaudio-ctl mute:}$(printf '%b' "\uf028") %{F}$VOLUME%%{A}"
     fi
-}
-
-syncthing() {
-    SYNC_STATUS=$(systemctl --user status syncthing | grep active | cut -d: -f 2 | cut -d " " -f 2)
-    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue083") %{F}$SYNC_STATUS"
 }
 
 hue_lights(){
     STATUS1=$(hue lights 1 | cut -d' ' -f5)
     STATUS2=$(hue lights 2 | cut -d' ' -f5)
-    LIGHTS_ICON_ON=$(printf '%b' "\ue098")
-    LIGHTS_ICON_OFF=$(printf '%b' "\ue098")
+    LIGHTS_ICON_ON=$(printf '%b' "\uf205")
+    LIGHTS_ICON_OFF=$(printf '%b' "\uf204")
 
 
     if [ "$STATUS1" == "on" ]; then
@@ -118,14 +114,14 @@ hue_lights(){
     else LIGHT2="%{F#FF$BLACK2_COLOR A:hue lights 2 on: A3:hue lights 2 -50:}$LIGHTS_ICON_OFF%{A A F-}"
     fi
 
-    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\ue0cc") $LIGHT1$LIGHT2"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf0eb") $LIGHT1$LIGHT2"
 }
 
 battery(){
     CAPACITY=$(cat /sys/class/power_supply/BAT0/capacity)
     if [ $CAPACITY -lt 20 ]; then
-        echo "%{F#FF$RED_COLOR T2}bat $CAPACITY%%{F T-}"
-    else echo "%{F#FF$WHITE_COLOR T2}bat %{F T-}$CAPACITY%"
+        echo "%{F#FF$RED_COLOR T2}$(printf '%b' "\uf241") $CAPACITY%%{F T-}"
+    else echo "%{F#FF$WHITE_COLOR T2}$(printf '%b' "\uf241") %{F T-}$CAPACITY%"
     fi
 }
 

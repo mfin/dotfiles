@@ -85,7 +85,7 @@ super + @button{1-3}
 # CUSTOM
 
 super + Return
-	urxvt
+	termite
 
 super + space
 	$HOME/.bin/dmenu_run.sh
