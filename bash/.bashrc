@@ -66,5 +66,8 @@ shopt -s histappend
 # source autoenv
 #source $(which activate.sh)
 
+# masquerade as xterm!
+export TERM=xterm
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
