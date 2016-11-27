@@ -30,4 +30,4 @@ CYAN2_COLOR="$(getXresColor color14)"
 WHITE_COLOR="$(getXresColor color7)"
 WHITE2_COLOR="$(getXresColor color15)"
 
-SEP=""
+SEP="%{F#FF$BLACK2_COLOR}$(printf '%b' "\uf105")%{F-}"
