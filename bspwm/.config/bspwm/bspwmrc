@@ -32,5 +32,6 @@ bspc rule -a Spotify desktop=^4 state=floating
 bspc rule -a mpv state=floating
 bspc rule -a Pinentry-gtk-2 state=floating
 bspc rule -a Shutter state=floating
+bspc rule -a Pavucontrol state=floating
 
 $HOME/.config/bspwm/panel &
