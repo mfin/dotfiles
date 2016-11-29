@@ -67,7 +67,7 @@ temperature() {
 
 load_avg() {
     AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
-    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf080") %{F}$AVGLOAD"
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf0e4") %{F}$AVGLOAD"
 }
 
 mpd(){

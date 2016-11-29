@@ -3,8 +3,8 @@
 PANEL_HEIGHT=25
 PANEL_WIDTH=$(sres -W)
 PANEL_GEOMETRY="${PANEL_WIDTH}x30+0+0"
-FONT="Inconsolata:style=bold:size=12"
-FONT2="FontAwesome:style=bold:size=11"
+FONT="Noto Mono:size=10"
+FONT2="Font Awesome:size=11"
 
 getXresColor() {
    echo -n "$( xrdb -query | grep "\*.$1:" | grep -oE "#[a-zA-Z0-9]{6}" | cut -c 2- )";
@@ -30,4 +30,4 @@ CYAN2_COLOR="$(getXresColor color14)"
 WHITE_COLOR="$(getXresColor color7)"
 WHITE2_COLOR="$(getXresColor color15)"
 
-SEP="%{F#FF$BLACK2_COLOR}$(printf '%b' "\uf105")%{F-}"
+SEP="%{F#FF$BLACK2_COLOR} $(printf '%b' "\uf0da") %{F-}"
