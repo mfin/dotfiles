@@ -164,3 +164,6 @@ super + alt + comma
 
 super + alt + period
 	hue lights 2 +50
+
+super + alt + space
+	clipster -s
