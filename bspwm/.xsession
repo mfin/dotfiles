@@ -21,7 +21,7 @@ setxkbmap si -option 'ctrl:nocaps' &
 xsetroot -cursor_name left_ptr &
 
 ~/.fehbg &
-compton --sw-opti --use-ewmh-active-win &
+compton --use-ewmh-active-win &
 xscreensaver -no-splash &
 xss-lock -- xscreensaver-command --lock &
 dunst &
