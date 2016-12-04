@@ -91,7 +91,7 @@ super + space
 	$HOME/.bin/dmenu_run.sh
 
 super + shift + Return
-	light-locker-command -l
+	xset s activate
 
 super + shift + space
 	$HOME/.bin/dmenu_session.sh

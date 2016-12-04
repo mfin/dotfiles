@@ -22,7 +22,8 @@ xsetroot -cursor_name left_ptr &
 
 ~/.fehbg &
 compton --sw-opti --use-ewmh-active-win &
-light-locker &
+xscreensaver -no-splash &
+xss-lock -- xscreensaver-command --lock &
 dunst &
 unclutter &
 clipster -d &
