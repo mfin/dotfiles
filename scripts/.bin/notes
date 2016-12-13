@@ -1,19 +1,49 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Look for configuration file at ~/.config/notes/config and use it
+if [ -f ~/.config/notes/config ]; then 
+    . ~/.config/notes/config
+fi
 
 configured_dir=${NOTES_DIRECTORY%/} # Remove trailing slashes
 notes_dir="${configured_dir:-$HOME/notes}"
-escaped_notes_dir=$(printf $notes_dir | sed -e 's/[]\/$*.^|[]/\\&/g')
+escaped_notes_dir="$(printf "$notes_dir" | sed -e 's/[]\/$*.^|[]/\\&/g')"
+
+# If no $EDITOR, look for `editor` (symlink on debian/ubuntu/etc)
+if [ -z "$EDITOR" ] && type editor &>/dev/null; then
+    EDITOR=editor
+fi
 
 without_notes_dir() {
-    cat | sed -e s/^$escaped_notes_dir//g | sed -E "s/^\/+//g" 
+    cat | sed -e "s/^$escaped_notes_dir//g" | sed -E "s/^\/+//g"
+}
+
+ls_notes() {
+    local ls_output=$(ls -p "$notes_dir/$*" 2>&1)
+    local ls_result=$?
+    local formatted_output
+
+    if [ $# -gt 0 ]; then
+        local path_prefix=$(printf "${*%/}" | sed -e 's/[]\/$*.^|[]/\\&/g')
+        formatted_output=$(printf "$ls_output" | sed -E "s/^/$path_prefix\//")
+    else
+        formatted_output=$ls_output
+    fi
+
+    if [[ $ls_result == 0 && "$formatted_output" ]]; then
+        printf "$formatted_output\n"
+        return 0
+    else
+        return 2
+    fi
 }
 
 find_notes() {
-    find_output=$(find "$notes_dir" -ipath "$notes_dir/*$**" -type f 2>&1)
-    find_result=$?
-    formatted_output=$(printf "$find_output" | without_notes_dir)
+    local find_output=$(find "$notes_dir" -ipath "$notes_dir/*$**" -type f 2>&1)
+    local find_result=$?
+    local formatted_output=$(printf "$find_output" | without_notes_dir)
 
-    if [[ $find_result == 0 && $formatted_output ]]; then
+    if [[ $find_result == 0 && "$formatted_output" ]]; then
         printf "$formatted_output\n"
         return 0
     else
@@ -27,11 +57,11 @@ grep_notes() {
         return 1
     fi
 
-    grep_output=$(grep -r "$notes_dir" -li -e "$*" 2>&1)
-    grep_result=$?
-    formatted_output=$(printf "$grep_output" | without_notes_dir)
+    local grep_output=$(grep -r "$notes_dir" -li -e "$*" 2>&1)
+    local grep_result=$?
+    local formatted_output=$(printf "$grep_output" | without_notes_dir)
 
-    if [[ $grep_result == 0 && $formatted_output ]]; then
+    if [[ $grep_result == 0 && "$formatted_output" ]]; then
         printf "$formatted_output\n"
         return 0
     else
@@ -40,9 +70,25 @@ grep_notes() {
 }
 
 new_note() {
-    note_name="$*"
-    mkdir -p $(dirname "$notes_dir/$note_name")
+    local note_name="$*"
+    mkdir -p "$(dirname "$notes_dir/$note_name")"
     open_note "$note_name.md"
+}
+
+remove_note() {
+    local rm_args=()
+    if [[ "$1" == "-r" || "$1" == "--recursive" ]]; then
+        rm_args+=("--recursive")
+        shift
+    fi
+
+    local note_name="$*"
+    local to_remove="$notes_dir/$note_name"
+
+    if [ -f "$notes_dir/$note_name.md" ]; then
+        to_remove="$notes_dir/$note_name.md"
+    fi
+    rm "${rm_args[@]}" "$to_remove"
 }
 
 open_something() {
@@ -59,13 +105,17 @@ open_something() {
 }
 
 open_note() {
-    note_path=$1
+    local note_path=$1
 
     if [[ "$note_path" != *.md ]]; then
         note_path="$note_path.md"
     fi
     if [ ! -f "$note_path" ]; then
         note_path="$notes_dir/$note_path"
+    fi
+    if [ -z "$EDITOR" ]; then
+        printf "Please set \$EDITOR to edit notes\n"
+        exit 1
     fi
 
     $EDITOR "$note_path" < /dev/tty
@@ -76,13 +126,17 @@ usage() {
 notes is a command line note taking tool.
 
 Usage:
-    notes new <name>                    # Create a new note
-    notes find [pattern]                # Search notes by filename and path
-    notes grep <pattern>                # Search notes by content
-    notes open                          # Open your notes directory
-    notes open <name>                   # Open a note for editing by full name
-    echo <name> | notes open            # Open all note filenames piped in
-    notes --help                        # Print this usage information
+    notes new|n <name>                    # Create a new note
+    notes ls <pattern>                    # List notes by path
+    notes find|f [pattern]                # Search notes by filename and path
+    notes grep|g <pattern>                # Search notes by content
+    notes open|o                          # Open your notes directory
+    notes open|o <name>                   # Open a note for editing by full name
+    notes rm [-r | --recursive] <name>    # Remove note, or folder if -r or --recursive is given
+    echo <name> | notes open|o            # Open all note filenames piped in
+    notes --help                          # Print this usage information
+
+'command|c' means you can use 'command' or the equivalent shorthand alias 'c'
 
 Your notes directory is $notes_dir. You can
 override this by setting \$NOTES_DIRECTORY to your preferred path.
@@ -90,8 +144,8 @@ EOF
 }
 
 main() {
-    ret=0
-    cmd=""
+    local ret=0
+    local cmd=""
 
     if [ -z "$1" ]; then
         printf "No command specified\n\n"
@@ -100,17 +154,23 @@ main() {
     fi
 
     case "$1" in
-        "new" )
+        "new"|"n" )
             cmd="new_note"
             ;;
-        "find" )
+        "ls" )
+            cmd="ls_notes"
+            ;;
+        "find"|"f" )
             cmd="find_notes"
             ;;
-        "grep" )
+        "grep"|"g" )
             cmd="grep_notes"
             ;;
-        "open" )
+        "open"|"o" )
             cmd="open_something"
+            ;;
+        "rm" )
+            cmd="remove_note"
             ;;
         --help | -help | -h )
             cmd="usage"
@@ -123,7 +183,7 @@ main() {
     esac
     shift
 
-    $cmd $@
+    $cmd "$@"
     ret=$[$ret+$?]
     exit $ret
 }
