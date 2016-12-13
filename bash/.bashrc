@@ -69,5 +69,7 @@ shopt -s histappend
 # masquerade as xterm!
 export TERM=xterm
 
+export NOTES_DIRECTORY=$HOME/Sync/notes
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
