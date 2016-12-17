@@ -1,0 +1,18 @@
+#!/bin/bash
+
+case $1 in
+    1)
+        STATUS1=$(hue lights 1 | cut -d' ' -f5)
+        if [ "$STATUS1" == "on" ]; then
+            hue lights 1 off
+        else hue lights 1 on
+        fi
+        ;;
+    2)
+        STATUS2=$(hue lights 2 | cut -d' ' -f5)
+        if [ "$STATUS2" == "on" ]; then
+            hue lights 2 off
+        else hue lights 2 on
+        fi
+        ;;
+esac
