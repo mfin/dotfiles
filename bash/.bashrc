@@ -33,25 +33,30 @@ man() {
 # 	git rev-parse --short HEAD 2>/dev/null
 # }
 
-# PROMPT_COMMAND='__git_ps1 "${PYTHON_VIRTUALENV}\[\033[0;36m\]\u\[\033[0m\] \[\033[0;33m\]\W\[\033[0m\]" " \[\e[31;1m\]> \[\e[0m\]" " \[\033[1;36m\]:\[\033[0m\]%s \[\033[0;35m\]$(get_sha)"'
+# masquerade as xterm!
+export TERM=xterm
 
+# better prompt
 source $HOME/.bash_prompt
 
-# Start the gpg-agent if not already running
+# set notes directory
+export NOTES_DIRECTORY=$HOME/Sync/notes
+
+# start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
   gpg-connect-agent /bye >/dev/null 2>&1
 fi
 
-# Set SSH to use gpg-agent
+# set SSH to use gpg-agent
 unset SSH_AGENT_PID
 if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 fi
 
-# Set GPG TTY
+# set GPG TTY
 export GPG_TTY=$(tty)
 
-# Refresh gpg-agent tty in case user switches into an X session
+# refresh gpg-agent tty in case user switches into an X session
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
 # force ignoredups and ignorespace
@@ -65,11 +70,6 @@ shopt -s histappend
 
 # source autoenv
 #source $(which activate.sh)
-
-# masquerade as xterm!
-export TERM=xterm
-
-export NOTES_DIRECTORY=$HOME/Sync/notes
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
