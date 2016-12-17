@@ -54,8 +54,8 @@
     <keepBorder>yes</keepBorder>
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
-      <name>candy</name>
-      <size>8</size>
+      <name>Termsynu</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -63,8 +63,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>candy</name>
-      <size>8</size>
+      <name>Termsynu</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -72,8 +72,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>candy</name>
-      <size>8</size>
+      <name>Termsynu</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -81,8 +81,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>candy</name>
-      <size>8</size>
+      <name>Termsynu</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -90,8 +90,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>candy</name>
-      <size>9</size>
+      <name>Termsynu</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -99,8 +99,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>candy</name>
-      <size>9</size>
+      <name>Termsynu</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -120,10 +120,10 @@
     <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
-      <name>home</name>
-      <name>term</name>
-      <name>web</name>
-      <name>fun</name>
+      <name>1</name>
+      <name>2</name>
+      <name>3</name>
+      <name>4</name>
     </names>
     <popupTime>875</popupTime>
     <!-- The number of milliseconds to show the popup for when switching
@@ -224,22 +224,22 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-F1">
+    <keybind key="W-1">
       <action name="GoToDesktop">
         <to>1</to>
       </action>
     </keybind>
-    <keybind key="W-F2">
+    <keybind key="W-2">
       <action name="GoToDesktop">
         <to>2</to>
       </action>
     </keybind>
-    <keybind key="W-F3">
+    <keybind key="W-3">
       <action name="GoToDesktop">
         <to>3</to>
       </action>
     </keybind>
-    <keybind key="W-F4">
+    <keybind key="W-4">
       <action name="GoToDesktop">
         <to>4</to>
       </action>
@@ -248,7 +248,7 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
-    <keybind key="A-F4">
+    <keybind key="W-q">
       <action name="Close"/>
     </keybind>
     <keybind key="A-F5">
@@ -323,7 +323,7 @@
         <command>firefox</command>
       </action>
     </keybind>
-    <keybind key="W-r">
+    <keybind key="W-f">
       <action name="Execute">
         <command>urxvt -e ranger</command>
       </action>
@@ -333,9 +333,9 @@
         <command>urxvt -e ncmpcpp</command>
       </action>
     </keybind>
-    <keybind key="W-q">
+    <keybind key="W-g">
       <action name="Execute">
-        <command>urxvt -e htop</command>
+        <command>urxvt -e glances</command>
       </action>
     </keybind>
     <keybind key="W-space">
@@ -343,7 +343,7 @@
         <command>dmenu_run.sh</command>
       </action>
     </keybind>
-    <keybind key="W-t">
+    <keybind key="W-Return">
       <action name="Execute">
         <command>urxvt</command>
       </action>
@@ -390,12 +390,17 @@
     </keybind>
     <keybind key="Print">
       <action name="Execute">
-        <command>gnome-screenshot</command>
+        <command>shutter -s</command>
       </action>
     </keybind>
-    <keybind key="W-Print">
+    <keybind key="W-a-minus">
       <action name="Execute">
-        <command>gnome-screenshot --interactive</command>
+        <command>hue_toggle 2</command>
+      </action>
+    </keybind>
+    <keybind key="W-a-comma">
+      <action name="Execute">
+        <command>hue_toggle 1</command>
       </action>
     </keybind>
   </keyboard>
@@ -471,7 +476,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action xmlns="http://openbox.org/3.4/rc" name="ToggleMaximize"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">

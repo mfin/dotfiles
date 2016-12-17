@@ -13,13 +13,13 @@ window.*.client.color: #283634
 ## TITLE
 
 # Add some padding
-padding.width: 10
-padding.height: 8
+padding.width: 3
+padding.height: 3
 
 # Set title colors
 window.*.title.bg: Solid Flat
 window.*.*.bg: Parentrelative
-window.active.title.bg.color: #ef8171
+window.active.title.bg.color: #000000
 window.inactive.title.bg.color: #000000
 window.inactive.label.text.color: #999999
 window.active.label.text.color: #ffffff
@@ -32,17 +32,20 @@ window.active.button.*.image.color: #ffffff
 
 # Set menu colors
 menu.*.bg: Solid Flat
-menu.*.bg.color: #EEEEEE
-menu.*.text.color: #021B21
+menu.title.text.color: #ffffff
+menu.items.bg.color: #000000
+menu.items.text.color: #ffffff
+menu.items.active.bg.color: #ffffff
+menu.items.active.text.color: #000000
 
 # Add some padding
-menu.border.width: 20
-menu.border.color: #EEEEEE
+menu.border.width: 5
+menu.border.color: #000000
 
 # Add some submenu padding
-menu.overlap.x: -30
+menu.overlap.x: -10
 menu.overlap.y: 0
 
 # Add padding between items
 menu.separator.padding.height: 3
-menu.separator.color: #EEEEEE
+menu.separator.color: #111111
