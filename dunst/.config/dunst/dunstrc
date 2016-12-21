@@ -128,7 +128,7 @@
     # xev might be helpful to find names for keys
 
     # close notification
-    close = ctrl+space
+    close = mod4+minus
 
     # close all notifications
     close_all = ctrl+shift+space
