@@ -2,6 +2,7 @@
 # ~/.bashrc
 #
 
+# import my aliases
 . ~/.bash_aliases
 
 # send pass copied passwords to primary
@@ -19,25 +20,21 @@ man() {
     man "$@"
 }
 
-# beaufify the prompt (with git)
-#. /usr/share/git/completion/git-prompt.sh
-
-# GIT_PS1_SHOWDIRTYSTATE=1
-# GIT_PS1_SHOWSTASHSTATE=1
-# GIT_PS1_SHOWUNTRACKEDFILES=1
-# GIT_PS1_SHOWCOLORHINTS=1
-# GIT_PS1_DESCRIBE_STYLE="branch"
-# GIT_PS1_SHOWUPSTREAM="auto git"
-
-# get_sha() {
-# 	git rev-parse --short HEAD 2>/dev/null
-# }
-
 # masquerade as xterm!
 export TERM=xterm
 
 # better prompt
 source $HOME/.bash_prompt
+
+# some tab completion wizardry
+bind "set completion-ignore-case on"
+bind "set completion-map-case on"
+bind "set show-all-if-ambiguous on"
+
+# 'cd' wizardry
+shopt -s autocd
+shopt -s dirspell
+shopt -s cdspell
 
 # set notes directory
 export NOTES_DIRECTORY=$HOME/Sync/notes
@@ -59,17 +56,24 @@ export GPG_TTY=$(tty)
 # refresh gpg-agent tty in case user switches into an X session
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# force ignoredups and ignorespace
-export HISTCONTROL=ignoreboth
-
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-# liquid prompt!
-#source $HOME/.liquidprompt/liquidprompt
+# save multi-line commands as one command
+shopt -s cmdhist
 
-# source autoenv
-#source $(which activate.sh)
+# huge history. doesn't appear to slow things down, so why not?
+HISTSIZE=500000
+HISTFILESIZE=100000
+
+# avoid duplicate entries
+HISTCONTROL="erasedups:ignoreboth"
+
+# don't record some commands
+export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
+
+# useful timestamp format
+HISTTIMEFORMAT='%F %T '
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
