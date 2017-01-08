@@ -15,4 +15,4 @@ eval "$(dircolors -b)"
 
 #[[ -s "/home/mfin/.gvm/scripts/gvm" ]] && source "/home/mfin/.gvm/scripts/gvm"
 
-export QT_STYLE_OVERRIDE=gtk
+export QT_QPA_PLATFORMTHEME="qt5ct"
