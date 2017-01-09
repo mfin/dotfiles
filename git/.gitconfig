@@ -12,5 +12,3 @@
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [color]
 	ui = auto
-[commit]
-	gpgsign = true
