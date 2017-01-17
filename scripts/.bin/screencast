@@ -17,8 +17,8 @@ QMAX=10                         # Maximum Quantization [1-31] (Lower is better q
 FULLSCREEN="1920x1080"          # Set your desktop resolution
 #DISPLAY=:0.1                    # Set to record specific monitor 0.0 or 0.1?
 
-OUTPUT="/home/mfin/out.webm"
-TMP="/home/mfin/out.mkv"
+OUTPUT="$HOME/out.webm"
+TMP="$HOME/out.mkv"
 KEEP=true                      # Keep original mkv file after conversion [true|false]
 
 if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
