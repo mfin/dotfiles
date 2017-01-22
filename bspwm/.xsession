@@ -30,5 +30,5 @@ clipster -d &
 #( sleep 3 && stalonetray ) &
 #~/.screenlayout/default.sh &
 
-sxhkd -f 50 &
+sxhkd &
 #exec bspwm
