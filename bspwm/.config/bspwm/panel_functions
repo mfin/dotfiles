@@ -126,7 +126,7 @@ battery(){
 }
 
 vpn(){
-    STATUS=$(ip address | grep tun0 | head -1 | cut -d',' -f4)
+    STATUS=$(ip address | grep vpn | head -1 | cut -d',' -f4)
     if [ "$STATUS" == "UP" ]; then
         echo "%{F#FF$GREEN_COLOR T2}$(printf '%b' "\uf023") VPN%{F T-}"
     else echo "%{F#FF$RED_COLOR T2}$(printf '%b' "\uf09c") VPN%{F T-}"
