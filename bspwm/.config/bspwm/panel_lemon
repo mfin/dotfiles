@@ -61,5 +61,5 @@ while read -r line ; do
             IFS=$NORMIFS
             ;;
     esac
-    printf "%s\n" "%{c} $wm_infos$sys_infos"
+    printf "%s\n" "%{l}$wm_infos$sys_infos"
 done
