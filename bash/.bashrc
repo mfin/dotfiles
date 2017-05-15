@@ -75,5 +75,8 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
 # useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
+# source travis.sh. if it exists
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
