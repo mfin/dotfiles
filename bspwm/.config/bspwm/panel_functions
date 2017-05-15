@@ -134,7 +134,7 @@ vpn(){
 }
 
 todo(){
-    TODO_FILE="$HOME/Sync/notes/todo.md"
+    TODO_FILE="$HOME/Nextcloud/Notes/todo.txt"
     TODO_ITEMS=$(grep -c "^\[\ ]" $TODO_FILE)
 
     echo "%{F#FF$WHITE_COLOR A:code $TODO_FILE:}$(printf '%b' "\uf0ca") %{F}$TODO_ITEMS items%{A}"

@@ -16,7 +16,7 @@ if [[ $(hostname) == 'Mimic' ]]; then
 elif [[ $(hostname) == 'mfinzgar' ]]; then
     bspc monitor HDMI-1 -d     
     bspc monitor DP-2 -d 6 7 8
-    bspc config window_gap 15
+    bspc config window_gap 20
     bspc rule -a Firefox state=floating
 elif [[ $(hostname) == 'Magneto' ]]; then
     bspc monitor DVI-I-1 -d     

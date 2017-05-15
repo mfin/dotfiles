@@ -24,7 +24,7 @@ decorations none
 # dockapp_mode <mode>        # set dockapp mode, which can be either simple (for
                              # e.g. OpenBox, wmaker for WindowMaker, or none
                              # (default). NEW in 0.8.
-dockapp_mode simple
+dockapp_mode none
 
 # fuzzy_edges [<level>]      # enable fuzzy edges and set fuzziness level. level
                              # can be from 0 (disabled) to 3; this setting works
@@ -34,7 +34,7 @@ fuzzy_edges 0
 
 # geometry <geometry>        # tray's geometry in standard X notation; width and
                              # height are specified in slot_size multiples
-geometry 1x1+170+0
+geometry 1x1+0+1060
 
 # grow_gravity <gravity>     # one of N, S, E, W, NW, NE, SW, SE; tray will grow
                              # in the direction opposite to one specified by
@@ -47,7 +47,7 @@ grow_gravity W
 icon_gravity NW
 
 # icon_size <int>            # specifies dimensions of typical icon slot
-icon_size 24
+icon_size 16
 
 # log_level <level>          # controls the amount of logging output, level can
                              # be err (default), info, or trace (enabled only
@@ -66,6 +66,8 @@ log_level err
                              #     icon_size
                              # * use_icon_hints - use icon window hints to
                              #     dtermine icon size
+
+kludges force_icons_size
 
 # max_geometry <geometry>    # maximal tray dimensions; 0 in width/height means
                              # no limit
@@ -95,6 +97,8 @@ scrollbars none
 # slot_size <int>            # specifies size of icon slot, defaults to
                              # icon_size NEW in 0.8.
 
+slot_size 20
+
 # skip_taskbar [<bool>]      # hide tray`s window from the taskbar
 skip_taskbar true
 
@@ -111,7 +115,7 @@ tint_level 0
 
 # transparent [<bool>]       # whether to use root-transparency (background
                              # image must be set with Esetroot or compatible utility)
-transparent false
+transparent true
 
 # vertical [<bool>]          # whether to use vertical layout (horisontal layout
                              # is used by default)
@@ -119,7 +123,7 @@ vertical false
 
 # window_layer <layer>       # set the EWMH-compatible window layer; one of:
                              # bottom, normal, top
-window_layer normal
+window_layer bottom
 
 # window_strut <mode>        # enable/disable window struts for tray window (to
                              # avoid converting of tray window by maximized
@@ -130,7 +134,7 @@ window_strut auto
 
 # window_type <type>         # set the EWMH-compatible window type; one of:
                              # desktop, dock, normal, toolbar, utility
-window_type dock
+window_type desktop
 
 # xsync [<bool>]             # whether to operate on X server synchronously (SLOOOOW)
 xsync false
