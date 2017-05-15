@@ -27,7 +27,7 @@ xss-lock -- xscreensaver-command --lock &
 dunst &
 unclutter &
 clipster -d &
-#( sleep 3 && stalonetray ) &
+( sleep 3 && stalonetray ) &
 #~/.screenlayout/default.sh &
 
 sxhkd &

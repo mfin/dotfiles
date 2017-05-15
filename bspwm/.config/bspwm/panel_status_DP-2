@@ -3,6 +3,6 @@
 source $(dirname $0)/panel_functions
 
 while :; do
-    echo "S%{l} $(spotify) %{r}$(trola) $SEP $(syncthing) %{B-}"
+    echo "S%{c} $(spotify) %{r}$(bitcoin) $SEP $(trola) $SEP $(syncthing) %{B-}"
     sleep 2
 done
