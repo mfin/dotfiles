@@ -18,6 +18,9 @@ elif [[ $(hostname) == 'mfinzgar' ]]; then
     bspc monitor DP-2 -d 6 7 8
     bspc config window_gap 20
     bspc rule -a Firefox state=floating
+    bspc rule -a Google-chrome state=floating
+    bspc rule -a Google-chromium state=floating
+    bspc rule -a Chromium state=floating
 elif [[ $(hostname) == 'Magneto' ]]; then
     bspc monitor DVI-I-1 -d     
     bspc monitor HDMI-0 -d 6 7 8
