@@ -8,6 +8,7 @@ bspc config gapless_monocle           true
 bspc config focus_by_distance         true
 bspc config remove_disabled_monitors  true
 bspc config remove_unplugged_monitors true
+bspc config pointer_modifier          mod1
 
 if [[ $(hostname) == 'Mimic' ]]; then
     bspc monitor LVDS1 -d     
