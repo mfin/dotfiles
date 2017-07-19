@@ -135,6 +135,21 @@ XF86AudioLowerVolume
 XF86AudioRaiseVolume
 	$HOME/.bin/volume up 5
 
+super + ctrl + Next
+	$HOME/.bin/volume down 5
+
+super + ctrl + Prior
+	$HOME/.bin/volume up 5
+
+super + ctrl + Home
+	$HOME/.bin/volume next
+
+super + ctrl + End
+	$HOME/.bin/volume prev
+
+super + ctrl + Insert
+	$HOME/.bin/volume play
+
 XF86AudioMute
 	$HOME/.bin/volume mute
 
