@@ -3,6 +3,6 @@
 source $(dirname $0)/panel_functions
 
 while :; do
-    echo "S%{c} $(datetime_left) %{r}$(load_avg) $SEP $(todo) $SEP $(temperature) $SEP $(volume) %{B-}"
+    echo "S%{c} $(worklog) %{r}$(load_avg) $SEP $(temperature) $SEP $(volume) $SEP $(datetime_right)%{B-}"
     sleep 2
 done

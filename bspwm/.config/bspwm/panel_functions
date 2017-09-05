@@ -145,3 +145,9 @@ bitcoin(){
 
     echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf15a") %{F}$BC_JSON"
 }
+
+worklog(){
+    WORKLOG=$(watson status)
+
+    echo "%{F#FF$WHITE_COLOR}$(printf '%b' "\uf0ad") %{F}$WORKLOG"
+}
