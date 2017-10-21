@@ -1,8 +1,0 @@
-#! /bin/sh
-
-source $(dirname $0)/panel_functions
-
-while :; do
-    echo "S%{r}$(vpn) $SEP $(trola) %{B-}"
-    sleep 2
-done

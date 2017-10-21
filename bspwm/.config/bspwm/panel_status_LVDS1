@@ -1,8 +1,0 @@
-#! /bin/sh
-
-source $(dirname $0)/panel_functions
-
-while :; do
-    echo "S%{r}$(wifi_ssid) $SEP $(battery) $SEP $(volume) $SEP $(datetime_right)%{B-}"
-    sleep 2
-done

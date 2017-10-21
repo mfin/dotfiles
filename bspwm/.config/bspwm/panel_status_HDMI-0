@@ -1,8 +1,0 @@
-#! /bin/sh
-
-source $(dirname $0)/panel_functions
-
-while :; do
-    echo "S%{l} $(spotify) %{r}$(vpn) $SEP $(syncthing) %{B-}"
-    sleep 2
-done

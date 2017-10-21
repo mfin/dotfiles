@@ -85,13 +85,13 @@ super + @button{1-3}
 # CUSTOM
 
 super + Return
-	termite
+	urxvt
 
 super + space
 	$HOME/.bin/dmenu_run.sh
 
 super + shift + Return
-	xset s activate
+	dm-tool lock
 
 super + shift + space
 	$HOME/.bin/dmenu_session.sh
@@ -126,8 +126,11 @@ super + shift + {F1,F2}
 super + ctrl + BackSpace
 	bspc node @/ -R 90
 
-super + alt + Return
-	{pkill -x panel; bspc config top_padding 0; bspc config bottom_padding 0; bspc config left_padding 0; bspc config right_padding 0, ~/.config/bspwm/panel}
+XF86MonBrightnessUp
+	xbacklight +10
+
+XF86MonBrightnessDown
+	xbacklight -10
 
 XF86AudioLowerVolume
 	$HOME/.bin/volume down 5
@@ -141,44 +144,29 @@ super + ctrl + Next
 super + ctrl + Prior
 	$HOME/.bin/volume up 5
 
-super + ctrl + Home
-	$HOME/.bin/volume next
-
-super + ctrl + End
-	$HOME/.bin/volume prev
-
-super + ctrl + Insert
-	$HOME/.bin/volume play
-
 XF86AudioMute
 	$HOME/.bin/volume mute
 
-XF86AudioPrev
-	$HOME/.bin/volume prev
-
-XF86AudioNext
+super + ctrl + Right
 	$HOME/.bin/volume next
 
-XF86AudioPlay
+super + ctrl + Left
+	$HOME/.bin/volume prev
+
+super + ctrl + Up
 	$HOME/.bin/volume play
 
-XF86AudioStop
+super + ctrl + Down
 	$HOME/.bin/volume stop
 
 Print
-	shutter -s
+	xfce4-screenshooter
 
 super + q; {w,f,e,s,a}
-	{firefox,thunar,subl3,shutter -s,pavucontrol}
+	{qutebrowser,urxvt -e ranger,code,xfce4-screenshooter,pavucontrol}
 
 super + alt + minus
 	{hue lights 2 on, hue lights 2 off}
-
-super + alt + comma
-	hue lights 2 -50
-
-super + alt + period
-	hue lights 2 +50
 
 super + alt + space
 	clipster -s -c

@@ -1,0 +1,175 @@
+[colors]
+background = ${xrdb:background:#000000}
+foreground = ${xrdb:foreground:#ffffff}
+primary = ${xrdb:color6:#ffffff}
+alert = ${xrdb:color4:#ff0000}
+
+[bar/mimic_main]
+monitor = ${env:MONITOR:eDP1}
+width = 100%
+height = 25
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Misc Termsynu:pixelsize=13;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = siji:pixelsize=10;1
+
+modules-left = bspwm
+modules-center = music
+modules-right = pavolume wlan eth battery_0 battery_1 date
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/pavolume]
+type = custom/script
+tail = true
+label = %output%
+exec = ~/.config/polybar/pavolume.sh --listen
+click-right = exec pavucontrol
+click-left = ~/.config/polybar/pavolume.sh --togmute
+scroll-up = ~/.config/polybar/pavolume.sh --up
+scroll-down = ~/.config/polybar/pavolume.sh --down
+
+[module/music]
+type = custom/script
+interval = 5
+
+label = %output:0:45:...%
+exec = ~/.config/polybar/mpris.sh
+click-left = playerctl play-pause
+click-middle = playerctl previous
+click-right = playerctl next
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.primary}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.primary}
+label-empty-padding = 2
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.alert}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+[module/eth]
+type = internal/network
+interface = enp0s25
+interval = 3.0
+
+format-connected-prefix = " "
+label-connected = %local_ip%
+
+format-disconnected = <label-disconnected>
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.alert}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = " %d.%m.%Y"
+
+time = %H:%M
+time-alt = %H:%M:%S
+
+format-prefix = 
+
+label = %date% %time%
+
+[module/battery_1]
+type = internal/battery
+battery = BAT1
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> B1 <label-charging>
+format-discharging = <ramp-capacity> B1 <label-discharging>
+
+format-full-prefix = " B1 "
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-framerate = 750
+
+[module/battery_0]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> B0 <label-charging>
+format-discharging = <ramp-capacity> B0 <label-discharging>
+
+format-full-prefix = " B0 "
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-framerate = 750
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
