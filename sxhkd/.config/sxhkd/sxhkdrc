@@ -88,7 +88,7 @@ super + Return
 	urxvt
 
 super + space
-	$HOME/.bin/dmenu_run.sh
+	rofi -show run
 
 super + shift + Return
 	dm-tool lock

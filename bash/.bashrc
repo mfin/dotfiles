@@ -5,9 +5,6 @@
 # import my aliases
 . ~/.bash_aliases
 
-# send pass copied passwords to primary
-export PASSWORD_STORE_X_SELECTION=primary
-
 # make man pages colorful
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -35,9 +32,6 @@ bind "set show-all-if-ambiguous on"
 shopt -s autocd
 shopt -s dirspell
 shopt -s cdspell
-
-# set notes directory
-export NOTES_DIRECTORY=$HOME/Sync/notes
 
 # start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
@@ -74,9 +68,6 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
 
 # useful timestamp format
 HISTTIMEFORMAT='%F %T '
-
-# source travis.sh. if it exists
-[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
