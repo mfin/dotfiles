@@ -6,4 +6,4 @@ ExecStart=/usr/bin/udiskie -2
 ExecStop=/usr/bin/pkill udiskie
 
 [Install]
-WantedBy=mfin.target
+WantedBy=default.target

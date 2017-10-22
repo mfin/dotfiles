@@ -86,7 +86,7 @@ format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
 
 format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
+label-disconnected =
 label-disconnected-foreground = ${colors.alert}
 
 ramp-signal-0 = 
@@ -104,7 +104,7 @@ format-connected-prefix = " "
 label-connected = %local_ip%
 
 format-disconnected = <label-disconnected>
-label-disconnected = %ifname% disconnected
+label-disconnected = 
 label-disconnected-foreground = ${colors.alert}
 
 [module/date]
@@ -127,8 +127,8 @@ battery = BAT1
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> B1 <label-charging>
-format-discharging = <ramp-capacity> B1 <label-discharging>
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " B1 "
 
@@ -147,8 +147,8 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> B0 <label-charging>
-format-discharging = <ramp-capacity> B0 <label-discharging>
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
 
 format-full-prefix = " B0 "
 
