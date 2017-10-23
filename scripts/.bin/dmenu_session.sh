@@ -9,7 +9,7 @@ fi
 choice=$(echo -e "lock\nexit\nshutdown\nreboot" | $DMENU)
 
 case $choice in
-	lock) dm-tool lock & ;;
+	lock) xscreensaver-command --lock & ;;
 	exit) bspc quit & ;;
 	shutdown) poweroff & ;;
 	reboot) reboot & ;;
