@@ -19,6 +19,5 @@ xss-lock -- dm-tool lock &
 dunst &
 unclutter &
 clipster -d &
-stalonetray &
 
 sxhkd &
