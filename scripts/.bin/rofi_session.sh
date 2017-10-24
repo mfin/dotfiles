@@ -6,7 +6,7 @@ else
 	DMENU='dmenu -i'
 fi
 
-choice=$(echo -e "lock\nexit\nshutdown\nreboot" | $DMENU)
+choice=$(echo -e "lock\nexit\nshutdown\nreboot" | rofi -dmenu)
 
 case $choice in
 	lock) xscreensaver-command --lock & ;;

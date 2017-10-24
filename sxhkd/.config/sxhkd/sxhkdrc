@@ -94,7 +94,7 @@ super + shift + Return
 	xscreensaver-command --lock
 
 super + shift + space
-	$HOME/.bin/dmenu_session.sh
+	$HOME/.bin/rofi_session.sh
 
 super + {F3,F1}
 	CUR_DESKTOP=$(bspc query -d -D); \
