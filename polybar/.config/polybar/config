@@ -119,7 +119,8 @@ type = custom/script
 interval = 5
 
 label = %output%
-exec = ~/.config/polybar/backup.sh
+exec = echo "backup running!"
+exec-if = pgrep borg > /dev/null
 
 [module/xwindow]
 type = internal/xwindow
