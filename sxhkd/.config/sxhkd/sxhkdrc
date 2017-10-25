@@ -162,8 +162,8 @@ super + ctrl + Down
 Print
 	xfce4-screenshooter
 
-super + q; {w,f,e,s,a,t}
-	{qutebrowser,urxvt -e ranger,code,xfce4-screenshooter,pavucontrol,urxvt -e vim $HOME/Dropbox/Personal/todo.txt}
+super + q; {w,f,e,s,a}
+	{qutebrowser,urxvt -e ranger,code,xfce4-screenshooter,pavucontrol}
 
 super + alt + minus
 	{hue lights 2 on, hue lights 2 off}
