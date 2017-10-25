@@ -54,8 +54,8 @@ font-0 = Misc Termsynu:pixelsize=13;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = siji:pixelsize=10;1
 
-modules-left = bspwm
-modules-center = music
+modules-left = bspwm backup
+modules-center =
 modules-right = pavolume date
 
 wm-restack = bspwm
@@ -83,8 +83,8 @@ font-0 = Misc Termsynu:pixelsize=13;1
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm
-modules-center =
-modules-right =
+modules-center = music
+modules-right = bitcoin
 
 tray-position = right
 tray-padding = 2
@@ -114,10 +114,15 @@ click-left = playerctl play-pause
 click-middle = playerctl previous
 click-right = playerctl next
 
+[module/bitcoin]
+type = custom/script
+interval = 180
+label = BTC %output%
+exec = curl -s 'https://www.bitstamp.net/api/v2/ticker/btceur/' | jq -r '.last'
+
 [module/backup]
 type = custom/script
 interval = 5
-
 label = %output%
 exec = echo "backup running!"
 exec-if = pgrep borg > /dev/null
