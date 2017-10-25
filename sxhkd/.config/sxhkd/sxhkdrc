@@ -147,6 +147,9 @@ super + ctrl + Prior
 XF86AudioMute
 	$HOME/.bin/volume mute
 
+XF86AudioMicMute
+        pulseaudio-ctl mute-input
+
 super + ctrl + Right
 	$HOME/.bin/volume next
 
