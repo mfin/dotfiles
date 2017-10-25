@@ -23,7 +23,7 @@ font-0 = Misc Termsynu:pixelsize=13;1
 ;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-1 = siji:pixelsize=10;1
 
-modules-left = bspwm
+modules-left = bspwm backup
 modules-center = music
 modules-right = pavolume wlan eth battery_0 battery_1 date
 
@@ -113,6 +113,13 @@ exec = ~/.config/polybar/mpris.sh
 click-left = playerctl play-pause
 click-middle = playerctl previous
 click-right = playerctl next
+
+[module/backup]
+type = custom/script
+interval = 5
+
+label = %output%
+exec = ~/.config/polybar/backup.sh
 
 [module/xwindow]
 type = internal/xwindow
