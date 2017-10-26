@@ -55,7 +55,7 @@ font-0 = Misc Termsynu:pixelsize=13;1
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
-modules-center =
+modules-center = xwindow
 modules-right = pavolume date
 
 wm-restack = bspwm
@@ -84,7 +84,7 @@ font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = music
-modules-right = bitcoin
+modules-right = bitcoin trola
 
 tray-position = right
 tray-padding = 2
@@ -114,6 +114,13 @@ click-left = playerctl play-pause
 click-middle = playerctl previous
 click-right = playerctl next
 
+[module/trola]
+type = custom/script
+interval = 60
+
+label = LPP %output%
+exec = trola
+
 [module/bitcoin]
 type = custom/script
 interval = 180
@@ -129,7 +136,7 @@ exec-if = pgrep borg > /dev/null
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:50:...%
 
 [module/bspwm]
 type = internal/bspwm
