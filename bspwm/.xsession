@@ -13,7 +13,7 @@ xset s 120 180
 setxkbmap si -option 'ctrl:nocaps' &
 xsetroot -cursor_name left_ptr &
 
-~/.fehbg &
+nitrogen --restore &
 compton --use-ewmh-active-win &
 xscreensaver -no-splash &
 xss-lock -- xscreensaver-command --lock &
