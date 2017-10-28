@@ -94,6 +94,65 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/wolverine_main]
+monitor = ${env:MONITOR:DVI-I-1}
+width = 100%
+height = 25
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Misc Termsynu:pixelsize=13;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = siji:pixelsize=10;1
+
+modules-left = bspwm backup
+modules-center = xwindow
+modules-right = openconnect pavolume date
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/wolverine_secondary]
+monitor = ${env:MONITOR:HDMI-0}
+width = 100%
+height = 25
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Misc Termsynu:pixelsize=13;1
+;font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = siji:pixelsize=10;1
+
+modules-left = bspwm
+modules-center = music
+modules-right = bitcoin
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = bspwm
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
 [module/pavolume]
 type = custom/script
 tail = true

@@ -148,7 +148,7 @@ XF86AudioMute
 	$HOME/.bin/volume mute
 
 XF86AudioMicMute
-        pulseaudio-ctl mute-input
+    pulseaudio-ctl mute-input
 
 super + ctrl + Right
 	$HOME/.bin/volume next
@@ -169,7 +169,7 @@ super + q; {w,f,e,s,a}
 	{qutebrowser,urxvt -e ranger,code,xfce4-screenshooter,pavucontrol}
 
 super + alt + minus
-	{hue lights 2 on, hue lights 2 off}
+	hue_toggle 2
 
 super + alt + space
 	clipster -s -c
