@@ -2,7 +2,7 @@
 background = ${xrdb:background:#000000}
 foreground = ${xrdb:foreground:#ffffff}
 primary = ${xrdb:color6:#ffffff}
-alert = ${xrdb:color4:#ff0000}
+alert = ${xrdb:color1:#ff0000}
 
 [bar/mimic_main]
 monitor = ${env:MONITOR:eDP1}
@@ -115,7 +115,7 @@ font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
 modules-center = xwindow
-modules-right = openconnect pavolume date
+modules-right = openconnect pavolume date powermenu
 
 wm-restack = bspwm
 
@@ -305,6 +305,36 @@ animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = true
+
+format-spacing = 1
+
+label-open = 
+label-open-foreground = ${colors.alert}
+label-close =  cancel
+label-close-foreground = ${colors.alert}
+label-separator = |
+label-separator-foreground = ${colors.primary}
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-2 = suspend
+menu-0-2-exec = menu-open-3
+
+menu-1-0 = Confirm reboot!
+menu-1-0-exec = systemctl reboot
+
+menu-2-0 = Confirm power off!
+menu-2-0-exec = systemctl poweroff
+
+menu-3-0 = Confirm suspend!
+menu-3-0-exec = systemctl suspend
 
 [settings]
 screenchange-reload = true
