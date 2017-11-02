@@ -55,7 +55,7 @@ font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
 modules-center = xwindow
-modules-right = pavolume date powermenu
+modules-right = cpu memory temperature pavolume date powermenu
 
 wm-restack = bspwm
 
@@ -202,6 +202,37 @@ exec-if = pgrep borg > /dev/null
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.primary}
+label = %percentage_used%%
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-warn = <ramp> <label-warn>
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.alert}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.primary}
 
 [module/bspwm]
 type = internal/bspwm
