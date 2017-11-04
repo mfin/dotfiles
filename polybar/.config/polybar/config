@@ -301,7 +301,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " B1 "
+format-full-prefix = " "
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -321,7 +321,7 @@ full-at = 98
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 
-format-full-prefix = " B0 "
+format-full-prefix = " "
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
