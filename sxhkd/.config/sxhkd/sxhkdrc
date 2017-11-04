@@ -176,3 +176,6 @@ super + alt + space
 
 super + alt + v
 	zathura $HOME/Dropbox/Documents/vim_cheat_sheet_for_programmers_screen.pdf
+
+XF86Search
+	rofi -show combi
