@@ -173,3 +173,6 @@ super + alt + minus
 
 super + alt + space
 	clipster -s -c
+
+super + alt + v
+	zathura $HOME/Dropbox/Documents/vim_cheat_sheet_for_programmers_screen.pdf
