@@ -1,5 +1,5 @@
 [global]
-    font = Misc Termsynu 11
+    font = Terminus 12
 
     # <b>bold</b>
     # <i>italic</i>
