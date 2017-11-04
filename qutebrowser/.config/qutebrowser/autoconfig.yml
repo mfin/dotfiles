@@ -4,6 +4,8 @@
 config_version: 1
 global:
   completion.height: 25%
+  confirm_quit:
+  - always
   fonts.completion.category: bold 10pt monospace
   fonts.completion.entry: 10pt monospace
   fonts.statusbar: 10pt monospace
