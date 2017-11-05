@@ -11,8 +11,10 @@ URxvt.clipboard.copycmd:    xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:   xclip -o -selection clipboard
 URxvt.clipboard.autocopy:   true
 URxvt*scrollBar:            False
-URxvt*font:                 -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
-URxvt*boldFont:             -*-terminus-bold-r-*-*-16-*-*-*-*-*-*-*
+!URxvt*font:                 -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
+!URxvt*boldFont:             -*-terminus-bold-r-*-*-16-*-*-*-*-*-*-*
+URxvt*font: xft:Iosevka NF:size=10
+URxvt*boldFont: xft:Iosevka NF:size=10:style=bold
 URxvt*externalBorder:       0
 URxvt*internalBorder:       5
 URxvt*borderLess:           False

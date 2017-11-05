@@ -8,6 +8,7 @@ global:
   - always
   fonts.completion.category: bold 10pt monospace
   fonts.completion.entry: 10pt monospace
+  fonts.monospace: '"Iosevka NF"'
   fonts.statusbar: 10pt monospace
   fonts.tabs: 10pt monospace
   scrolling.smooth: true
