@@ -3,6 +3,8 @@
 
 config_version: 1
 global:
+  colors.hints.bg: rgba(0, 0, 0, 0.6)
+  colors.hints.fg: yellow
   completion.height: 25%
   confirm_quit:
   - always
@@ -11,7 +13,9 @@ global:
   fonts.monospace: '"Iosevka NF"'
   fonts.statusbar: 10pt monospace
   fonts.tabs: 10pt monospace
+  hints.border: '1px solid #ffffff'
   scrolling.smooth: true
+  tabs.background: true
   tabs.padding:
     bottom: 5
     left: 5
