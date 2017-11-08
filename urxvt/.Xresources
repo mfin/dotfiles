@@ -14,7 +14,7 @@ URxvt*scrollBar:            False
 !URxvt*font:                 -*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*
 !URxvt*boldFont:             -*-terminus-bold-r-*-*-16-*-*-*-*-*-*-*
 URxvt*font: xft:Iosevka NF:size=10:style=medium
-URxvt*boldFont: xft:Iosevka NF:size=10:style=bold
+URxvt*boldFont: xft:Iosevka NF:size=10:style=heavy
 URxvt*externalBorder:       0
 URxvt*internalBorder:       5
 URxvt*borderLess:           False
