@@ -12,7 +12,7 @@ global:
   fonts.completion.entry: 10pt monospace
   fonts.monospace: '"Iosevka NF"'
   fonts.statusbar: 10pt monospace
-  fonts.tabs: 10pt monospace
+  fonts.tabs: bold 10pt monospace
   hints.border: '1px solid #ffffff'
   scrolling.smooth: true
   tabs.background: true
