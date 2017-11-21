@@ -10,6 +10,11 @@
 	last = show -1
 	unstage = reset HEAD --
 	cached = diff --cached
+	d = difftool
 	ignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
 [color]
 	ui = auto
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
