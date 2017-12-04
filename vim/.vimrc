@@ -3,30 +3,33 @@ set nocp
 set encoding=utf8
 set ffs=unix,dos,mac
 set nocompatible
-set nu
 filetype off
 syntax on
 set foldmethod=indent
 set foldlevel=99
-let python_highlight_all=1
 
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf.vim'
+Plug 'davidhalter/jedi-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+call plug#end()
 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-
-let g:ycm_autoclose_preview_window_after_completion=1
+" Keep undo history across sessions by storing it in a file
+if has('persistent_undo')
+    let undo_dir = expand('$HOME/.vim/undo_dir')
+    if !isdirectory(undo_dir)
+        call mkdir(undo_dir, "", 0700)
+    endif
+    set undodir=$HOME/.vim/undo_dir
+    set undofile
+endif
 
 hi User1 ctermfg=black ctermbg=white guifg=black guibg=white
 
