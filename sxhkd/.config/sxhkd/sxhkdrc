@@ -165,6 +165,9 @@ super + ctrl + Down
 Print
 	xfce4-screenshooter
 
+shift + Print
+	xfce4-screenshooter -r -m
+
 super + q; {w,f,e,s,a}
 	{qutebrowser,urxvt -e ranger,code,xfce4-screenshooter,pavucontrol}
 
