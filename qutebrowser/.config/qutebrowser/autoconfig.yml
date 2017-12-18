@@ -8,11 +8,11 @@ global:
   completion.height: 25%
   confirm_quit:
   - always
-  fonts.completion.category: bold 10pt monospace
-  fonts.completion.entry: 10pt monospace
-  fonts.monospace: '"Iosevka NF"'
-  fonts.statusbar: 10pt monospace
-  fonts.tabs: bold 10pt monospace
+  fonts.completion.category: bold 12px monospace
+  fonts.completion.entry: 12px monospace
+  fonts.monospace: '"dina"'
+  fonts.statusbar: 12px monospace
+  fonts.tabs: 12px monospace
   hints.border: '1px solid #ffffff'
   scrolling.smooth: true
   tabs.background: true
