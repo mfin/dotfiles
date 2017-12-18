@@ -8,5 +8,5 @@ ExecStart=/usr/bin/mpd --no-daemon
 ExecStop=/usr/bin/mpd --kill
 
 [Install]
-WantedBy=mfin.target
+WantedBy=default.target
 Also=mpd.socket

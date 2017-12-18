@@ -8,4 +8,4 @@ ExecStart=/usr/bin/pulseaudio --start
 ExecStop=/usr/bin/pulseaudio --kill
 
 [Install]
-WantedBy=mfin.target
+WantedBy=default.target

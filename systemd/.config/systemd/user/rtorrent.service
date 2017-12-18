@@ -11,4 +11,4 @@ ExecStop=/usr/bin/stmux send-keys -t rt:rtorrent C-q
 WorkingDirectory=/home/%I/
 
 [Install]
-WantedBy=mfin.target
+WantedBy=default.target
