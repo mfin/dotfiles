@@ -3,7 +3,10 @@
 #
 
 export EDITOR=vim
-export PATH="$HOME/.bin:$PATH"
+export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 eval "$(dircolors -b $HOME/.dircolors)"
 
