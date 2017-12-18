@@ -2,8 +2,7 @@
 
 xrdb -merge ~/.Xresources
 xset +fp /usr/share/fonts/local
-xset +fp $HOME/.fonts/bitmap-fonts/bitmap/termsyn-1.8.7/
-xset +fp $HOME/.fonts/bitmap-fonts/bitmap/siji/
+xset +fp $HOME/.fonts/bitmap-fonts/bitmap/dina/
 xset fp rehash
 xset m 3/2
 xset r rate 300 30

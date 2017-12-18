@@ -19,7 +19,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka NF:pixelsize=10:antialias=true:style=medium;2
+font-0 = dina:pixelsize=12;3
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
@@ -49,7 +49,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka NF:pixelsize=10:antialias=true:style=medium;2
+font-0 = dina:pixelsize=12;3
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
@@ -76,7 +76,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka NF:pixelsize=10:antialias=true:style=medium;2
+font-0 = dina:pixelsize=12;3
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm
@@ -106,7 +106,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka NF:pixelsize=10:antialias=true:style=medium;2
+font-0 = dina:pixelsize=12;3
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
@@ -133,7 +133,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka NF:pixelsize=10:antialias=true:style=medium;2
+font-0 = dina:pixelsize=12;3
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm
