@@ -29,6 +29,7 @@ modules-right = openconnect pavolume wlan eth battery_0 battery_1 date
 tray-position = right
 tray-padding = 2
 
+override-redirect = true
 wm-restack = bspwm
 
 cursor-click = pointer
@@ -56,6 +57,7 @@ modules-left = bspwm backup
 modules-center = xwindow
 modules-right = cpu memory temperature pavolume date powermenu
 
+override-redirect = true
 wm-restack = bspwm
 
 cursor-click = pointer
@@ -86,6 +88,7 @@ modules-right = bitcoin trola
 tray-position = right
 tray-padding = 2
 
+override-redirect = true
 wm-restack = bspwm
 
 cursor-click = pointer
@@ -113,6 +116,7 @@ modules-left = bspwm backup
 modules-center = xwindow
 modules-right = openconnect pavolume date powermenu
 
+override-redirect = true
 wm-restack = bspwm
 
 cursor-click = pointer
@@ -143,6 +147,7 @@ modules-right = bitcoin
 tray-position = right
 tray-padding = 2
 
+override-redirect = true
 wm-restack = bspwm
 
 cursor-click = pointer

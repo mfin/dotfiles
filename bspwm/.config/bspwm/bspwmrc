@@ -16,6 +16,7 @@ bspc config presel_border_color '#719d72'
 bspc config normal_sticky_border_color '#8abeb7'
 bspc config focused_sticky_border_color '#f0c674'
 bspc config urgent_border_color '#b76969'
+bspc config top_padding 25
 
 bspc rule -a mpv state=floating
 bspc rule -a Pinentry-gtk-2 state=floating
