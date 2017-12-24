@@ -88,7 +88,7 @@ super + Return
 	urxvt
 
 super + space
-	rofi -show combi
+	rofi -show drun
 
 super + shift + Return
 	xscreensaver-command --lock
@@ -181,4 +181,4 @@ super + alt + v
 	zathura $HOME/Dropbox/Documents/vim_cheat_sheet_for_programmers_screen.pdf
 
 XF86Search
-	rofi -show combi
+	rofi -show drun
