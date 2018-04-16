@@ -19,6 +19,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-notes'
 call plug#end()
 
 " Keep undo history across sessions by storing it in a file
