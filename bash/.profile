@@ -3,7 +3,8 @@
 #
 
 export EDITOR=vim
-export PATH="$HOME/.bin:$HOME/.pyenv/bin:$PATH"
+export SSH_ASKPASS=/usr/bin/qt4-ssh-askpass
+export PATH="$HOME/.local/bin:$HOME/.bin:$HOME/.pyenv/bin:$PATH"
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
