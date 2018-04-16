@@ -11,15 +11,17 @@ URxvt.clipboard.copycmd:    xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:   xclip -o -selection clipboard
 URxvt.clipboard.autocopy:   true
 URxvt*scrollBar:            False
-URxvt*font:                 -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-URxvt*boldFont:             -*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
 URxvt*externalBorder:       0
 URxvt*internalBorder:       5
 URxvt*borderLess:           False
-Xft.antialias:  1
-Xft.autohint:   0
-Xft.dpi:        96
-Xft.hinting:    1
-Xft.hintstyle:  hintslight
-Xft.lcdfilter:  lcdlight
-Xft.rgba:       rgb
+
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                true
+Xft.hintstyle:              hintslight
+URxvt*letterSpace: 0
+URxvt.depth: 0
+
+URxvt.font:                 xft:Iosevka Term:style=Medium:size=10
+URxvt.boldfont:             xft:Iosevka Term:style=Bold:size=10
