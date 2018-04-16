@@ -9,7 +9,7 @@ xset r rate 300 30
 xset b off
 xset s 120 180
 
-setxkbmap si -option 'caps:swapescape' &
+setxkbmap -layout si,gb -option grp:alt_shift_toggle -option caps:swapescape &
 xsetroot -cursor_name left_ptr &
 
 nitrogen --restore &
