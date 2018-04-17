@@ -1,11 +1,11 @@
 [global]
-    font = dina 9
+    font = Iosevka Term Medium 12
 
     # <b>bold</b>
     # <i>italic</i>
     # <s>strikethrough<s/>
     # <u>underline</u>
-    allow_markup = yes
+    markup = yes
 
     # The format of the message. Possible variables are:
     #   %a  appname
@@ -15,7 +15,7 @@
     #   %I  iconname (without its path)
     #   %p  progress value if set ([  0%] to [100%]) or nothing
     # Markup is allowed
-    format = "<b>%s</b>\n%b\n%i"
+    format = "<b>%s</b>\n%b"
 
     # Sort messages by urgency
     sort = yes
@@ -53,7 +53,7 @@
     # right side of the screen.  Y is measured from the top and down respectevly.
     # The width can be negative. In this case the actual width is the
     # screen width minus the width defined in within the geometry option.
-    geometry = "250x20-10-10"
+    geometry = "0x5-10+31"
 
     # The transparency of the window. range: [0; 100]
     # This option will only work if a compositing windowmanager is present (e.g. xcompmgr, compiz, etc..)
@@ -117,6 +117,14 @@
     # browser for opening urls in context menu
     browser = /usr/bin/firefox -new-tab
 
+    # Align icons left/right/off
+    icon_position = left
+
+    # Scale larger icons down to this size, set to 0 to disable
+    max_icon_size = 32
+
+    # Paths to default icons.
+    icon_path = /usr/share/icons/Paper/32x32/apps/:/usr/share/icons/Paper/32x32/actions/:/usr/share/icons/Paper/32x32/devices/:/usr/share/icons/Paper/32x32/status/
 [frame]
     width = 1
     color = "#c5c8c6"
