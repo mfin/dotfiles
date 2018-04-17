@@ -23,5 +23,5 @@ Xft.hintstyle:              hintslight
 URxvt*letterSpace: 0
 URxvt.depth: 0
 
-URxvt.font:                 xft:Iosevka Term:style=Medium:size=10
-URxvt.boldfont:             xft:Iosevka Term:style=Bold:size=10
+URxvt.font:                 xft:Iosevka Term:style=Medium:size=12
+URxvt.boldfont:             xft:Iosevka Term:style=Bold:size=12
