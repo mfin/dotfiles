@@ -51,7 +51,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka Term Medium:size=10;2
+font-0 = Iosevka Term Medium:size=12;2
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm backup
@@ -79,7 +79,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka Term Medium:size=10;2
+font-0 = Iosevka Term Medium:size=12;2
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm
