@@ -39,6 +39,12 @@ super + {_,shift + }c
 super + bracket{left,right}
 	bspc desktop -f {prev,next}
 
+super + Prior
+	bspc desktop -f prev
+
+super + Next
+	bspc desktop -f next
+
 super + {cedilla,Tab}
 	bspc {node,desktop} -f last
 
