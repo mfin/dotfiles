@@ -7,7 +7,7 @@
 ! "Number of columns" Set from: Default
 ! rofi.columns:                        1
 ! "Font to use" Set from: Default
-rofi.font:                           Iosevka Term Medium 12
+rofi.font:                           Hack Nerd Font 10
 ! "Border width" Set from: Default
 ! rofi.bw:                             1
 ! "Location on screen" Set from: Default
@@ -266,3 +266,4 @@ rofi.theme: .config/rofi/themes/dark.rasi
 ! rofi.me-accept-entry:                MouseD1
 ! "Accept hovered row with custom action" Set from: Default
 ! rofi.me-accept-custom:               Control+MouseD1
+rofi.theme: /home/mfin/.config/rofi/themes/dark.rasi

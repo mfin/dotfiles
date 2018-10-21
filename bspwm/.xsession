@@ -16,8 +16,14 @@ nitrogen --restore &
 compton --use-ewmh-active-win &
 xscreensaver -no-splash &
 xss-lock -- xscreensaver-command --lock &
+udiskie &
 dunst &
 unclutter &
 clipster -d &
+caffeine &
+dropbox &
+blueman-applet &
+nm-applet &
+redshift-gtk &
 
 sxhkd &

@@ -1,6 +1,8 @@
 [user]
 	email = matjaz@finzgar.net
 	name = Matjaž Finžgar
+[commit]
+	gpgSign = true
 [push]
 	default = simple
 [alias]

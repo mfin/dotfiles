@@ -69,5 +69,41 @@ export HISTIGNORE="&:[ ]*:exit:ls:bg:fg:history"
 # useful timestamp format
 HISTTIMEFORMAT='%F %T '
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+alias_completion(){
+    # keep global namespace clean
+    local cmd completion
+
+    # determine first word of alias definition
+    # NOTE: This is really dirty. Is it possible to use
+    #       readline's shell-expand-line or alias-expand-line?
+    cmd=$(alias "$1" | sed 's/^alias .*='\''//;s/\( .\+\|'\''\)//')
+
+    # determine completion function
+    completion=$(complete -p "$1" 2>/dev/null)
+
+    # run _completion_loader only if necessary
+    [[ -n $completion ]] || {
+
+        # load completion
+        _completion_loader "$cmd"
+
+        # detect completion
+        completion=$(complete -p "$cmd" 2>/dev/null)
+    }
+
+    # ensure completion was detected
+    [[ -n $completion ]] || return 1
+
+    # configure completion
+    eval "$(sed "s/$cmd\$/$1/" <<<"$completion")"
+}
+
+# aliases to load completion for
+aliases=(d g dc)
+
+for a in "${aliases[@]}"; do
+    alias_completion "$a"
+done
+
+# clean up after ourselves
+unset a aliases

@@ -79,7 +79,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Iosevka Term Medium:size=12;2
+font-0 = Hack Nerd Font:size=12;2
 font-1 = siji:pixelsize=10;1
 
 modules-left = bspwm
@@ -95,29 +95,30 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/wolverine_main]
-monitor = ${env:MONITOR:DVI-I-1}
+[bar/primary]
+monitor = ${env:MONITOR}
 width = 100%
-height = 25
+height = 20
 fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-padding-left = 0
-padding-right = 2
-
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = dina:pixelsize=12;3
-font-1 = siji:pixelsize=10;1
+font-0 = Hack Nerd Font:pixelsize=10;3
+font-1 = Unifont:pixelsize=10
+font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm backup
+modules-left = bspwm backup music
 modules-center = xwindow
-modules-right = openconnect pavolume date powermenu
+modules-right = openvpn pavolume date powermenu
 
-override-redirect = true
+tray-position = right
+tray-padding = 2
+
+override-redirect = false
 wm-restack = bspwm
 
 cursor-click = pointer
@@ -164,12 +165,12 @@ click-left = ~/.config/polybar/pavolume.sh --togmute
 scroll-up = ~/.config/polybar/pavolume.sh --up
 scroll-down = ~/.config/polybar/pavolume.sh --down
 
-[module/openconnect]
+[module/openvpn]
 type = custom/script
 interval = 5
 label = %output%
 exec = echo "VPN ON"
-exec-if = pgrep openconnect > /dev/null
+exec-if = pgrep openvpn > /dev/null
 
 [module/music]
 type = custom/script
