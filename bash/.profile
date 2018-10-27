@@ -12,4 +12,8 @@ eval "$(pyenv virtualenv-init -)"
 export QT_QPA_PLATFORMTHEME=gtk2
 export _JAVA_AWT_WM_NONREPARENTING=1
 
+if [ -f $HOME/.private_env ]; then
+    eval $(cat $HOME/.private_env)
+fi
+
 . /usr/share/LS_COLORS/dircolors.sh
