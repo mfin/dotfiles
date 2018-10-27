@@ -29,16 +29,9 @@ if [[ $(hostname) == 'Wolverine' ]]; then
     bspc monitor $MONITOR -d 1 2 3 4 5
 
     polybar primary &
-elif [[ $(hostname) == 'dolores' ]]; then
-    bspc monitor HDMI-1 -d 1 2 3 4 5
-    bspc config top_padding 21
-    bspc monitor DP-2 -d 6 7 8
-    bspc config window_gap 10
-    bspc rule -a Firefox state=floating
-    bspc rule -a Google-chrome state=floating
-    bspc rule -a Google-chromium state=floating
-    bspc rule -a Chromium state=floating
+elif [[ $(hostname) == 'Lockheed' ]]; then
+    export MONITOR=eDP-1
+    bspc monitor $MONITOR -d 1 2 3 4
 
-    polybar mfinzgar_main &
-    polybar mfinzgar_secondary &
+    polybar primary &
 fi
