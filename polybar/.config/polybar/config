@@ -1,99 +1,16 @@
 [colors]
 background = ${xrdb:background:#000000}
 foreground = ${xrdb:foreground:#ffffff}
+green = ${xrdb:color2:#ffffff}
+red = ${xrdb:color1:#ffffff}
+yellow = ${xrdb:color3:#ffffff}
+blue = ${xrdb:color4:#ffffff}
+magenta = ${xrdb:color5:#ffffff}
+cyan = ${xrdb:color6:#ffffff}
+lblack = ${xrdb:color8:#ffffff}
 primary = ${xrdb:color6:#ffffff}
 alert = ${xrdb:color1:#ff0000}
 transparent = #66000000
-
-[bar/mimic_main]
-monitor = ${env:MONITOR:eDP-1}
-width = 100%
-height = 21
-fixed-center = true
-
-background = ${colors.transparent}
-foreground = ${colors.foreground}
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Iosevka Term Medium:size=12;2
-font-1 = siji:pixelsize=10;1
-
-modules-left = bspwm backup
-modules-center = music
-modules-right = openconnect pavolume wlan eth battery_0 battery_1 date
-
-tray-position = right
-tray-padding = 2
-
-override-redirect = true
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/mfinzgar_main]
-monitor = ${env:MONITOR:HDMI-1}
-width = 100%
-height = 21
-fixed-center = true
-
-background = ${colors.transparent}
-foreground = ${colors.foreground}
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Iosevka Term Medium:size=12;2
-font-1 = siji:pixelsize=10;1
-
-modules-left = bspwm backup
-modules-center = xwindow
-modules-right = cpu memory temperature pavolume date powermenu
-
-override-redirect = true
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[bar/mfinzgar_secondary]
-monitor = ${env:MONITOR:DP-2}
-width = 100%
-height = 21
-fixed-center = true
-
-background = ${colors.transparent}
-foreground = ${colors.foreground}
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = Hack Nerd Font:size=12;2
-font-1 = siji:pixelsize=10;1
-
-modules-left = bspwm
-modules-center = music
-modules-right = bitcoin trola
-
-tray-position = right
-tray-padding = 2
-
-override-redirect = true
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
 
 [bar/primary]
 monitor = ${env:MONITOR}
@@ -107,16 +24,15 @@ foreground = ${colors.foreground}
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Hack Nerd Font:pixelsize=9;3
-font-1 = Unifont:pixelsize=10
-font-2 = siji:pixelsize=10;1
+font-0 = Hack Nerd Font:pixelsize=10;3
+font-2 = Font Awesome 5 Free:pixelsize=10
 
-modules-left = bspwm backup music
+modules-left = bspwm production borg openvpn hue spotify
 modules-center = xwindow
-modules-right = openvpn pavolume date powermenu
+modules-right = trola wlan volume date powermenu
 
 tray-position = right
-tray-padding = 2
+tray-padding = 1
 
 override-redirect = false
 wm-restack = bspwm
@@ -124,134 +40,102 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[bar/wolverine_secondary]
-monitor = ${env:MONITOR:HDMI-0}
-width = 100%
-height = 25
-fixed-center = true
-
-background = ${colors.background}
-foreground = ${colors.foreground}
-
-padding-left = 0
-padding-right = 2
-
-module-margin-left = 1
-module-margin-right = 2
-
-font-0 = dina:pixelsize=12;3
-font-1 = siji:pixelsize=10;1
-
-modules-left = bspwm
-modules-center = music
-modules-right = bitcoin
-
-tray-position = right
-tray-padding = 2
-
-override-redirect = true
-wm-restack = bspwm
-
-cursor-click = pointer
-cursor-scroll = ns-resize
-
-[module/pavolume]
-type = custom/script
-tail = true
-label = %output%
-exec = ~/.config/polybar/pavolume.sh --listen
-click-right = exec pavucontrol
-click-left = ~/.config/polybar/pavolume.sh --togmute
-scroll-up = ~/.config/polybar/pavolume.sh --up
-scroll-down = ~/.config/polybar/pavolume.sh --down
-
 [module/openvpn]
 type = custom/script
 interval = 5
 label = %output%
-exec = echo "VPN ON"
+exec = echo " VPN ON "
+label-background = ${colors.green}
+label-foreground = ${colors.background}
 exec-if = pgrep openvpn > /dev/null
 
-[module/music]
+[module/production]
 type = custom/script
 interval = 5
+label = %output%
+exec = echo " PRODUCTION "
+label-background = ${colors.alert}
+label-foreground = ${colors.background}
+exec-if = ps a | grep "[s]sh prod" > /dev/null
 
-label = %output:0:45:...%
-exec = ~/.config/polybar/mpris.sh
-click-left = playerctl play-pause
-click-middle = playerctl previous
-click-right = playerctl next
+[module/hue]
+type = custom/script
+interval = 5
+label = %output%
+exec = bash $HOME/.config/polybar/hue_status.sh
+exec-if = [ $(curl http://ipinfo.io/ip) == $PRIVATE_HOME_IP ]
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.green}
+format = %{A1:playerctl play-pause:}<label>%{A}
+exec = python $HOME/.config/polybar/spotify_status.py -f '{artist} - {song}' -t 120
 
 [module/trola]
 type = custom/script
 interval = 60
-
-label = LPP %output%
+label = %output%
+format-prefix = " "
+format-prefix-foreground = ${colors.green}
 exec = trola
+exec-if =  [ $(curl http://ipinfo.io/ip) == $PRIVATE_WORK_IP ]
 
-[module/bitcoin]
-type = custom/script
-interval = 180
-label = BTC %output%
-exec = curl -s 'https://www.bitstamp.net/api/v2/ticker/btceur/' | jq -r '.last'
-
-[module/backup]
+[module/borg]
 type = custom/script
 interval = 5
 label = %output%
-exec = echo "backup running!"
+exec = echo " borg running! "
+label-background = ${colors.alert}
+label-foreground = ${colors.background}
 exec-if = pgrep borg > /dev/null
 
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:50:...%
+format-prefix = " "
+format-prefix-foreground = ${colors.cyan}
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.primary}
-label = %percentage:2%%
+[module/volume]
+type = internal/pulseaudio
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.primary}
-label = %percentage_used%%
+label-volume = %percentage%%
+format-volume = <label-volume>
+format-volume-prefix = " "
+format-volume-prefix-foreground = ${colors.blue}
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-warn = <ramp> <label-warn>
-
-label = %temperature%
-label-warn = %temperature%
-label-warn-foreground = ${colors.alert}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.primary}
+label-muted = muted
+format-muted = <label-muted>
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.alert}
 
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+format = <label-mode> <label-state>
+
+label-monocle = " M"
+label-monocle-foreground = ${colors.blue}
+label-tiled = " T"
+label-tiled-foreground = ${colors.lblack}
+label-floating = " F"
+label-floating-foreground = ${colors.yellow}
+label-locked = " L"
+label-locked-foreground = ${colors.alert}
+
+label-focused = %name%
 label-focused-background = ${colors.primary}
 label-focused-padding = 1
 
-label-occupied = %index%
+label-occupied = %name%
 label-occupied-padding = 1
 
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = ${colors.primary}
 label-empty-padding = 1
 
@@ -273,18 +157,6 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 
-[module/eth]
-type = internal/network
-interface = enp0s25
-interval = 3.0
-
-format-connected-prefix = " "
-label-connected = %local_ip%
-
-format-disconnected = <label-disconnected>
-label-disconnected = 
-label-disconnected-foreground = ${colors.alert}
-
 [module/date]
 type = internal/date
 interval = 5
@@ -295,7 +167,8 @@ date-alt = " %d.%m.%Y"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
+format-prefix-foreground = ${colors.yellow}
 
 label = %date% %time%
 
@@ -346,9 +219,9 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = " "
 label-open-foreground = ${colors.alert}
-label-close =  cancel
+label-close = 
 label-close-foreground = ${colors.alert}
 label-separator = |
 label-separator-foreground = ${colors.primary}
