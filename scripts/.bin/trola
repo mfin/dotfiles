@@ -4,15 +4,15 @@
 
 from urllib.request import Request, urlopen
 import json
+import os
 
-
-req = Request('http://www.trola.si/204111')
+req = Request('http://www.trola.si/{}'.format(os.getenv('PRIVATE_LPP_STATION')))
 req.add_header('Accept', 'application/json')
 data = json.loads(urlopen(req).read().decode('utf8'))
 buses = data['stations'][0]['buses']
 
 for bus in buses:
-	if bus['direction'] == 'Gameljne':
+	if bus['direction'] == os.getenv('PRIVATE_LPP_DIRECTION'):
 		schedule = ", ".join(map(str, bus['arrivals']))
 
 print(schedule if schedule else 'No buses!')
