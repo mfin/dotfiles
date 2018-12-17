@@ -99,7 +99,7 @@ alias_completion(){
 }
 
 # aliases to load completion for
-aliases=(d g dc)
+aliases=(d g k dc)
 
 for a in "${aliases[@]}"; do
     alias_completion "$a"
@@ -107,3 +107,6 @@ done
 
 # clean up after ourselves
 unset a aliases
+
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"

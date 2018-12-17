@@ -30,7 +30,7 @@ if [[ $(hostname) == 'Wolverine' ]]; then
 
     polybar primary &
 elif [[ $(hostname) == 'Lockheed' ]]; then
-    export MONITOR=eDP-1
+    export MONITOR=eDP1
     bspc monitor $MONITOR -d 1 2 3 4
 
     polybar primary &

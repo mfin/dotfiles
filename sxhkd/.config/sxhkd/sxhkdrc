@@ -6,9 +6,6 @@ super + Escape
 super + alt + Escape
 	pkill -x panel; bspc quit
 
-super + shift + Escape
-	pkill -x panel; $HOME/.config/bspwm/panel
-
 super + {_,shift + }w
 	bspc node -{c,k}
 
@@ -133,10 +130,10 @@ super + ctrl + BackSpace
 	bspc node @/ -R 90
 
 XF86MonBrightnessUp
-	xbacklight +10
+	light -A 10
 
 XF86MonBrightnessDown
-	xbacklight -10
+	light -U 10
 
 XF86AudioLowerVolume
 	$HOME/.bin/volume down 5

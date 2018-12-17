@@ -36,6 +36,7 @@ alias copy='xclip -selection clipboard'
 alias d='docker'
 alias g='git'
 alias dc='docker-compose'
+alias k='kubectl'
 
 # function for font testing
 function pchar {

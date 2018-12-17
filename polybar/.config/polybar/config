@@ -29,7 +29,7 @@ font-2 = Font Awesome 5 Free:pixelsize=10
 
 modules-left = bspwm production borg openvpn hue spotify
 modules-center = xwindow
-modules-right = trola wlan volume date powermenu
+modules-right = trola battery_0 battery_1 volume date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -138,24 +138,6 @@ label-urgent-padding = 1
 label-empty = %name%
 label-empty-foreground = ${colors.primary}
 label-empty-padding = 1
-
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-interval = 3.0
-
-format-connected = <ramp-signal> <label-connected>
-label-connected = %essid%
-
-format-disconnected = <label-disconnected>
-label-disconnected =
-label-disconnected-foreground = ${colors.alert}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
 
 [module/date]
 type = internal/date
