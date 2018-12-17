@@ -40,6 +40,13 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/secondary]
+inherit = bar/primary
+monitor = ${env:SECONDARY_MONITOR}
+
+modules-left = bspwm production openvpn
+modules-right = date
+
 [module/openvpn]
 type = custom/script
 interval = 5
