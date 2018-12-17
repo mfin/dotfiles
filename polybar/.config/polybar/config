@@ -113,16 +113,7 @@ format-muted-prefix-foreground = ${colors.alert}
 [module/bspwm]
 type = internal/bspwm
 
-format = <label-mode> <label-state>
-
-label-monocle = " M"
-label-monocle-foreground = ${colors.blue}
-label-tiled = " T"
-label-tiled-foreground = ${colors.lblack}
-label-floating = " F"
-label-floating-foreground = ${colors.yellow}
-label-locked = " L"
-label-locked-foreground = ${colors.alert}
+format = <label-state>
 
 label-focused = %name%
 label-focused-background = ${colors.primary}
