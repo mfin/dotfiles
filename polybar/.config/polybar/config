@@ -29,7 +29,7 @@ font-2 = Font Awesome 5 Free:pixelsize=10
 
 modules-left = bspwm production borg openvpn hue spotify
 modules-center = xwindow
-modules-right = trola battery_0 battery_1 volume date powermenu
+modules-right = unlocked trola battery_0 battery_1 volume date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -44,8 +44,8 @@ cursor-scroll = ns-resize
 inherit = bar/primary
 monitor = ${env:SECONDARY_MONITOR}
 
-modules-left = bspwm production openvpn
-modules-right = date
+modules-left = bspwm production borg openvpn
+modules-right = unlocked trola date
 
 [module/openvpn]
 type = custom/script
@@ -79,6 +79,14 @@ format-prefix = " "
 format-prefix-foreground = ${colors.green}
 format = %{A1:playerctl play-pause:}<label>%{A}
 exec = python $HOME/.config/polybar/spotify_status.py -f '{artist} - {song}' -t 120
+
+[module/unlocked]
+type = custom/script
+interval = 60
+format-prefix = " "
+format-prefix-foreground = ${colors.green}
+format = <label>
+exec = python $HOME/.config/polybar/unlocked_for.py
 
 [module/trola]
 type = custom/script
