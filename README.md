@@ -13,6 +13,8 @@ cd ~/.dotfiles
 stow <folder name>
 ```
 
+Still usable but unused dotfiles are stored in the deprecated directory.
+
 screenshot
 ----------
 
