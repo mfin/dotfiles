@@ -180,6 +180,9 @@ super + v
 super + alt + space
 	clipster -s -c
 
+super + ctrl + Return
+	{mute-notifications,unmute-notifications}
+
 super + alt + v
 	zathura $HOME/Dropbox/Documents/vim_cheat_sheet_for_programmers_screen.pdf
 
