@@ -7,6 +7,7 @@ bspc config focus_by_distance         true
 bspc config remove_disabled_monitors  true
 bspc config remove_unplugged_monitors true
 bspc config pointer_modifier          mod1
+bspc config pointer_follows_monitor   true
 
 bspc config normal_border_color '#111111'
 bspc config focused_border_color '#d3d3d3'
@@ -31,7 +32,7 @@ if [[ $(hostname) == 'Wolverine' ]]; then
     polybar primary &
 elif [[ $(hostname) == 'Lockheed' ]]; then
     export MONITOR=eDP1
-    bspc monitor $MONITOR -d 1 2 3 4
+    bspc monitor $MONITOR -d 1 2 3 4 5
 
     polybar primary &
 fi
