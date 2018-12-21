@@ -168,26 +168,6 @@ format-prefix-foreground = ${colors.yellow}
 
 label = %date% %time%
 
-[module/battery_1]
-type = internal/battery
-battery = BAT1
-adapter = AC
-full-at = 98
-
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
-
-format-full-prefix = " "
-
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-framerate = 750
-
 [module/battery_0]
 type = internal/battery
 battery = BAT0
@@ -196,17 +176,26 @@ full-at = 98
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
+format-charging-foreground = ${colors.yellow}
 
-format-full-prefix = " "
+format-full-prefix = " "
+format-full-prefix-foreground = ${colors.green}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-0-foreground = ${colors.alert}
+ramp-capacity-1-foreground = ${colors.yellow}
+ramp-capacity-2-foreground = ${colors.green}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
 animation-charging-framerate = 750
+
+[module/battery_1]
+inherit = module/battery_0
+battery = BAT1
 
 [module/powermenu]
 type = custom/menu
