@@ -18,7 +18,7 @@ man() {
 }
 
 # masquerade as xterm!
-export TERM=xterm
+export TERM=rxvt-256color
 
 # better prompt
 source $HOME/.bash_prompt
