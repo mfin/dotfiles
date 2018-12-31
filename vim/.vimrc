@@ -1,3 +1,5 @@
+let g:mapleader = "\<Space>"
+
 set laststatus=2
 set nocp
 set encoding=utf8
@@ -21,6 +23,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'scrooloose/nerdtree'
 call plug#end()
 
 " Keep undo history across sessions by storing it in a file
@@ -48,3 +51,9 @@ set statusline +=%1*0x%04B\ %*          "character under cursor
 
 command Paste w | !paste.sh %
 command PublicPaste w | !paste.sh -p %
+
+nnoremap <silent> <leader><space> :Files<CR>
+nnoremap <silent> <leader>a :Buffers<CR>
+nnoremap <silent> <leader>gl :Commits<CR>
+nnoremap <silent> <leader>ga :BCommits<CR>
+nnoremap <silent> <leader>n :NERDTreeToggle<CR>
