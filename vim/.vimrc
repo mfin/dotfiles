@@ -53,6 +53,7 @@ command Paste w | !paste.sh %
 command PublicPaste w | !paste.sh -p %
 
 let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore --glob "!.git/*" -l ""'
+let g:notes_directories = ['~/Dropbox/Personal/Notes']
 
 nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
