@@ -52,6 +52,8 @@ set statusline +=%1*0x%04B\ %*          "character under cursor
 command Paste w | !paste.sh %
 command PublicPaste w | !paste.sh -p %
 
+let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore --glob "!.git/*" -l ""'
+
 nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>gl :Commits<CR>
