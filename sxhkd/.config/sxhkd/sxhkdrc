@@ -91,7 +91,7 @@ super + Return
 	urxvt
 
 super + space
-	rofi -show drun
+	rofi -show drun -modi drun,emoji,window
 
 super + shift + Return
 	xscreensaver-command --lock
