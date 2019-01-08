@@ -10,7 +10,7 @@ export QT_QPA_PLATFORMTHEME=gtk2
 export _JAVA_AWT_WM_NONREPARENTING=1
 
 if [ -f $HOME/.env/${HOSTNAME,,}.env ]; then
-    eval $(cat $HOME/.env/${HOSTANAME,,}.env)
+    eval $(cat $HOME/.env/${HOSTNAME,,}.env)
 fi
 
 . /usr/share/LS_COLORS/dircolors.sh
