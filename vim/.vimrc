@@ -67,7 +67,7 @@ let g:ale_linters = {'python': ['flake8']}
 let g:ale_python_auto_pipenv = 1
 
 let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore --glob "!.git/*" -l ""'
-let g:notes_directories = ['~/Dropbox/Personal/Notes']
+let g:notes_directories = ['~/.notes']
 
 nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
