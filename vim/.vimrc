@@ -2,9 +2,12 @@ let g:mapleader = "\<Space>"
 
 set laststatus=2
 set nocp
+set number
+set cursorline
 set encoding=utf8
 set ffs=unix,dos,mac
 set nocompatible
+set mouse=a
 filetype off
 syntax on
 set foldmethod=indent
@@ -17,13 +20,15 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf.vim'
-Plug 'davidhalter/jedi-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
 Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'w0rp/ale'
 call plug#end()
 
 " Keep undo history across sessions by storing it in a file
@@ -36,7 +41,13 @@ if has('persistent_undo')
     set undofile
 endif
 
-hi User1 ctermfg=black ctermbg=white guifg=black guibg=white
+hi User1 ctermfg=white ctermbg=black guifg=white guibg=black
+hi LineNr ctermfg=darkgray guifg=darkgray
+hi CursorLine cterm=NONE ctermbg=black guibg=black
+hi ALEErrorSign ctermfg=red ctermbg=NONE guifg=red guibg=NONE
+hi ALEWarningSign ctermfg=yellow ctermbg=NONE guifg=yellow guibg=NONE
+
+hi User1 ctermfg=white ctermbg=black guifg=white guibg=black
 
 set statusline=
 set statusline +=%1*\ %n\ %*            "buffer number
@@ -52,6 +63,9 @@ set statusline +=%1*0x%04B\ %*          "character under cursor
 command Paste w | !paste.sh %
 command PublicPaste w | !paste.sh -p %
 
+let g:ale_linters = {'python': ['flake8']}
+let g:ale_python_auto_pipenv = 1
+
 let $FZF_DEFAULT_COMMAND = 'rg --hidden --no-ignore --glob "!.git/*" -l ""'
 let g:notes_directories = ['~/Dropbox/Personal/Notes']
 
@@ -59,4 +73,7 @@ nnoremap <silent> <leader><space> :Files<CR>
 nnoremap <silent> <leader>a :Buffers<CR>
 nnoremap <silent> <leader>gl :Commits<CR>
 nnoremap <silent> <leader>ga :BCommits<CR>
-nnoremap <silent> <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>t :NERDTreeToggle<CR>
+nnoremap <silent> <leader>m :TagbarToggle<CR>
+nnoremap <silent> <leader>d :YcmCompleter GoTo<CR>
+nnoremap <silent> <leader>s :YcmCompleter GoToReferences<CR>
