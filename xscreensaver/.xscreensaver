@@ -273,7 +273,7 @@ programs:								      \
 		    "My Movie" 	mpv --really-quiet --no-audio --fs	      \
 				  --loop=inf --no-stop-screensaver	      \
 				  --wid=$XSCREENSAVER_WINDOW		      \
-				  $HOME/Dropbox/Photos/Wallpapers/pixel_backstreet.gif	    \n\
+				  $HOME/Dropbox/Other/rBgfdvL.mp4	    \n\
 
 
 pointerPollTime:    0:00:05
