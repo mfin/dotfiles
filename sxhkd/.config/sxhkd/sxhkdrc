@@ -175,7 +175,7 @@ super + q; {w,f,e,s,a}
 	{qutebrowser,urxvt -e ranger,code,xfce4-screenshooter,pavucontrol}
 
 super + v
-	$HOME/.bin/hue_toggle 2
+	$HOME/.bin/hue-toggle 2
 
 super + alt + space
 	clipster -s -c

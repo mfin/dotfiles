@@ -19,4 +19,4 @@ if [ "$LIGHT2" == "on" ]; then
 else COLOR2=$LIGHT_OFF_COLOR
 fi
 
-echo "%{F$COLOR1}%{A1:hue_toggle 1:}$LIGHT_ICON%{A}%{F-} %{F$COLOR2}%{A1:hue_toggle 2:}$LIGHT_ICON%{A}%{F-}"
+echo "%{F$COLOR1}%{A1:hue-toggle 1:}$LIGHT_ICON%{A}%{F-} %{F$COLOR2}%{A1:hue-toggle 2:}$LIGHT_ICON%{A}%{F-}"

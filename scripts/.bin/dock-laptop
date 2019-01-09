@@ -1,0 +1,36 @@
+#!/bin/bash
+
+INTERNAL_MONITOR=eDP1
+DOCKED_MONITOR=DP1-1
+RESOLUTION=2560x1440
+
+if ! xrandr | grep "$DOCKED_MONITOR connected" > /dev/null; then
+    echo "$DOCKED_MONITOR is not connected!"
+    exit 1
+fi
+
+xrandr --output $DOCKED_MONITOR --mode $RESOLUTION --right-of $INTERNAL_MONITOR
+
+if [ $(bspc query -D -m $INTERNAL_MONITOR | wc -l) -gt 5 ]; then
+    wspcs=$(bspc query -D -m $INTERNAL_MONITOR | tail -5)
+else
+    wspcs=$(bspc query -D -m $INTERNAL_MONITOR | tail -2)
+fi
+
+while read -r wspc; do
+    bspc desktop $wspc -m $DOCKED_MONITOR
+done <<< $wspcs
+
+bspc desktop $(bspc query -D -m $DOCKED_MONITOR | head -1) -r
+
+if [ $(bspc query -D -m $DOCKED_MONITOR | wc -l) -lt 5 ]; then
+    bspc monitor $DOCKED_MONITOR -d 4 5 6 7 8
+fi
+
+#nmcli radio wifi off &
+SECONDARY_MONITOR=$DOCKED_MONITOR polybar secondary &
+setxkbmap -layout si,gb -option grp:alt_shift_toggle -option caps:swapescape &
+xset m 0 0 &
+xset r rate 300 30 &
+
+exit

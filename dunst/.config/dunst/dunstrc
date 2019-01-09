@@ -186,7 +186,7 @@
 
 [play_sound]
     summary = "*"
-    script = sound_alert.sh
+    script = sound-alert
 
 #[espeak]
 #    summary = "*"
