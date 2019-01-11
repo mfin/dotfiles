@@ -37,6 +37,7 @@ alias d='docker'
 alias g='git'
 alias dc='docker-compose'
 alias k='kubectl'
+alias s='screen'
 
 # function for font testing
 function pchar {

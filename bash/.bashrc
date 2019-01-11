@@ -99,7 +99,7 @@ alias_completion(){
 }
 
 # aliases to load completion for
-aliases=(d g k dc)
+aliases=(d g k dc s)
 
 for a in "${aliases[@]}"; do
     alias_completion "$a"
