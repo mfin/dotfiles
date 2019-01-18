@@ -63,7 +63,7 @@ label = %output%
 exec = echo " PRODUCTION "
 label-background = ${colors.alert}
 label-foreground = ${colors.background}
-exec-if = ps a | grep "[s]sh prod" > /dev/null
+exec-if =  (ps x | grep -E "firefox[^..]+prod") || (ps a | grep "[s]sh prod")
 
 [module/notifications]
 type = custom/script
