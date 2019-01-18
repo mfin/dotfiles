@@ -32,5 +32,6 @@ SECONDARY_MONITOR=$DOCKED_MONITOR polybar secondary &
 setxkbmap -layout si,gb -option grp:alt_shift_toggle -option caps:swapescape &
 xset m 0 0 &
 xset r rate 300 30 &
+nitrogen --restore &
 
 exit
