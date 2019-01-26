@@ -16,9 +16,10 @@ bspc config normal_sticky_border_color '#8abeb7'
 bspc config focused_sticky_border_color '#f0c674'
 bspc config urgent_border_color '#b76969'
 
-bspc config window_gap 10
+bspc config single_monocle true
+bspc config window_gap 0
 bspc config top_padding 20
-bspc config border_width 3
+bspc config border_width 1
 
 bspc rule -a mpv state=floating
 bspc rule -a Pinentry-gtk-2 state=floating
