@@ -1,10 +1,10 @@
 # XScreenSaver Preferences File
-# Written by xscreensaver-demo 5.38 for matjaz on Wed Feb  7 09:05:44 2018.
+# Written by xscreensaver-demo 5.40 for mfin on Sat Jan 26 23:30:01 2019.
 # https://www.jwz.org/xscreensaver/
 
-timeout:	0:02:00
+timeout:	0:01:00
 cycle:		0:02:00
-lock:		True
+lock:		False
 lockTimeout:	0:00:00
 passwdTimeout:	0:00:30
 visualID:	default
@@ -274,6 +274,13 @@ programs:								      \
 				  --loop=inf --no-stop-screensaver	      \
 				  --wid=$XSCREENSAVER_WINDOW		      \
 				  $HOME/Dropbox/Other/rBgfdvL.mp4	    \n\
+  GL: 				crumbler -root				    \n\
+				filmleader -root			    \n\
+				glitchpeg -root				    \n\
+  GL: 				maze3d -root				    \n\
+  GL: 				peepers -root				    \n\
+  GL: 				razzledazzle -root			    \n\
+				vfeedback -root				    \n\
 
 
 pointerPollTime:    0:00:05

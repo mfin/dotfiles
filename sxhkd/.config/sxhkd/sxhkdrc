@@ -94,7 +94,7 @@ super + space
 	rofi -show drun -modi drun,emoji,window
 
 super + shift + Return
-	xscreensaver-command --lock
+	dm-tool lock
 
 super + shift + space
 	rofi -show emoji -modi emoji

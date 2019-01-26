@@ -15,7 +15,7 @@ xsetroot -cursor_name left_ptr &
 nitrogen --restore &
 compton --use-ewmh-active-win &
 xscreensaver -no-splash &
-xss-lock -- xscreensaver-command --lock &
+xss-lock -- dm-tool lock &
 udiskie &
 dunst &
 unclutter &
