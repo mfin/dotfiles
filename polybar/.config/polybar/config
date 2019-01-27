@@ -29,7 +29,7 @@ font-2 = Font Awesome 5 Free:pixelsize=10
 
 modules-left = bspwm production borg openvpn hue notifications spotify
 modules-center = xwindow
-modules-right = unlocked trola battery_0 battery_1 volume date powermenu
+modules-right = trola battery_0 battery_1 volume date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -45,7 +45,7 @@ inherit = bar/primary
 monitor = ${env:SECONDARY_MONITOR}
 
 modules-left = bspwm production borg openvpn notifications
-modules-right = unlocked trola date
+modules-right = trola date
 
 [module/openvpn]
 type = custom/script
