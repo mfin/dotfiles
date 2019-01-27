@@ -14,15 +14,17 @@ xsetroot -cursor_name left_ptr &
 
 nitrogen --restore &
 compton --use-ewmh-active-win &
-xss-lock -- dm-tool lock &
 udiskie &
 dunst &
 unclutter &
 clipster -d &
+light-locker --no-late-locking --lock-on-suspend &
+
 caffeine &
 dropbox &
 blueman-applet &
 nm-applet &
 redshift-gtk &
+usbguard-applet-qt &
 
 sxhkd &

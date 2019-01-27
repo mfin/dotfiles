@@ -94,7 +94,7 @@ super + space
 	rofi -show drun -modi drun,emoji,window
 
 super + shift + Return
-	dm-tool lock
+	light-locker-command -l
 
 super + shift + space
 	rofi -show emoji -modi emoji
