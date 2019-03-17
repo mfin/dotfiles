@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# W I P !!!!
+
+if [ -z $1 ]; then
+  echo
+  echo "Usage:"
+  echo "   otp a google"
+  echo "   otp s google"
+  echo "   otp c google"
+  echo
+  echo "Key store: $HOME/.otpkeys/<name>.gpg"
+  exit
+fi
+
+OTPKEY=$(gpg -q --decrypt $HOME/.otpkeys/$1.gpg 2> /dev/null)
+
+if [ -z $OTPKEY ]; then
+  echo "$(basename $0): Bad Service Name '$1'"
+  $0
+  exit
+fi
+
+oathtool --totp -b $OTPKEY | xclip && echo "Copied to clipboard."

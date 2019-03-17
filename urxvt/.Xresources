@@ -15,6 +15,10 @@ URxvt*externalBorder:       0
 URxvt*internalBorder:       5
 URxvt*borderLess:           False
 URxvt*termName:             xterm-256color
+URxvt*scrollTtyOutput:      false
+URxvt*scrollWithBuffer:     true
+URxvt*scrollTtyKeypress:    true
+URxvt*saveLines:            100000
 
 Xft.dpi:                    96
 Xft.antialias:              true
