@@ -29,7 +29,7 @@ font-2 = Font Awesome 5 Free:pixelsize=10
 
 modules-left = bspwm production borg openvpn notifications spotify
 modules-center = xwindow
-modules-right = battery_0 battery_1 volume date powermenu
+modules-right = battery_0 battery_1 keyboard volume date powermenu
 
 tray-position = right
 tray-padding = 1
@@ -196,6 +196,16 @@ animation-charging-framerate = 750
 [module/battery_1]
 inherit = module/battery_0
 battery = BAT1
+
+[module/keyboard]
+type = internal/xkeyboard
+
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+blacklist-2 = caps lock
+
+format-prefix = " "
+format-prefix-foreground = ${colors.magenta}
 
 [module/powermenu]
 type = custom/menu
