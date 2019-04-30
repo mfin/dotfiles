@@ -1,12 +1,14 @@
 #include ".colors/derp"
 
-URxvt.perl-ext-common:      default,matcher,clipboard,keyboard-select
+URxvt.perl-ext-common:      default,matcher,clipboard,keyboard-select,resize-font
 URxvt.url-launcher:         /usr/bin/firefox
 URxvt.matcher.button:       1
 URxvt.iso14755:             False
 URxvt.keysym.M-c:           perl:clipboard:copy
 URxvt.keysym.M-v:           perl:clipboard:paste
 URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.C-=:           resize-font:smaller
+URxvt.keysym.C-+:           resize-font:bigger
 URxvt.clipboard.copycmd:    xclip -i -selection clipboard
 URxvt.clipboard.pastecmd:   xclip -o -selection clipboard
 URxvt.clipboard.autocopy:   true
@@ -28,5 +30,5 @@ Xft.hintstyle:              hintslight
 URxvt*letterSpace: 0
 URxvt.depth: 0
 
-URxvt.font:                 xft:Hack Nerd Font:style=Medium:size=9
-URxvt.boldfont:             xft:Hack Nerd Font:style=Bold:size=9
+URxvt.font:                 xft:SauceCodePro Nerd Font:style=Medium:size=10
+URxvt.boldfont:             xft:SauceCodePro Nerd Font:style=Bold:size=10

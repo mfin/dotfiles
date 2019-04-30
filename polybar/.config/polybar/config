@@ -24,15 +24,13 @@ foreground = ${colors.foreground}
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Hack Nerd Font:pixelsize=10;3
-font-2 = Font Awesome 5 Free:pixelsize=10
+font-0 = SauceCodePro Nerd Font:pixelsize=10;3
 
-modules-left = bspwm production borg openvpn notifications spotify
-modules-center = xwindow
-modules-right = battery_0 battery_1 keyboard volume date powermenu
+modules-left = bspwm notifications openvpn production borg spotify
+modules-right = battery_0 battery_1 keyboard volume date
 
 tray-position = right
-tray-padding = 1
+tray-padding = 2
 
 override-redirect = false
 wm-restack = bspwm
@@ -51,18 +49,16 @@ modules-right = date
 type = custom/script
 interval = 5
 label = %output%
-exec = echo " VPN ON "
-label-background = ${colors.green}
-label-foreground = ${colors.background}
+exec = echo " VPN"
+label-foreground = ${colors.green}
 exec-if = pgrep openvpn > /dev/null
 
 [module/production]
 type = custom/script
 interval = 5
 label = %output%
-exec = echo " PRODUCTION "
-label-background = ${colors.alert}
-label-foreground = ${colors.background}
+exec = echo " PROD"
+label-foreground = ${colors.alert}
 exec-if =  (ps x | grep -E "firefox[^..]+prod") || (ps a | grep "[s]sh prod")
 
 [module/notifications]
@@ -109,9 +105,8 @@ exec-if =  [ $(curl http://ipinfo.io/ip) == $PRIVATE_WORK_IP ]
 type = custom/script
 interval = 5
 label = %output%
-exec = echo " borg running! "
-label-background = ${colors.alert}
-label-foreground = ${colors.background}
+exec = echo " BORG"
+label-foreground = ${colors.alert}
 exec-if = pgrep borg > /dev/null
 
 [module/xwindow]
@@ -136,20 +131,26 @@ format-muted-prefix-foreground = ${colors.alert}
 [module/bspwm]
 type = internal/bspwm
 
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 4;
+ws-icon-3 = 5;
+ws-icon-default = 
+
 format = <label-state>
 
-label-focused = %name%
-label-focused-background = ${colors.primary}
+label-focused = %icon%
+label-focused-foreground = ${colors.yellow}
 label-focused-padding = 1
 
-label-occupied = %name%
+label-occupied = %icon%
 label-occupied-padding = 1
 
-label-urgent = %name%
-label-urgent-background = ${colors.alert}
+label-urgent = 
+label-urgent-foreground = ${colors.alert}
 label-urgent-padding = 1
 
-label-empty = %name%
+label-empty = %icon%
 label-empty-foreground = ${colors.primary}
 label-empty-padding = 1
 
