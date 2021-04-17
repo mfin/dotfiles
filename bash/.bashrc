@@ -20,8 +20,8 @@ man() {
 # masquerade as xterm!
 export TERM=rxvt-256color
 
-# better prompt
-source $HOME/.bash_prompt
+# aws-vault backend
+export AWS_VAULT_BACKEND=pass
 
 # some tab completion wizardry
 bind "set completion-ignore-case on"
@@ -110,3 +110,5 @@ unset a aliases
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+eval "$(starship init bash)"

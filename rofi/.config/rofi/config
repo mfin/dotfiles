@@ -1,13 +1,13 @@
 ! "Enabled modi" Set from: Default
-! rofi.modi:                           window,run,ssh
+rofi.modi:                           window,drun
 ! "Window width" Set from: Default
 ! rofi.width:                          50
 ! "Number of lines" Set from: Default
-! rofi.lines:                          15
+rofi.lines:                          5
 ! "Number of columns" Set from: Default
 ! rofi.columns:                        1
 ! "Font to use" Set from: Default
-rofi.font:                           Hack Nerd Font 9
+rofi.font:                           monospace 10
 ! "Border width" Set from: Default
 ! rofi.bw:                             1
 ! "Location on screen" Set from: Default
@@ -97,7 +97,7 @@ rofi.show-icons:                     true
 ! "Indicate how it match by underlining it." Set from: Default
 ! rofi.show-match:                     true
 ! "New style theme file" Set from: Default
-rofi.theme: .config/rofi/themes/dark.rasi                          
+rofi.theme: .config/rofi/themes/slate.rasi                          
 ! "Color scheme for normal row" Set from: Default
 ! rofi.color-normal:                   
 ! "Color scheme for urgent row" Set from: Default
@@ -266,4 +266,3 @@ rofi.theme: .config/rofi/themes/dark.rasi
 ! rofi.me-accept-entry:                MouseD1
 ! "Accept hovered row with custom action" Set from: Default
 ! rofi.me-accept-custom:               Control+MouseD1
-rofi.theme: /home/mfin/.config/rofi/themes/dark.rasi
