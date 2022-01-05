@@ -39,6 +39,7 @@ alias dc='docker-compose'
 alias k='kubectl'
 alias s='skaffold'
 alias h='helm'
+alias t='terraform'
 
 # function for font testing
 function pchar {

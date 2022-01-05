@@ -1,0 +1,6 @@
+configuration {
+    modi: "window,drun";
+    font: "monospace 10";
+    show-icons: true;
+}
+@theme "/usr/share/rofi/themes/android_notification.rasi"
