@@ -5,6 +5,10 @@
 # import my aliases
 . ~/.bash_aliases
 
+[[ -f "$HOME/.bash_helpers" ]] && source $HOME/.bash_helpers
+
+# [[ -f "$HOME/.sops-age" ]] && source $HOME/.sops-age
+
 # make man pages colorful
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -110,5 +114,7 @@ unset a aliases
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+eval "$(direnv hook bash)"
 
 eval "$(starship init bash)"
