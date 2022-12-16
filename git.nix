@@ -10,7 +10,6 @@
     signing.signByDefault = true;
     signing.key = null;
 
-    # difftastic.enable = true;
     delta = {
       enable = true;
 

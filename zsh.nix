@@ -38,7 +38,6 @@
       "spectrum"
       "utility"
       "completion"
-      # "prompt"
       "syntax-highlighting"
       "autosuggestions"
       "ssh"
@@ -46,12 +45,6 @@
     ];
     editor.keymap = "emacs";
     editor.dotExpansion = true;
-    # prompt.theme = "pure";
-
-    # python.virtualenvInitialize = true;
-    # python.virtualenvAutoSwitch = true;
-
-    # ssh.identities = [ "id_rsa" "id_rsa2" "id_github" ];
 
     syntaxHighlighting.highlighters = [ "main" "brackets" "pattern" "line" "cursor" "root" ];
 
