@@ -20,10 +20,10 @@ in
   };
 
   imports = [
+    ./direnv.nix
     ./git.nix
-    ./other.nix
+    ./nnn.nix
     ./packages.nix
-    ./ranger.nix
     ./vim.nix
     ./zsh.nix
   ];

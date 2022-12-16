@@ -25,7 +25,6 @@
     kubernetes-helm
     ntfy
     pass
-    ranger
     rclone
     ripgrep
     rsync

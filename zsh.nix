@@ -18,6 +18,7 @@
       h = "helm";
       t = "terraform";
       g = "git";
+      n = "nnn -deHiUx";
       av = "aws-vault";
       kp = "kube-prompt";
     };
