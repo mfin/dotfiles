@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-(echo ""; sleep 3) | lemonbar -g 120x20+20+20 & \
-(echo " $@"; sleep 3) | lemonbar -g 120x20+20+40 & \
-(echo ""; sleep 3) | lemonbar -g 120x20+20+60

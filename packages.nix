@@ -1,0 +1,45 @@
+{ config, pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    argocd
+    aws-vault
+    awscli
+    bat
+    delta
+    difftastic
+    direnv
+    fzf
+    gh
+    git
+    gnupg
+    grpcurl
+    htop
+    httpie
+    jq
+    k9s
+    kind
+    kube-prompt
+    kubectl
+    kubectx
+    kubernetes-helm
+    ntfy
+    pass
+    ranger
+    rclone
+    ripgrep
+    rsync
+    socat
+    sops
+    starship
+    stow
+    tldr
+    tmux
+    unzip
+    wsl-open
+    wslu
+    xdg-utils
+    yq
+    zsh
+  ];
+}

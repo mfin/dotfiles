@@ -1,3 +1,0 @@
-ARGS='-i -h 25 -fn '-*-termsynu-medium-*-*-*-14-*-*-*-*-*-*-*' -nb '#000000' -sb '#000000' -nf '#ffffff' -sf '#d36265''
-DMENU="dmenu $ARGS"
-DMENU_RUN="dmenu_run -p Run: $ARGS"

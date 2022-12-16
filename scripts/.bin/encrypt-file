@@ -1,3 +1,0 @@
-#!/bin/bash
-
-gpg --output $1.gpg --encrypt --recipient $3 --local-user $2 $1

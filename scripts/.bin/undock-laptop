@@ -1,8 +1,0 @@
-#!/bin/bash
-
-DOCKED_MONITOR=DP1-1
-
-xrandr --output $DOCKED_MONITOR --off
-#nmcli radio wifi on
-
-exit
