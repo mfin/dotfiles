@@ -15,6 +15,7 @@ in
     sessionVariables = {
       LANG = locale;
       LC_ALL = locale;
+      VISUAL = "vim";
       EDITOR = "vim";
     };
   };
