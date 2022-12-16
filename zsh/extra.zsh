@@ -1,6 +1,6 @@
 path+=("$HOME/.bin")
 
-export WSL2_SSH_PAGEANT=/mnt/c/wsl2-ssh-pageant/wsl2-ssh-pageant.exe
+export WSL2_SSH_PAGEANT=/mnt/c/wsl-utils/wsl2-ssh-pageant.exe
 export SSH_AUTH_SOCK="$HOME/.ssh/agent.sock"
 export GPG_AGENT_SOCK="$HOME/.gnupg/S.gpg-agent"
 

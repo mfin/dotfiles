@@ -50,3 +50,5 @@ function kc {
 
     export KUBECONFIG
 }
+
+notify-send() { /mnt/c/wsl-utils/wsl-notify-send.exe --category "from Nix" "${@}"; }
