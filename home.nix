@@ -21,6 +21,7 @@ in
   };
 
   imports = [
+    ./code.nix
     ./direnv.nix
     ./git.nix
     ./nnn.nix

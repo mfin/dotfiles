@@ -1,0 +1,8 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "Fira Code Retina",
+    "terminal.integrated.fontFamily": "Fira Code Retina",
+    "window.autoDetectColorScheme": true,
+    "terminal.integrated.fontSize": 12,
+    "editor.fontSize": 12
+}
