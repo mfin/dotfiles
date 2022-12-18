@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   locale = "en_US.UTF-8";
@@ -27,7 +27,8 @@ in
     ./packages.nix
     ./vim.nix
     ./zsh.nix
-  ];
+    ./wsl.nix
+  ] ++ lib.optional (builtins.pathExists "${homedir}/.private/private.nix") "${homedir}/.private/private.nix";
 
   programs.home-manager.enable = true;
 }

@@ -7,7 +7,6 @@
     awscli
     bat
     delta
-    difftastic
     direnv
     fzf
     gh
