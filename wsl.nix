@@ -7,7 +7,7 @@ in
   home.file.wsl2-ssh-pageant = {
     source = pkgs.fetchurl {
       url = "https://github.com/BlackReloaded/wsl2-ssh-pageant/releases/download/v1.4.0/wsl2-ssh-pageant.exe";
-      sha256 = "sha256:6f71457f83d3c18f5e90613bb4cba2e501885b812409c4c2f86c02d5dc437b3d";
+      sha256 = "sha256-b3FFf4PTwY9ekGE7tMui5QGIW4EkCcTC+GwC1dxDez0=";
     }; 
     target = "${wsl-utils}/wsl2-ssh-pageant/wsl2-ssh-pageant.exe";
     executable = true;
