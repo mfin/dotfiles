@@ -21,6 +21,10 @@
       n = "nnn -deHiUx";
       av = "aws-vault";
       kp = "kube-prompt";
+      cat = "bat";
+      ls = "exa";
+      la = "exa -lah";
+      l = "exa -l";
     };
 
     initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;

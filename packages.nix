@@ -10,18 +10,21 @@
     bat
     delta
     direnv
+    exa
     fzf
     gh
     git
     gnumake
     gnupg
+    grc
     grpcurl
     htop
-    httpie
+    # httpie
     jq
     k9s
     kind
     kube-prompt
+    kubeconform
     kubectl
     kubectx
     kubernetes-helm
