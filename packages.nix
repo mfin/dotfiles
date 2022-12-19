@@ -13,6 +13,7 @@
     fzf
     gh
     git
+    gnumake
     gnupg
     grpcurl
     htop
