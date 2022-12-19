@@ -1,8 +1,7 @@
 <div align=center>
 
 # dotfiles 💻
-
-#### my userspace environment managed with Home Manager
+#### _my userspace environment managed with Home Manager_
 
 <img src=screenshot.png width=300px>
 </div>
