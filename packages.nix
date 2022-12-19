@@ -2,6 +2,8 @@
 
 {
   home.packages = with pkgs; [
+    ansible
+    ansible-lint
     argocd
     aws-vault
     awscli
