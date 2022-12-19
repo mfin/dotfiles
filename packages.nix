@@ -30,6 +30,7 @@
     kubernetes-helm
     ntfy
     pass
+    qmk
     rclone
     ripgrep
     rsync
