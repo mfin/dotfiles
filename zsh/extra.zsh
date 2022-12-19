@@ -1,3 +1,5 @@
+unsetopt PATH_DIRS
+
 path+=("$HOME/.bin")
 
 export WSL2_SSH_PAGEANT=$HOME/.wsl-utils/wsl2-ssh-pageant/wsl2-ssh-pageant.exe
