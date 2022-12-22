@@ -1,8 +1,11 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
     "editor.fontFamily": "Fira Code Retina",
+    "editor.fontSize": 12,
     "terminal.integrated.fontFamily": "Fira Code Retina",
-    "window.autoDetectColorScheme": true,
     "terminal.integrated.fontSize": 12,
-    "editor.fontSize": 12
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "Material Theme Darker High Contrast",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredDarkColorTheme": "Material Theme Darker High Contrast",
+    "workbench.preferredLightColorTheme": "Material Theme Lighter High Contrast"
 }

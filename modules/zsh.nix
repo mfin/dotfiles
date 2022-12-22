@@ -25,8 +25,6 @@
       my_ip = "http -p b http://ipinfo.io/ip";
       n = "nnn -deHiUx";
       t = "terraform";
-      vi = "nvim";
-      vim = "nvim";
     };
 
     initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;
