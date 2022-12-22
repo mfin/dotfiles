@@ -12,19 +12,21 @@
     };
 
     shellAliases = {
-      my_ip = "http -p b http://ipinfo.io/ip";
+      av = "aws-vault";
+      cat = "bat";
+      g = "git";
+      h = "helm";
       hm = "home-manager";
       k = "kubectl";
-      h = "helm";
-      t = "terraform";
-      g = "git";
-      n = "nnn -deHiUx";
-      av = "aws-vault";
       kp = "kube-prompt";
-      cat = "bat";
-      ls = "exa";
-      la = "exa -lah";
       l = "exa -l";
+      la = "exa -lah";
+      ls = "exa";
+      my_ip = "http -p b http://ipinfo.io/ip";
+      n = "nnn -deHiUx";
+      t = "terraform";
+      vi = "nvim";
+      vim = "nvim";
     };
 
     initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;

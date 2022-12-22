@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  programs.vim = {
+  programs.neovim = {
     enable = true;
   };
 }

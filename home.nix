@@ -15,20 +15,20 @@ in
     sessionVariables = {
       LANG = locale;
       LC_ALL = locale;
-      VISUAL = "vim";
-      EDITOR = "vim";
+      VISUAL = "nvim";
+      EDITOR = "nvim";
     };
   };
 
   imports = [
-    ./code.nix
-    ./direnv.nix
-    ./git.nix
-    ./nnn.nix
-    ./packages.nix
-    ./vim.nix
-    ./zsh.nix
-    ./wsl.nix
+    ./modules/code.nix
+    ./modules/direnv.nix
+    ./modules/git.nix
+    ./modules/neovim.nix
+    ./modules/nnn.nix
+    ./modules/packages.nix
+    ./modules/wsl.nix
+    ./modules/zsh.nix
   ] ++ lib.optional (builtins.pathExists "${homedir}/.private/private.nix") "${homedir}/.private/private.nix";
 
   programs.home-manager.enable = true;
