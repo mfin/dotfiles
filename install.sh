@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# THIS SCRIPT IS NOT YET RUNNABLE
+
 set -e
 
 curl -L https://nixos.org/nix/install | sh
