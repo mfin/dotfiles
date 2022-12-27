@@ -1,7 +1,7 @@
 {
-    "editor.fontFamily": "Fira Code Retina",
+    "editor.fontFamily": "Fira Code",
     "editor.fontSize": 12,
-    "terminal.integrated.fontFamily": "Fira Code Retina",
+    "terminal.integrated.fontFamily": "Fira Code",
     "terminal.integrated.fontSize": 12,
     "window.autoDetectColorScheme": true,
     "workbench.colorTheme": "GitHub Light Default",
