@@ -1,0 +1,54 @@
+function git_pull_all {
+    find . -maxdepth 2 -type d -name .git -exec git --git-dir={} --work-tree=$PWD/{} pull \;
+}
+
+function select_region {
+    supported_regions=$(aws ec2 describe-regions)
+
+    if [ $? -ne 0 ]; then
+        echo "Credentials problem!"
+        return 1
+    fi
+
+    echo "$(echo $supported_regions | jq -r ".Regions[].RegionName" | tr " " "\n" | fzf)"
+}
+
+function ecr_login {
+    region=$(select_region)
+
+    if [[ $region == "" ]]; then
+        return 0
+    fi
+
+    ecr_repo="$(aws sts get-caller-identity | jq -r '.Account').dkr.ecr.$region.amazonaws.com"
+
+    aws ecr get-login-password --region $region | docker login --username AWS --password-stdin $ecr_repo
+
+    echo "$ecr_repo"
+}
+
+function eks_config {
+    region=$(select_region)
+
+    clusters=$(aws --region $region eks list-clusters --output json)
+
+    if [ $? -ne 0 ]; then
+        return 1
+    fi
+
+    cluster=$(echo $clusters | jq -r '.clusters[]' | fzf)
+
+    if [[ $cluster == "" ]]; then
+        return 0
+    fi
+
+    aws eks update-kubeconfig --name $cluster --alias $cluster --kubeconfig $HOME/.clusters/$cluster
+}
+
+function kc {
+    KUBECONFIG="$HOME/.clusters/$(ls $HOME/.clusters | fzf)"
+
+    export KUBECONFIG
+}
+
+notify-send() { $HOME/.wsl-utils/wsl-notify-send/wsl-notify-send.exe --category "from Nix" "${@}"; }

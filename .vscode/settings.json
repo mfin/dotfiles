@@ -1,0 +1,11 @@
+{
+    "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 12,
+    "terminal.integrated.fontFamily": "Fira Code",
+    "terminal.integrated.fontSize": 12,
+    "window.autoDetectColorScheme": true,
+    "workbench.colorTheme": "GitHub Light Default",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredDarkColorTheme": "GitHub Dark Default",
+    "workbench.preferredLightColorTheme": "GitHub Light Default"
+}

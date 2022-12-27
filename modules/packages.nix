@@ -1,0 +1,50 @@
+{ config, pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    # httpie
+    ansible
+    ansible-lint
+    argocd
+    aws-vault
+    awscli
+    bat
+    delta
+    direnv
+    exa
+    fzf
+    gh
+    git
+    gnumake
+    gnupg
+    grc
+    grpcurl
+    htop
+    jq
+    k9s
+    kind
+    kube-prompt
+    kubeconform
+    kubectl
+    kubectx
+    kubernetes-helm
+    ntfy
+    pass
+    qmk
+    rclone
+    ripgrep
+    rsync
+    socat
+    sops
+    starship
+    stow
+    tldr
+    tmux
+    unzip
+    wsl-open
+    wslu
+    xdg-utils
+    yq
+    zsh
+  ];
+}

@@ -1,21 +1,25 @@
-dotfiles
-========
+<div align=center>
 
-Here be my dotfiles. My flavor of choice is Arch, but everything should work on other distros AFAIK.
+# dotfiles 💻
+#### _my WSL userspace environment managed with Home Manager 🐧🪟_
 
-management
-----------
-Dotfiles are managed with [GNU Stow](https://www.gnu.org/software/stow/).
+<img src=screenshot.png width=300px>
+</div>
 
+## Intro
+My personal declarative development environment setup with [home-manager](https://github.com/nix-community/home-manager) (NixOS) on Ubuntu WSL2. Some dependencies exist on the host (Windows) side, such as Kleopatra for SSH/PGP.
+
+## Use configuration
+Check the `install.sh` script. It's not yet runnable, but should give some pointers on the dependencies.
+
+```bash
+git clone https://github.com/mfin/dotfiles .config/nixpkgs 
+home-manager switch
 ```
-git clone https://github.com/mfin/dotfiles ~/.dotfiles
-cd ~/.dotfiles
-stow <folder name>
-```
+This setup also optionally pulls in private configuration from `$HOME/.private/private.nix`, if it exists. Useful for storing somewhat secret workspace configuration.
 
-Still usable but unused dotfiles are stored in the deprecated directory.
-
-screenshot
-----------
-
-![Screenshot](screenshot.png "bspwm on Arch")
+## TODO
+- document host-side dependencies
+- document modules used in the configuration
+- iron out the nvim configuration
+- make install.sh runnable
