@@ -21,7 +21,6 @@ in
   };
 
   imports = [
-    ./modules/code.nix
     ./modules/direnv.nix
     ./modules/git.nix
     ./modules/neovim.nix
