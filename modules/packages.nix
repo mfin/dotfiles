@@ -2,7 +2,6 @@
 
 {
   home.packages = with pkgs; [
-    # httpie
     ansible
     ansible-lint
     argocd
@@ -20,6 +19,7 @@
     grc
     grpcurl
     htop
+    httpie
     jq
     k9s
     kind
