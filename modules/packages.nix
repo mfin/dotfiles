@@ -28,6 +28,7 @@
     kubectl
     kubectx
     kubernetes-helm
+    minio-client
     ntfy
     pass
     qmk
