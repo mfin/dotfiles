@@ -11,6 +11,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-gitgutter
       vim-fugitive
+      copilot-vim
       { plugin = vim-startify;
         config = "let g:startify_change_to_vcs_root = 0";
       }
