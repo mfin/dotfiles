@@ -12,6 +12,8 @@
     };
 
     shellAliases = {
+      a = "ansible";
+      ap = "ansible-playbook";
       av = "aws-vault";
       cat = "bat";
       g = "git";
