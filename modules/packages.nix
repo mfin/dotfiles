@@ -16,6 +16,7 @@
     git
     gnumake
     gnupg
+    go-task
     grc
     grpcurl
     htop
@@ -31,6 +32,7 @@
     minio-client
     ntfy
     pass
+    popeye
     qmk
     rclone
     ripgrep
@@ -45,7 +47,8 @@
     wsl-open
     wslu
     xdg-utils
-    yq
+    yq-go
     zsh
+    zx
   ];
 }
