@@ -12,6 +12,12 @@ tasks:
     cmds:
       - nix-channel --update
 
+  upgrade:
+    desc: Upgrade Nix packages
+    silent: true
+    cmds:
+      - nix-env -u
+
   switch:
     desc: Switch to the new configuration
     silent: true
