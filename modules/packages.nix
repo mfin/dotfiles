@@ -7,6 +7,7 @@
     argocd
     aws-vault
     awscli
+    bash
     bat
     delta
     direnv
@@ -29,6 +30,7 @@
     kubectl
     kubectx
     kubernetes-helm
+    locale
     minio-client
     ntfy
     pass
