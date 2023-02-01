@@ -21,12 +21,17 @@ in
   };
 
   imports = [
+    ./modules/atuin.nix
+    ./modules/autojump.nix
     ./modules/direnv.nix
+    ./modules/fzf.nix
     ./modules/git.nix
+    ./modules/gitui.nix
     ./modules/neovim.nix
     ./modules/nnn.nix
     ./modules/packages.nix
     ./modules/wsl.nix
+    ./modules/zellij.nix
     ./modules/zsh.nix
   ] ++ lib.optional (builtins.pathExists "${homedir}/.private/private.nix") "${homedir}/.private/private.nix";
 
