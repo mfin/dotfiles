@@ -12,6 +12,7 @@
     delta
     direnv
     exa
+    fd
     fzf
     gh
     git
