@@ -4,7 +4,10 @@ version: "3"
 tasks:
   default:
     silent: true
-    cmds: ["task -l"]
+    cmds:
+      - task: update
+      - task: upgrade
+      - task: switch
 
   update:
     desc: Update the Nix channels
