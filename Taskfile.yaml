@@ -5,9 +5,16 @@ tasks:
   default:
     silent: true
     cmds:
+      - task: pull
       - task: update
       - task: upgrade
       - task: switch
+
+  pull:
+    desc: Pull the latest changes
+    silent: true
+    cmds:
+      - git pull
 
   update:
     desc: Update the Nix channels
