@@ -11,7 +11,9 @@
     plugins = with pkgs.vimPlugins; [
       vim-gitgutter
       vim-fugitive
-      copilot-vim
+      { plugin = copilot-vim;
+      	config = "let g:copilot_filetypes = { 'gitcommit': v:true, 'markdown': v:true, 'yaml': v:true}";
+      }
       { plugin = vim-startify;
         config = "let g:startify_change_to_vcs_root = 0";
       }
