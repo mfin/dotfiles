@@ -46,7 +46,7 @@ function eks_config {
 }
 
 function kc {
-    KUBECONFIG="$HOME/.clusters/$(ls $HOME/.clusters | fzf)"
+    KUBECONFIG="$HOME/.private/clusters/$(ls $HOME/.private/clusters | fzf)"
 
     export KUBECONFIG
 }
