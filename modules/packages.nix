@@ -33,6 +33,7 @@
     kubernetes-helm
     locale
     minio-client
+    nodejs
     ntfy
     pass
     popeye
