@@ -28,6 +28,7 @@
       n = "nnn -deHiUx";
       nb = "cd $(readlink $(echo $HOME/.config/nnn/bookmarks/$(/bin/ls $HOME/.config/nnn/bookmarks/ | fzf)))";
       t = "task";
+      v = "nvim";
     };
 
     initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;
