@@ -26,6 +26,7 @@
     jq
     k9s
     kind
+    krew
     kube-prompt
     kubeconform
     kubectl
