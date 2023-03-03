@@ -5,6 +5,7 @@
     ansible
     ansible-lint
     argocd
+    autorestic
     aws-vault
     awscli
     bash
@@ -40,6 +41,7 @@
     popeye
     qmk
     rclone
+    restic
     ripgrep
     rsync
     socat
