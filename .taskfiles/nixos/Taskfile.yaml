@@ -1,0 +1,40 @@
+---
+version: "3"
+
+tasks:
+  d:
+    dir: '{{.dir}}'
+    desc: Update nixos channels
+    silent: true
+    cmds:
+      - nix-channel --update
+
+  g:
+    dir: '{{.dir}}'
+    desc: Upgrade nixos packages
+    silent: true
+    cmds:
+      - nix-env -u
+
+  s:
+    dir: '{{.dir}}'
+    desc: Switch nixos configuration
+    silent: true
+    cmds:
+      - sudo nixos-rebuild switch --flake ".#{{.host}}"
+
+  b:
+    dir: '{{.dir}}'
+    desc: Add nixos configuration as boot option
+    silent: true
+    cmds:
+      - sudo nixos-rebuild boot --flake ".#{{.host}}"
+
+  gc:
+    dir: '{{.dir}}'
+    desc: Garbage collect nixos
+    silent: true
+    cmds:
+      - sudo nix-collect-garbage -d
+      - sudo nix-store --optimise
+      - sudo nix-env --delete-generations old --profile /nix/var/nix/profiles/system

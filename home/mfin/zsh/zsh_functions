@@ -51,4 +51,4 @@ function kc {
     export KUBECONFIG
 }
 
-notify-send() { $HOME/.wsl-utils/wsl-notify-send/wsl-notify-send.exe --category "from Nix" "${@}"; }
+# notify-send() { $HOME/.wsl-utils/wsl-notify-send/wsl-notify-send.exe --category "from Nix" "${@}"; }

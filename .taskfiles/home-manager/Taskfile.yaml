@@ -1,0 +1,19 @@
+---
+version: "3"
+
+tasks:
+  s:
+    dir: '{{.dir}}'
+    desc: Switch home-manager configuration for current user
+    silent: true
+    cmds:
+      - home-manager switch --flake ".#{{.user}}@{{.host}}"
+
+  gc:
+    dir: '{{.dir}}'
+    desc: Garbage collect home-manager
+    silent: true
+    cmds:
+      - nix-collect-garbage -d
+      - nix-store --optimise
+      - nix-env --delete-generations old --profile /nix/var/nix/profiles/per-user/{{.user}}

@@ -1,0 +1,10 @@
+---
+version: "3"
+
+tasks:
+  so:
+    dir: '{{.dir}}'
+    desc: Set git origin remote
+    silent: true
+    cmds:
+      - git remote set-url origin git@github.com:mfin/dotfiles.git

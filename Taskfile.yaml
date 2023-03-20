@@ -1,49 +1,28 @@
 ---
 version: "3"
 
+env:
+  HOST:
+    sh: "echo $(hostname -s) | tr '[:upper:]' '[:lower:]'"
+
+vars:
+  dir: '{{.dir | default .ROOT_DIR}}'
+  user: '{{.user | default .USER}}'
+  host: '{{.host | default .HOST}}'
+
+includes:
+  g: .taskfiles/git
+  h: .taskfiles/home-manager
+  n: .taskfiles/nixos
+
 tasks:
   default:
     silent: true
-    cmds:
-      - task: pull
-      - task: update
-      - task: upgrade
-      - task: switch
+    cmds: ["task -l"]
 
-  pull:
-    desc: Pull the latest changes
+  bs:
+    desc: Bootstrap the system
     silent: true
     cmds:
-      - git pull
-
-  update:
-    desc: Update the Nix channels
-    silent: true
-    cmds:
-      - nix-channel --update
-
-  upgrade:
-    desc: Upgrade Nix packages
-    silent: true
-    cmds:
-      - nix-env -u
-
-  switch:
-    desc: Switch to the new configuration
-    silent: true
-    cmds:
-      - home-manager switch
-
-  bootstrap:
-    desc: Bootstrap the home-manager configuration
-    silent: true
-    cmds:
-      - curl -L https://nixos.org/nix/install | sh
-      - source $HOME/.nix-profile/etc/profile.d/nix.sh
-      - export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
-      - nix-channel --add https://github.com/nix-community/home-manager/archive/master.tar.gz home-manager
-      - task: update
-      - nix-shell '<home-manager>' -A install
-      - task: switch
-      - echo "$HOME/.nix-profile/bin/zsh" | sudo tee -a /etc/shells
-      - chsh -s $HOME/.nix-profile/bin/zsh
+      - task: n:switch
+      - task: h:switch

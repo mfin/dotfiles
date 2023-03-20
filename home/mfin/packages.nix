@@ -5,12 +5,21 @@
     ansible
     ansible-lint
     argocd
+    autorestic
     aws-vault
+    cliphist
+    grim
+    slurp
+    wf-recorder
+    wl-clipboard
+    mpv
     awscli
     bash
     bat
+    cfonts
     delta
     direnv
+    discord-canary
     exa
     fd
     fzf
@@ -19,12 +28,15 @@
     gnumake
     gnupg
     go-task
+    gpicview
     grc
     grpcurl
     htop
     httpie
+    jo
     jq
     k9s
+    kalker
     kind
     krew
     kube-prompt
@@ -36,24 +48,37 @@
     minio-client
     nodejs
     ntfy
+    ouch
     pass
+    pavucontrol
     popeye
     qmk
     rclone
+    restic
     ripgrep
     rsync
     socat
+    slack
+    swaylock-effects
+    swayidle
     sops
     starship
     stow
+    swww
+    thunderbird
+    libreoffice-fresh
     tldr
     tmux
+    google-chrome
     unzip
     wsl-open
     wslu
     xdg-utils
     yq-go
-    zsh
+    zathura
+    zoom-us
     zx
+    xfce.thunar
+    xfce.thunar-volman
   ];
 }
