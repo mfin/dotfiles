@@ -23,7 +23,6 @@
       kp = "kube-prompt";
       my_ip = "http -p b http://ipinfo.io/ip";
       n = "nnn -deHiUx";
-      nb = "cd $(readlink $(echo $HOME/.config/nnn/bookmarks/$(ls $HOME/.config/nnn/bookmarks/ | fzf)))";
       t = "task";
       v = "nvim";
     };
