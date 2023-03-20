@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  home.file.".wide.jpg".source = ../../lib/wall/wide.jpg;
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -16,6 +18,7 @@
       exec-once = ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
 
       exec-once = swww init
+      exec-once = swww img $HOME/.wide.jpg
       exec-once = swayidle -w timeout 300 'swaylock -f' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f' & disown
 
       exec-once = wl-paste --type text --watch cliphist store

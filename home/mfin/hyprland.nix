@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 
 {
+  home.file.".wide.jpg".source = ../../lib/wall/wide.jpg;
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -9,6 +11,7 @@
 
       exec-once = swww init
       exec-once = swayidle -w timeout 300 'swaylock -f' timeout 600 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f' & disown
+      exec-once = swww img $HOME/.wide.jpg
 
       exec-once = wl-paste --type text --watch cliphist store
       exec-once = wl-paste --type image --watch cliphist store
