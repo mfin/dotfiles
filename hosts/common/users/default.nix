@@ -8,7 +8,7 @@
       # passwordFile = config.sops.secrets."users.mfin.password".path;
       initialPassword = "justtemppassword";
       isNormalUser = true;
-      extraGroups = [ "wheel" "users" "networkmanager" "audio" "video" "disk" "kvm" ];
+      extraGroups = [ "wheel" "users" "networkmanager" "audio" "video" "disk" "kvm" "libvirtd" ];
       shell = pkgs.zsh;
     };
   };

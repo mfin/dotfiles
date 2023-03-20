@@ -77,6 +77,7 @@
     yq-go
     zathura
     zoom-us
+    virt-manager
     zx
     xfce.thunar
     xfce.thunar-volman
