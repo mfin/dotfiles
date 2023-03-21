@@ -164,6 +164,7 @@ in
   services.avahi.nssmdns = true;
   services.avahi.openFirewall = true;
   virtualisation.libvirtd.enable = true;
+  networking.firewall.checkReversePath = false;
 
   services.gnome.at-spi2-core.enable = true;
   services.gnome.gnome-keyring.enable = true;
