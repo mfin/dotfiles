@@ -17,6 +17,7 @@
     ./fzf.nix
     ./git.nix
     ./gitui.nix
+    ./go.nix
     ./gtk.nix
     ./gpg-agent.nix
     ./hyprland.nix
