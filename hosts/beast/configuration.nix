@@ -85,6 +85,7 @@ in
     obsidian
     synology-drive-client
     lm_sensors
+    smartmontools
     wireguard-tools
     polkit_gnome
     wofi
@@ -159,6 +160,7 @@ in
   services.gnome.gnome-keyring.enable = true;
 
   services.fwupd.enable = true;
+  services.smartd.enable = true;
 
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };

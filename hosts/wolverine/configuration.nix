@@ -97,6 +97,7 @@ in
     obsidian
     synology-drive-client
     lm_sensors
+    smartmontools
     wireguard-tools
     polkit_gnome
     wofi
@@ -170,6 +171,7 @@ in
   services.gnome.gnome-keyring.enable = true;
 
   services.fwupd.enable = true;
+  services.smartd.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "22.11";
