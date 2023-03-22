@@ -158,6 +158,8 @@ in
   services.gnome.at-spi2-core.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
+  services.fwupd.enable = true;
+
   nixpkgs.config.packageOverrides = pkgs: {
     vaapiIntel = pkgs.vaapiIntel.override { enableHybridCodec = true; };
   };
