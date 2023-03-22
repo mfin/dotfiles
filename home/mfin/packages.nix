@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     ansible
     ansible-lint
+    ardour
     argocd
     autorestic
     aws-vault
