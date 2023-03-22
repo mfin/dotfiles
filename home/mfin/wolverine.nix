@@ -12,6 +12,7 @@
     ./broot.nix
     ./direnv.nix
     ./dunst.nix
+    ./easyeffects.nix
     ./exa.nix
     ./fonts.nix
     ./fzf.nix
