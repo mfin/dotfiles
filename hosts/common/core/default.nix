@@ -28,6 +28,7 @@
 
   boot.kernelParams = [ "quiet" ];
   boot.initrd.systemd.enable = true;
+  boot.consoleLogLevel = 3;
 
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";

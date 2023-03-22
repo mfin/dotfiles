@@ -167,6 +167,8 @@ in
   virtualisation.libvirtd.enable = true;
   networking.firewall.checkReversePath = false;
 
+  boot.loader.systemd-boot.consoleMode = "max";
+
   services.gnome.at-spi2-core.enable = true;
   services.gnome.gnome-keyring.enable = true;
 
