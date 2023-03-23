@@ -201,6 +201,7 @@
       bindl=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
       bind=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bind=, XF86Tools, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
     '';
   };
