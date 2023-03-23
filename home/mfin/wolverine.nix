@@ -111,13 +111,63 @@
     components = [ "secrets" "pkcs11" ];
   };
 
-  xdg.mime.enable = true;
-
-  xdg.mimeApps = {
+  xdg = {
     enable = true;
-    defaultApplications = {
-      "x-scheme-handler/https" = "firefox.desktop";
-      "x-scheme-handler/http" = "firefox.desktop";
+    cacheHome = config.home.homeDirectory + "/.local/cache";
+
+    mime.enable = true;
+
+    mimeApps = {
+      enable = true;
+
+      associations.removed = {
+        "image/png" = "google-chrome.desktop";
+        "image/jpeg" = "google-chrome.desktop";
+        "image/gif" = "google-chrome.desktop";
+        "image/webp" = "google-chrome.desktop";
+      };
+
+      defaultApplications = {
+        "application/x-extension-htm" = "firefox.desktop";
+        "application/x-extension-html" = "firefox.desktop";
+        "application/x-extension-shtml" = "firefox.desktop";
+        "application/x-extension-xht" = "firefox.desktop";
+        "application/x-extension-xhtml" = "firefox.desktop";
+        "application/xhtml+xml" = "firefox.desktop";
+        "text/html" = "firefox.desktop";
+        "x-scheme-handler/about" = "firefox.desktop";
+        "x-scheme-handler/chrome" = ["google-chrome.desktop"];
+        "x-scheme-handler/ftp" = "firefox.desktop";
+        "x-scheme-handler/http" = "firefox.desktop";
+        "x-scheme-handler/https" = "firefox.desktop";
+        "x-scheme-handler/unknown" = "firefox.desktop";
+
+        "audio/*" = ["mpv.desktop"];
+        "video/*" = ["mpv.dekstop"];
+        "image/*" = ["gpicview.desktop"];
+        "application/json" = "firefox.desktop";
+        "application/pdf" = ["org.pwmt.zathura.desktop"];
+        "x-scheme-handler/discord" = ["discord-canary.desktop"];
+        "x-scheme-handler/spotify" = ["spotify.desktop"];
+      };
+    };
+
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+
+      desktop = "$HOME/system/desktop";
+      download = "$HOME/tmp";
+      documents = "$HOME/docs";
+      templates = "$HOME/system/templates";
+      music = "$HOME/media/music";
+      videos = "$HOME/media/videos";
+      pictures = "$HOME/media/pictures";
+      publicShare = "$HOME/system/public";
+
+      extraConfig = {
+        XDG_SCREENSHOTS_DIR = "${config.xdg.userDirs.pictures}/screenshots";
+      };
     };
   };
 
