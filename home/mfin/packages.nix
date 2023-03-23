@@ -55,6 +55,7 @@
     plexamp
     popeye
     qmk
+    qpwgraph
     rclone
     restic
     ripgrep
@@ -73,6 +74,7 @@
     tmux
     google-chrome
     unzip
+    wev
     wsl-open
     wslu
     xdg-utils
