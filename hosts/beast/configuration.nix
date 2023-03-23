@@ -75,6 +75,7 @@ in
     obs-studio
     swaylock
     qt6.qtwayland
+    qmk-udev-rules
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct
     libva
@@ -146,6 +147,10 @@ in
         mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
       });
     })
+  ];
+
+  services.udev.packages = with pkgs; [
+    qmk-udev-rules
   ];
 
   services.printing.enable = true;
