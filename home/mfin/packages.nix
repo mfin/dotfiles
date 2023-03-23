@@ -52,6 +52,7 @@
     ouch
     pass
     pavucontrol
+    plexamp
     popeye
     qmk
     rclone
@@ -80,6 +81,7 @@
     zoom-us
     virt-manager
     zx
+    xdg-user-dirs
     xfce.thunar
     xfce.thunar-volman
   ];
