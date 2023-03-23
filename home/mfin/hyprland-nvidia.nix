@@ -23,6 +23,8 @@
       exec-once = wl-paste --type text --watch cliphist store
       exec-once = wl-paste --type image --watch cliphist store
 
+      exec-once = synology-drive
+
       monitor=,preferred,auto,auto
 
       # exec-once = waybar
