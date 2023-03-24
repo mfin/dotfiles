@@ -25,6 +25,7 @@
       n = "nnn -deHiUx";
       t = "task";
       v = "nvim";
+      ss-paste = "wl-paste -t image/png > $XDG_SCREENSHOTS_DIR/$(date +%Y%m%d_%H%M%S).png";
     };
 
     initExtraFirst = builtins.readFile ./zsh/extrafirst.zsh;
