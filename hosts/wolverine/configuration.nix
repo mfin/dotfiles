@@ -102,6 +102,8 @@ in
     wireguard-tools
     polkit_gnome
     wofi
+    inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.grimblast
+    inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.hyprprop
     firefox
     vscode
     greetd.gtkgreet

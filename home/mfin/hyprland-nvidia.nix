@@ -134,6 +134,31 @@
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
+      windowrule = float, file_progress
+      windowrule = float, confirm
+      windowrule = float, dialog
+      windowrule = float, download
+      windowrule = float, notification
+      windowrule = float, error
+      windowrule = float, splash
+      windowrule = float, confirmreset
+      windowrule = float, title:Open File
+      windowrule = float, title:Open Folder
+      windowrule = float, title:branchdialog
+      windowrule = float, Lxappearance
+      windowrule = float, pavucontrol-qt
+      windowrule = float, pavucontrol
+      windowrule = float, file-roller
+      windowrule = fullscreen, wlogout
+      windowrule = float, title:wlogout
+      windowrule = fullscreen, title:wlogout
+      windowrule = idleinhibit focus, mpv
+      windowrule = idleinhibit fullscreen, firefox
+      windowrule = float, title:^(Media viewer)$
+      windowrule = float, title:^(Volume Control)$
+      windowrule = float, title:^(Picture-in-Picture)$
+      windowrule = size 800 600, title:^(Volume Control)$
+      windowrule = move 75 44%, title:^(Volume Control)$
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
       $mainMod = SUPER
@@ -149,8 +174,8 @@
       bind = $mainMod, Space, exec, wofi --show drun -I
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
-      bind = , Print, exec, grim -g "$(slurp)" - | wl-copy
-      bind = SHIFT, Print, exec, grim - | wl-copy
+      bind = , Print, exec, grimblast --notify copysave area
+      bind = SHIFT, Print, exec, grimblast --notify copysave output
 
       # Move focus with mainMod + arrow keys
       bind = $mainMod, left, movefocus, l
@@ -202,6 +227,14 @@
 
       bind=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
       bind=, XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+
+      bind = $mainMod SHIFT, E, exec, code
+      bind = $mainMod SHIFT, A, exec, kitty pulsemixer
+      bind = $mainMod SHIFT, H, exec, kitty htop
+      bind = $mainMod SHIFT, W, exec, firefox
+      bind = $mainMod SHIFT, N, exec, obsidian
+      bind = $mainMod SHIFT, L, exec, wlogout
+      bind = $mainMod SHIFT, F, exec, thunar
 
     '';
   };

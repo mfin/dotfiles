@@ -27,6 +27,7 @@
     ./packages.nix
     ./zellij.nix
     ./zsh.nix
+    ./wlogout.nix
   ] ++ lib.optional (builtins.pathExists "/home/mfin/.private/private.nix") "/home/mfin/.private/private.nix";
 
   nixpkgs = {
