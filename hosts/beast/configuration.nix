@@ -44,6 +44,7 @@ in
   programs.xwayland.enable = true;
   programs.dconf.enable = true;
   programs.seahorse.enable = true;
+  programs.light.enable = true;
   services.dbus.enable = true;
   security.polkit.enable = true;
   services.tlp = {
