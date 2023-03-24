@@ -219,6 +219,7 @@
           "tray"
           "idle_inhibitor"
           "wireplumber"
+          "battery"
           "clock"
         ];
 
