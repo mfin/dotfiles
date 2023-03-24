@@ -145,6 +145,7 @@
       windowrule = float, title:Open File
       windowrule = float, title:Open Folder
       windowrule = float, title:branchdialog
+      windowrule = float, title:Bluetooth Devices
       windowrule = float, Lxappearance
       windowrule = float, pavucontrol-qt
       windowrule = float, pavucontrol
