@@ -54,6 +54,7 @@
     pavucontrol
     plexamp
     popeye
+    pulsemixer
     qmk
     qpwgraph
     rclone

@@ -196,6 +196,14 @@
       bind=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
       bind=, XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
+      bind = $mainMod SHIFT, E, exec, code
+      bind = $mainMod SHIFT, A, exec, kitty pulsemixer
+      bind = $mainMod SHIFT, H, exec, kitty htop
+      bind = $mainMod SHIFT, W, exec, firefox
+      bind = $mainMod SHIFT, N, exec, obsidian
+      bind = $mainMod SHIFT, L, exec, wlogout
+      bind = $mainMod SHIFT, F, exec, thunar
+
     '';
   };
 
