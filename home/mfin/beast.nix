@@ -4,10 +4,9 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
-    ./autorestic.nix
-    ./kitty.nix
     ./atuin.nix
     ./autojump.nix
+    ./autorestic.nix
     ./bottom.nix
     ./broot.nix
     ./direnv.nix
@@ -19,15 +18,18 @@
     ./git.nix
     ./gitui.nix
     ./go.nix
-    ./gtk.nix
     ./gpg-agent.nix
+    ./gtk.nix
     ./hyprland.nix
+    ./kitty.nix
+    ./lazygit.nix
     ./neovim.nix
     ./nnn.nix
+    ./obs-studio.nix
     ./packages.nix
+    ./wlogout.nix
     ./zellij.nix
     ./zsh.nix
-    ./wlogout.nix
   ] ++ lib.optional (builtins.pathExists "/home/mfin/.private/private.nix") "/home/mfin/.private/private.nix";
 
   nixpkgs = {
@@ -114,6 +116,8 @@
         "image/jpeg" = "google-chrome.desktop";
         "image/gif" = "google-chrome.desktop";
         "image/webp" = "google-chrome.desktop";
+        "application/pdf" = "google-chrome.desktop";
+        "application/json" = "firefox.desktop";
       };
 
       defaultApplications = {
@@ -130,11 +134,13 @@
         "x-scheme-handler/http" = "firefox.desktop";
         "x-scheme-handler/https" = "firefox.desktop";
         "x-scheme-handler/unknown" = "firefox.desktop";
-
+        "image/png" = "gpicview.desktop";
+        "image/jpeg" = "gpicview.desktop";
+        "image/gif" = "gpicview.desktop";
+        "image/webp" = "gpicview.desktop";
         "audio/*" = ["mpv.desktop"];
         "video/*" = ["mpv.dekstop"];
-        "image/*" = ["gpicview.desktop"];
-        "application/json" = "firefox.desktop";
+        "application/json" = "code.desktop";
         "application/pdf" = ["org.pwmt.zathura.desktop"];
         "x-scheme-handler/discord" = ["discord-canary.desktop"];
         "x-scheme-handler/spotify" = ["spotify.desktop"];

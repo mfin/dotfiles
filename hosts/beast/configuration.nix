@@ -66,37 +66,27 @@ in
   # virtualisation.virtualbox.guest.x11 = true;
 
   environment.systemPackages = with pkgs; [
-    efibootmgr
     acpi
-    pciutils
-    wayland
-    wl-clipboard
-    kitty
-    spotify
-    obs-studio
-    swaylock
-    qt6.qtwayland
-    qmk-udev-rules
+    at-spi2-core
+    cage
+    efibootmgr
+    greetd.gtkgreet
+    inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.grimblast
+    inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.hyprprop
+    libsecret
     libsForQt5.qt5.qtwayland
     libsForQt5.qt5ct
     libva
-    at-spi2-core
     libva-utils
-    libsecret
-    vaapiVdpau
-    obsidian
-    synology-drive-client
     lm_sensors
-    smartmontools
-    wireguard-tools
+    pciutils
     polkit_gnome
-    wofi
-    inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.grimblast
-    inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.hyprprop
-    firefox
-    vscode
-    greetd.gtkgreet
-    cage
+    qmk-udev-rules
+    qt6.qtwayland
+    smartmontools
+    vaapiVdpau
+    wayland
+    wireguard-tools
   ];
 
   fonts = {
@@ -161,6 +151,7 @@ in
   services.avahi.nssmdns = true;
   services.avahi.openFirewall = true;
   services.hardware.bolt.enable = true;
+  services.gvfs.enable = true;
   virtualisation.libvirtd.enable = true;
   networking.firewall.checkReversePath = false;
 

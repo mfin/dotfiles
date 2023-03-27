@@ -139,6 +139,8 @@
       windowrule = float, title:Open Folder
       windowrule = float, title:branchdialog
       windowrule = float, title:Bluetooth Devices
+      windowrule = float, title:pulsemixer
+      windowrule = float, mpv
       windowrule = float, Lxappearance
       windowrule = float, pavucontrol-qt
       windowrule = float, pavucontrol
@@ -232,6 +234,7 @@
       bind = $mainMod SHIFT, N, exec, obsidian
       bind = $mainMod SHIFT, L, exec, wlogout
       bind = $mainMod SHIFT, F, exec, thunar
+      bind = $mainMod SHIFT, B, exec, blueman-manager
 
     '';
   };

@@ -21,6 +21,7 @@
       hm = "home-manager";
       k = "kubectl";
       kp = "kube-prompt";
+      lg = "lazygit";
       my_ip = "http -p b http://ipinfo.io/ip";
       n = "nnn -deHiUx";
       t = "task";

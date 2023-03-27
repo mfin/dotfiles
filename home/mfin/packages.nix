@@ -6,31 +6,32 @@
     ansible-lint
     ardour
     argocd
+    audacity
     autorestic
     aws-vault
-    cliphist
-    grim
-    slurp
-    wf-recorder
-    wl-clipboard
-    mpv
     awscli
     bash
     bat
     cfonts
+    cliphist
+    darktable
     delta
     direnv
     discord-canary
     exa
     fd
+    firefox
     fzf
     gh
+    gimp
     git
     gnumake
     gnupg
     go-task
+    google-chrome
     gpicview
     grc
+    grim
     grpcurl
     htop
     httpie
@@ -45,10 +46,13 @@
     kubectl
     kubectx
     kubernetes-helm
+    libreoffice-fresh
     locale
     minio-client
+    mpv
     nodejs
     ntfy
+    obsidian
     ouch
     pass
     pavucontrol
@@ -61,31 +65,38 @@
     restic
     ripgrep
     rsync
-    socat
     slack
-    swaylock-effects
-    swayidle
+    slurp
+    socat
     sops
+    spotify
     starship
     stow
+    swayidle
+    swaylock-effects
     swww
+    synology-drive-client
     thunderbird
-    libreoffice-fresh
     tldr
     tmux
-    google-chrome
     unzip
+    virt-manager
+    vscode
     wev
+    wf-recorder
+    wl-clipboard
+    wofi
     wsl-open
     wslu
+    xdg-user-dirs
     xdg-utils
+    xfce.thunar
+    xfce.thunar-archive-plugin
+    xfce.thunar-volman
+    xfce.tumbler
     yq-go
     zathura
     zoom-us
-    virt-manager
     zx
-    xdg-user-dirs
-    xfce.thunar
-    xfce.thunar-volman
   ];
 }
