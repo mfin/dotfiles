@@ -9,6 +9,7 @@
     ./autorestic.nix
     ./bottom.nix
     ./broot.nix
+    ./btop.nix
     ./direnv.nix
     ./dunst.nix
     ./easyeffects.nix
