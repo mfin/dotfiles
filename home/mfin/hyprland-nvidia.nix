@@ -147,6 +147,7 @@
       windowrule = float, title:branchdialog
       windowrule = float, title:Bluetooth Devices
       windowrule = float, title:pulsemixer
+      windowrule = float, title:btop
       windowrule = float, mpv
       windowrule = float, Lxappearance
       windowrule = float, pavucontrol-qt
@@ -233,7 +234,7 @@
 
       bind = $mainMod SHIFT, E, exec, code
       bind = $mainMod SHIFT, A, exec, kitty pulsemixer
-      bind = $mainMod SHIFT, H, exec, kitty htop
+      bind = $mainMod SHIFT, T, exec, kitty btop
       bind = $mainMod SHIFT, W, exec, firefox
       bind = $mainMod SHIFT, N, exec, obsidian
       bind = $mainMod SHIFT, L, exec, wlogout
