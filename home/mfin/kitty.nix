@@ -4,12 +4,10 @@
   programs.kitty = {
     enable = true;
 
-    font = {
-      name = "JetBrainsMono Nerd Font";
-      size = 9;
-    };
-
     settings = {
+      font_family = "JetBrainsMono Nerd Font Thin";
+      bold_font = "JetBrainsMono Nerd Font ExtraBold";
+      font_size = "9";
       scrollback_lines = 10000;
       placement_strategy = "center";
 

@@ -21,6 +21,7 @@
     exa
     fd
     firefox
+    font-manager
     fzf
     gh
     gimp
