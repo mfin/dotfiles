@@ -65,6 +65,8 @@
       LC_ALL = "en_US.UTF-8";
       VISUAL = "nvim";
       EDITOR = "nvim";
+
+      QT_STYLE_OVERRIDE = "kvantum";
     };
   };
 
