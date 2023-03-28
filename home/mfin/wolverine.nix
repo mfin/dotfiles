@@ -4,6 +4,7 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
+    ./alacritty.nix
     ./atuin.nix
     ./autojump.nix
     ./autorestic.nix
@@ -20,7 +21,6 @@
     ./gpg-agent.nix
     ./gtk.nix
     ./hyprland-nvidia.nix
-    ./kitty.nix
     ./lazygit.nix
     ./neovim.nix
     ./nnn.nix

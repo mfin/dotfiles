@@ -146,8 +146,8 @@
       windowrule = float, title:Open Folder
       windowrule = float, title:branchdialog
       windowrule = float, title:Bluetooth Devices
-      windowrule = float, title:pulsemixer
-      windowrule = float, title:btop
+      windowrule = float, pulsemixer
+      windowrule = float, btop
       windowrule = float, mpv
       windowrule = float, Lxappearance
       windowrule = float, pavucontrol-qt
@@ -168,7 +168,7 @@
       $mainMod = SUPER
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
-      bind = $mainMod, Return, exec, kitty
+      bind = $mainMod, Return, exec, alacritty
       bind = $mainMod, L, exec, swaylock -f
       bind = $mainMod, C, killactive,
       bind = $mainMod, M, exit,
@@ -233,8 +233,8 @@
       bind=, XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
       bind = $mainMod SHIFT, E, exec, code
-      bind = $mainMod SHIFT, A, exec, kitty pulsemixer
-      bind = $mainMod SHIFT, T, exec, kitty btop
+      bind = $mainMod SHIFT, A, exec, alacritty --class pulsemixer -t pulsemixer -e pulsemixer
+      bind = $mainMod SHIFT, T, exec, alacritty --class btop -t btop -e btop
       bind = $mainMod SHIFT, W, exec, firefox
       bind = $mainMod SHIFT, N, exec, obsidian
       bind = $mainMod SHIFT, L, exec, wlogout
