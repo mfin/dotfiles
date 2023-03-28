@@ -5,13 +5,18 @@
     enable = true;
 
     iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      name = "WhiteSur-grey-dark";
+      package = pkgs.whitesur-icon-theme.override ({
+        boldPanelIcons = true;
+        themeVariants = [ "grey" ];
+      });
     };
 
     theme = {
-      name = "Adwaita";
-      package = pkgs.gnome3.gnome-themes-extra;
+      name = "WhiteSur-Dark-solid-grey";
+      package = pkgs.whitesur-gtk-theme.override ({
+        themeVariants = [ "grey" ];
+      });
     };
 
     font =
