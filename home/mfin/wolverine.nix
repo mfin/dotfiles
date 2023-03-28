@@ -7,7 +7,6 @@
     ./atuin.nix
     ./autojump.nix
     ./autorestic.nix
-    ./bottom.nix
     ./broot.nix
     ./btop.nix
     ./direnv.nix
@@ -17,7 +16,6 @@
     ./fonts.nix
     ./fzf.nix
     ./git.nix
-    ./gitui.nix
     ./go.nix
     ./gpg-agent.nix
     ./gtk.nix
