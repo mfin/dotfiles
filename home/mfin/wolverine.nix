@@ -54,6 +54,10 @@
     };
   };
 
+  xdg.configFile."Kvantum/kvantum.kvconfig".source = (pkgs.formats.ini {}).generate "kvantum.kvconfig" {
+    General.Theme = "WhiteSur-grey-dark";
+  };
+
   home = {
     username = "mfin";
     homeDirectory = "/home/mfin";
@@ -64,8 +68,6 @@
       LC_ALL = "en_US.UTF-8";
       VISUAL = "nvim";
       EDITOR = "nvim";
-
-      QT_STYLE_OVERRIDE = "kvantum";
     };
   };
 

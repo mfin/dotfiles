@@ -24,9 +24,7 @@ in
 
   environment.sessionVariables = rec {
     # Will break SDDM if running X11
-    QT_QPA_PLATFORM = "wayland;xcb";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-
     WLR_NO_HARDWARE_CURSORS = "1";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -84,8 +82,10 @@ in
     inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.grimblast
     inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.hyprprop
     libsecret
-    libsForQt5.qt5.qtwayland
+    qt5.qtwayland
+    libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
+    qt6.qtwayland
     libva
     libva-utils
     lm_sensors

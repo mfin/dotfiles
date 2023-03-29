@@ -48,7 +48,6 @@
     kubectx
     kubernetes-helm
     libreoffice-fresh
-    libsForQt5.qtstyleplugin-kvantum
     locale
     minio-client
     mpv
