@@ -226,11 +226,15 @@
       bindm = $mainMod, mouse:272, movewindow
       bindm = $mainMod, mouse:273, resizewindow
 
+      bind=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+      bind=, XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
       binde=, XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+
       bindl=, XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-
 
-      bind=, XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
-      bind=, XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
+      bindl=, XF86AudioPlay, exec, playerctl play-pause
+      bindl=, XF86AudioPrev, exec, playerctl previous
+      bindl=, XF86AudioNext, exec, playerctl next
+      bindl=, XF86AudioStop, exec, playerctl stop
 
       bind = $mainMod SHIFT, E, exec, code
       bind = $mainMod SHIFT, A, exec, alacritty --class pulsemixer -t pulsemixer -e pulsemixer
@@ -259,6 +263,10 @@
           "hyprland/window"
         ];
 
+        modules-center = [
+          "mpris"
+        ];
+
         modules-right = [
           "tray"
           "idle_inhibitor"
@@ -276,6 +284,18 @@
 
         "hyprland/window" = {
             format = "󰖯 {}";
+        };
+
+        "mpris" = {
+          format = "{player_icon} {artist} - {title}";
+          format-paused = "{status_icon} {artist} - {title}";
+          player-icons = {
+            "default" = "▶";
+            "Sonixd" = "🎵";
+          };
+          status-icons = {
+            "paused" = "⏸";
+          };
         };
 
         idle_inhibitor = {
