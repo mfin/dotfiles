@@ -57,6 +57,7 @@
     ouch
     pass
     pavucontrol
+    playerctl
     plexamp
     popeye
     pulsemixer
@@ -69,6 +70,7 @@
     slack
     slurp
     socat
+    sonixd
     sops
     spotify
     starship

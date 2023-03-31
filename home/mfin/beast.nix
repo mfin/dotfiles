@@ -26,6 +26,7 @@
     ./nnn.nix
     ./obs-studio.nix
     ./packages.nix
+    ./playerctld.nix
     ./wlogout.nix
     ./zellij.nix
     ./zsh.nix
