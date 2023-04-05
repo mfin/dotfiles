@@ -82,6 +82,8 @@ in
     inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.grimblast
     inputs.hyprland-contrib.packages.${pkgs.hostPlatform.system}.hyprprop
     libsecret
+    gtk-engine-murrine
+    gnome3.gnome-themes-extra
     qt5.qtwayland
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
@@ -94,7 +96,6 @@ in
     qmk-udev-rules
     qt6.qtwayland
     smartmontools
-    vaapiVdpau
     wayland
     wireguard-tools
   ];

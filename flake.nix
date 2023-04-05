@@ -46,6 +46,8 @@
         modules = [
           ./hosts/wolverine
           hyprland.nixosModules.default
+          # nixos-hardware.nixosModules.common-cpu-amd
+          # nixos-hardware.nixosModules.common-gpu-nvidia-nonprime
         ];
       };
     };
