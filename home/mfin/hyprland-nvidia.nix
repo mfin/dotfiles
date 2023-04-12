@@ -14,6 +14,10 @@
       env = GBM_BACKEND,nvidia-drm
       env = __GLX_VENDOR_LIBRARY_NAME,nvidia
       env = WLR_NO_HARDWARE_CURSORS,1
+      env = GDK_BACKEND=wayland,x11
+      env = QT_QPA_PLATFORM="wayland;xcb"
+      env = SDL_VIDEODRIVER=wayland
+      env = CLUTTER_BACKEND=wayland
 
       exec-once = ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1
 
@@ -23,7 +27,7 @@
       exec-once = wl-paste --type text --watch cliphist store
       exec-once = wl-paste --type image --watch cliphist store
 
-      exec-once = synology-drive
+      # exec-once = synology-drive
 
       monitor=,preferred,auto,auto
 

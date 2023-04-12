@@ -85,16 +85,16 @@ in
     gtk-engine-murrine
     gnome3.gnome-themes-extra
     qt5.qtwayland
+    qt5.qtbase
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
-    qt6.qtwayland
+    # qt6.qtwayland
     libva
     libva-utils
     lm_sensors
     pciutils
     polkit_gnome
     qmk-udev-rules
-    qt6.qtwayland
     smartmontools
     wayland
     wireguard-tools

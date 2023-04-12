@@ -15,7 +15,7 @@
       exec-once = wl-paste --type text --watch cliphist store
       exec-once = wl-paste --type image --watch cliphist store
 
-      exec-once = synology-drive
+      # exec-once = synology-drive
 
       monitor=eDP-1,preferred,auto,1
       monitor=,preferred,auto,auto

@@ -4,8 +4,7 @@
   home.sessionVariables = {
     GTK_THEME = "WhiteSur-Dark-solid-grey";
     XCURSOR_THEME = "phinger-cursors-light";
-    QT_QPA_PLATFORM = "wayland;xcb";
-    QT_STYLE_OVERRIDE = "kvantum";
+    # QT_QPA_PLATFORM = "wayland;xcb";
   };
 
   home.pointerCursor = {

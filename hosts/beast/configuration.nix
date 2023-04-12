@@ -75,14 +75,13 @@ in
     qt5.qtwayland
     libsForQt5.qtstyleplugin-kvantum
     libsForQt5.qt5ct
-    qt6.qtwayland
+    # qt6.qtwayland
     libva
     libva-utils
     lm_sensors
     pciutils
     polkit_gnome
     qmk-udev-rules
-    qt6.qtwayland
     smartmontools
     vaapiVdpau
     wayland
