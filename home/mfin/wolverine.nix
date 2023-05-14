@@ -92,25 +92,28 @@
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
-  programs.swaylock.settings = {
-    clock = true;
-    indicator = true;
-    indicator-radius = 120;
-    grace = 2;
-    timestr = "%H:%M";
-    datestr = "%a, %d.%m.%Y";
-    screenshots = true;
-    effect-pixelate = 10;
-    fade-in = 0.2;
-    font = "JetBrainsMono Nerd Font";
-    font-size = 48;
-    hide-keyboard-layout = true;
+  programs.swaylock = {
+    package = pkgs.swaylock-effects;
+    settings = {
+      clock = true;
+      indicator = true;
+      indicator-radius = 120;
+      grace = 2;
+      timestr = "%H:%M";
+      datestr = "%a, %d.%m.%Y";
+      screenshots = true;
+      effect-pixelate = 10;
+      fade-in = 0.2;
+      font = "JetBrainsMono Nerd Font";
+      font-size = 48;
+      hide-keyboard-layout = true;
 
-    ring-color = "000000";
-    line-color = "ffffff";
-    inside-color = "000000";
-    separator-color = "000000";
-    text-color = "ffffff";
+      ring-color = "000000";
+      line-color = "ffffff";
+      inside-color = "000000";
+      separator-color = "000000";
+      text-color = "ffffff";
+    };
   };
 
   services.gnome-keyring = {
