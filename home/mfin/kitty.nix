@@ -22,6 +22,8 @@
 
       window_padding_width = 5;
 
+      tab_bar_style = "separator";
+
       # colors
       foreground = "#ffffff";
       background = "#000000";

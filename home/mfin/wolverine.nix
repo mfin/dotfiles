@@ -21,6 +21,7 @@
     ./gpg-agent.nix
     ./gtk.nix
     ./hyprland-nvidia.nix
+    ./kitty.nix
     ./lazygit.nix
     ./neovim.nix
     ./nnn.nix
