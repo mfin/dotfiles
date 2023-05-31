@@ -126,10 +126,9 @@
           workspace_swipe_fingers = 4;
       }
 
-      # Example per-device config
-      # See https://wiki.hyprland.org/Configuring/Keywords/#executing for more
-      device:epic mouse V1 {
-          sensitivity = -0.5
+      device:apple-inc.-magic-trackpad-2 {
+          sensitivity = 0.5
+          accel_profile = adaptive
       }
 
       # Example windowrule v1

@@ -36,6 +36,7 @@
     grpcurl
     htop
     httpie
+    jamesdsp
     jo
     jq
     k9s

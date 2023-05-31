@@ -92,6 +92,7 @@ in
     libva
     libva-utils
     lm_sensors
+    nfs-utils
     pciutils
     polkit_gnome
     qmk-udev-rules
