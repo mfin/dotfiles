@@ -42,6 +42,8 @@
 
           touchpad {
               natural_scroll = no
+              clickfinger_behavior = true
+              tap-to-click = false
           }
 
           accel_profile = flat
@@ -133,6 +135,7 @@
       windowrule = float, notification
       windowrule = float, error
       windowrule = float, splash
+      windowrule = float, jamesdsp
       windowrule = float, confirmreset
       windowrule = float, title:Open File
       windowrule = float, title:Open Folder
@@ -233,6 +236,7 @@
 
       bind = $mainMod SHIFT, E, exec, code
       bind = $mainMod SHIFT, A, exec, alacritty --class pulsemixer -t pulsemixer -e pulsemixer
+      bind = $mainMod SHIFT, D, exec, jamesdsp
       bind = $mainMod SHIFT, T, exec, alacritty --class btop -t btop -e btop
       bind = $mainMod SHIFT, W, exec, firefox
       bind = $mainMod SHIFT, N, exec, obsidian
