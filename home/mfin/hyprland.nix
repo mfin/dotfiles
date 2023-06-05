@@ -50,10 +50,6 @@
           sensitivity = -0.3 # -1.0 - 1.0, 0 means no modification.
       }
 
-      gestures {
-          workspace_swipe = true
-      }
-
       general {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
@@ -113,12 +109,12 @@
 
       gestures {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = on
+          workspace_swipe = true
           workspace_swipe_fingers = 4;
       }
 
       device:apple-inc.-magic-trackpad-2 {
-          sensitivity = 0.5
+          sensitivity = 0.3
           accel_profile = adaptive
       }
 
