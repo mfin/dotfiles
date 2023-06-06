@@ -53,14 +53,12 @@
 
           touchpad {
               natural_scroll = no
+              clickfinger_behavior = true
+              tap-to-click = false
           }
 
           accel_profile = flat
           sensitivity = -0.3 # -1.0 - 1.0, 0 means no modification.
-      }
-
-      gestures {
-          workspace_swipe = true
       }
 
       general {
@@ -122,12 +120,12 @@
 
       gestures {
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
-          workspace_swipe = on
+          workspace_swipe = true
           workspace_swipe_fingers = 4;
       }
 
       device:apple-inc.-magic-trackpad-2 {
-          sensitivity = 0.5
+          sensitivity = 0.3
           accel_profile = adaptive
       }
 
