@@ -162,12 +162,27 @@ in
     qmk-udev-rules
   ];
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+
+    drivers = [ pkgs.cups-brother-mfcl2750dw ];
+  };
+
   services.avahi.enable = true;
   services.avahi.nssmdns = true;
   services.avahi.openFirewall = true;
   services.gvfs.enable = true;
   virtualisation.libvirtd.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
+
   networking.firewall.checkReversePath = false;
 
   boot.loader.systemd-boot.consoleMode = "max";

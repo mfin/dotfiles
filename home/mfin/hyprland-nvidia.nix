@@ -52,7 +52,6 @@
           follow_mouse = 1
 
           touchpad {
-              natural_scroll = no
               clickfinger_behavior = true
               tap-to-click = false
               scroll_factor = 0.7
