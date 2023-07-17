@@ -205,6 +205,11 @@
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
+      binde = $mainMod ALT, right, resizeactive, 15 0
+      binde = $mainMod ALT, left, resizeactive, -15 0
+      binde = $mainMod ALT, up, resizeactive, 0 -15
+      binde = $mainMod ALT, down, resizeactive, 0 15
+
       # special workspace aka scratchpad
       bind = $mainMod SHIFT, S, movetoworkspace,special
       bind = $mainMod, S, togglespecialworkspace,
