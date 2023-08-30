@@ -27,6 +27,7 @@ in
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/gitui.nix
+    ./modules/gpg-agent.nix
     ./modules/neovim.nix
     ./modules/nnn.nix
     ./modules/packages.nix
