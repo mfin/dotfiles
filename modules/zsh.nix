@@ -21,9 +21,6 @@
       hm = "home-manager";
       k = "kubectl";
       kp = "kube-prompt";
-      l = "exa -l";
-      la = "exa -lah";
-      ls = "exa";
       my_ip = "http -p b http://ipinfo.io/ip";
       n = "nnn -deHiUx";
       nb = "cd $(readlink $(echo $HOME/.config/nnn/bookmarks/$(/bin/ls $HOME/.config/nnn/bookmarks/ | fzf)))";

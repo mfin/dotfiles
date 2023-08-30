@@ -24,10 +24,13 @@ in
     ./modules/atuin.nix
     ./modules/autojump.nix
     ./modules/direnv.nix
+    ./modules/exa.nix
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/gitui.nix
+    ./modules/go.nix
     ./modules/gpg-agent.nix
+    ./modules/lazygit.nix
     ./modules/neovim.nix
     ./modules/nnn.nix
     ./modules/packages.nix

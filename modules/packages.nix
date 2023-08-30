@@ -10,15 +10,9 @@
     awscli
     bash
     bat
-    delta
-    direnv
-    exa
     fd
     fzf
-    gh
-    git
     gnumake
-    gnupg
     go-task
     grc
     grpcurl
@@ -46,7 +40,6 @@
     rsync
     socat
     sops
-    starship
     stow
     tldr
     tmux
