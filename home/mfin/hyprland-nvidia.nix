@@ -6,7 +6,7 @@
   wayland.windowManager.hyprland = {
     enable = true;
 
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
 
     extraConfig = ''
       env = LIBVA_DRIVER_NAME,nvidia
@@ -77,10 +77,6 @@
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
           rounding = 4
-          blur = yes
-          blur_size = 3
-          blur_passes = 1
-          blur_new_optimizations = on
 
           drop_shadow = yes
           shadow_range = 4
@@ -88,6 +84,12 @@
           col.shadow = rgba(1a1a1aee)
 
           dim_special = 0.4
+
+          blur {
+            size = 3
+            passes = 1
+            new_optimizations = on
+          }
       }
 
       animations {
