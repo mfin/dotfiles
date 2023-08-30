@@ -19,6 +19,7 @@
       g = "git";
       h = "helm";
       hm = "home-manager";
+      lg = "lazygit";
       k = "kubectl";
       kp = "kube-prompt";
       my_ip = "http -p b http://ipinfo.io/ip";
