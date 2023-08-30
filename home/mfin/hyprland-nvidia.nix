@@ -216,6 +216,12 @@
       bind = $mainMod SHIFT, 9, movetoworkspace, 9
       bind = $mainMod SHIFT, 0, movetoworkspace, 10
 
+      # move active window
+      bind = $mainMod SHIFT, right, movewindow, r
+      bind = $mainMod SHIFT, left, movewindow, l
+      bind = $mainMod SHIFT, up, movewindow, u
+      bind = $mainMod SHIFT, down, movewindow, d
+
       binde = $mainMod ALT, right, resizeactive, 15 0
       binde = $mainMod ALT, left, resizeactive, -15 0
       binde = $mainMod ALT, up, resizeactive, 0 -15

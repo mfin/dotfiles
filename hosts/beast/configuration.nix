@@ -89,7 +89,7 @@ in
   ];
 
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk
       noto-fonts-emoji
@@ -98,7 +98,7 @@ in
       (nerdfonts.override {fonts = ["JetBrainsMono"];})
     ];
 
-    enableDefaultFonts = false;
+    enableDefaultPackages = false;
 
     # user defined fonts
     # the reason there's Noto Color Emoji everywhere is to override DejaVu's
