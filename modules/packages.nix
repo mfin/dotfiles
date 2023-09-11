@@ -29,6 +29,7 @@
     kubernetes-helm
     locale
     minio-client
+    mr
     nodejs
     ntfy
     pass
