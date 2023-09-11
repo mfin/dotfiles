@@ -24,7 +24,7 @@ in
     ./modules/atuin.nix
     ./modules/autojump.nix
     ./modules/direnv.nix
-    ./modules/exa.nix
+    ./modules/eza.nix
     ./modules/fzf.nix
     ./modules/git.nix
     ./modules/gitui.nix
