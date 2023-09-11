@@ -31,6 +31,7 @@ in
     ./modules/go.nix
     ./modules/gpg-agent.nix
     ./modules/lazygit.nix
+    ./modules/mr.nix
     ./modules/neovim.nix
     ./modules/nnn.nix
     ./modules/packages.nix
