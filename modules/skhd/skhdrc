@@ -1,0 +1,70 @@
+meh - t : open /Applications/iTerm.app
+meh - f : open /System/Library/CoreServices/Finder.app
+meh - o : open /Applications/Obsidian.app
+meh - w : open /Applications/Firefox.app
+meh - e : open /Applications/Visual\ Studio\ Code.app
+meh - s : open /Applications/Slack.app
+
+# focus window
+meh - h : yabai -m window --focus west
+meh - j : yabai -m window --focus south
+meh - k : yabai -m window --focus north
+meh - l : yabai -m window --focus east
+meh - z : yabai -m window --focus stack.prev
+meh - c : yabai -m window --focus stack.next
+
+# swap window
+hyper - h : yabai -m window --swap west
+hyper - j : yabai -m window --swap south
+hyper - k : yabai -m window --swap north
+hyper - l : yabai -m window --swap east
+
+# move window
+# shift + cmd - h : yabai -m window --warp west
+# shift + cmd - j : yabai -m window --warp south
+# shift + cmd - k : yabai -m window --warp north
+# shift + cmd - l : yabai -m window --warp east
+
+# balance size of windows
+meh - 0 : yabai -m space --balance
+
+# fast focus desktop
+meh - 1 : yabai -m space --focus 1 || skhd -k "ctrl + alt + cmd - 1"
+meh - 2 : yabai -m space --focus 2 || skhd -k "ctrl + alt + cmd - 2"
+meh - 3 : yabai -m space --focus 3 || skhd -k "ctrl + alt + cmd - 3"
+meh - 4 : yabai -m space --focus 4 || skhd -k "ctrl + alt + cmd - 4"
+meh - 5 : yabai -m space --focus 5 || skhd -k "ctrl + alt + cmd - 5"
+meh - 6 : yabai -m space --focus 6 || skhd -k "ctrl + alt + cmd - 6"
+
+# send window to desktop and follow focus
+hyper - 1 : yabai -m window --space  1 && yabai -m space --focus 1
+hyper - 2 : yabai -m window --space  2 && yabai -m space --focus 2
+hyper - 3 : yabai -m window --space  3 && yabai -m space --focus 3
+hyper - 4 : yabai -m window --space  4 && yabai -m space --focus 4
+hyper - 5 : yabai -m window --space  5 && yabai -m space --focus 5
+hyper - 6 : yabai -m window --space  6 && yabai -m space --focus 6
+
+# focus monitor
+meh - z  : yabai -m display --focus prev
+
+# increase window size
+meh - left : yabai -m window --resize left:-20:0
+meh - down : yabai -m window --resize bottom:0:20
+meh - up : yabai -m window --resize top:0:-20
+meh - right : yabai -m window --resize right:20:0
+
+# decrease window size
+# shift + cmd - a : yabai -m window --resize left:20:0
+# shift + cmd - s : yabai -m window --resize bottom:0:-20
+# shift + cmd - w : yabai -m window --resize top:0:20
+# shift + cmd - d : yabai -m window --resize right:-20:0
+
+# toggle desktop offset
+meh - a : yabai -m space --toggle padding --toggle gap
+
+# toggle window fullscreen zoom
+hyper - f : yabai -m window --toggle zoom-fullscreen
+
+# float / unfloat window and restore position
+# alt - t : yabai -m window --toggle float && /tmp/yabai-restore/$(yabai -m query --windows --window | jq -re '.id').restore 2>/dev/null || true
+hyper - t : yabai -m window --toggle float --grid 4:4:1:1:2:2

@@ -34,7 +34,9 @@ in
     ./modules/neovim.nix
     ./modules/nnn.nix
     ./modules/packages.nix
+    ./modules/skhd.nix
     ./modules/wsl.nix
+    ./modules/yabai.nix
     ./modules/zellij.nix
     ./modules/zsh.nix
   ] ++ lib.optional (builtins.pathExists "${homedir}/.private/private.nix") "${homedir}/.private/private.nix";

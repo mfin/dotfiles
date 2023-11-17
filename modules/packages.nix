@@ -10,6 +10,8 @@
     awscli
     bash
     bat
+    cilium-cli
+    docker-client
     fd
     fzf
     gnumake
@@ -27,14 +29,15 @@
     kubectl
     kubectx
     kubernetes-helm
+    lima
     locale
     minio-client
     mr
     nodejs
-    ntfy
+    openssh
     pass
+    pinentry_mac
     popeye
-    qmk
     rclone
     restic
     ripgrep
@@ -44,9 +47,8 @@
     stow
     tldr
     tmux
+    tree
     unzip
-    wsl-open
-    wslu
     xdg-utils
     yq-go
     zsh
