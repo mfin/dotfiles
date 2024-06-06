@@ -5,7 +5,10 @@
 
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+
+    autosuggestion = {
+      enable = true;
+    };
 
     history = {
       extended = true;

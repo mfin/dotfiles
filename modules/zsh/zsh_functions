@@ -42,7 +42,7 @@ function eks_config {
         return 0
     fi
 
-    aws eks update-kubeconfig --name $cluster --alias $cluster --kubeconfig $HOME/.clusters/$cluster
+    aws --region $region eks update-kubeconfig --name $cluster --alias $cluster --kubeconfig $HOME/.private/clusters/$cluster
 }
 
 function kc {
