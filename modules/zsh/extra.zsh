@@ -53,5 +53,3 @@ fi
 if [ -f $HOME/.env/${HOSTNAME:l}.env ]; then
     eval $(cat $HOME/.env/${HOSTNAME:l}.env)
 fi
-
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)

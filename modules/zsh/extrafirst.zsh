@@ -8,6 +8,4 @@ if [ -e $HOME/.nix-profile/etc/profile.d/nix.sh ]; then
     source $HOME/.nix-profile/etc/profile.d/nix.sh
 fi
 
-export AWS_VAULT_BACKEND=pass
-
 eval "$(/opt/homebrew/bin/brew shellenv)"

@@ -28,15 +28,18 @@
     kubeconform
     kubectl
     kubectx
+    kubent
     kubernetes-helm
+    kubepug
     lima
     locale
     minio-client
     mr
+    mtr
     nodejs
-    openssh
     pass
     pinentry_mac
+    pluto
     popeye
     rclone
     restic

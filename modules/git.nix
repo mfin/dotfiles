@@ -24,6 +24,10 @@
     };
 
     extraConfig = {
+      gpg = {
+        format = "ssh";
+      };
+      
       merge = {
         conflictstyle  = "diff3";
       };

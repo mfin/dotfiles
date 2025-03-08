@@ -19,6 +19,7 @@
       ap = "ansible-playbook";
       av = "aws-vault";
       cat = "bat";
+      f = "vim .";
       g = "git";
       h = "helm";
       hm = "home-manager";
@@ -50,7 +51,6 @@
       "completion"
       "syntax-highlighting"
       "autosuggestions"
-      "ssh"
       "python"
     ];
     editor.keymap = "emacs";

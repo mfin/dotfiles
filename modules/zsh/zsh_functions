@@ -52,3 +52,5 @@ function kc {
 }
 
 notify-send() { $HOME/.wsl-utils/wsl-notify-send/wsl-notify-send.exe --category "from Nix" "${@}"; }
+
+code () { VSCODE_CWD="$PWD" '/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code' $* ;}

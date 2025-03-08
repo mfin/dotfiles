@@ -1,7 +1,7 @@
 meh - t : open /Applications/iTerm.app
 meh - f : open /System/Library/CoreServices/Finder.app
 meh - o : open /Applications/Obsidian.app
-meh - w : open /Applications/Firefox.app
+meh - w : open /Applications/LibreWolf.app
 meh - e : open /Applications/Visual\ Studio\ Code.app
 meh - s : open /Applications/Slack.app
 
