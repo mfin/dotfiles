@@ -11,6 +11,7 @@
     plugins = with pkgs.vimPlugins; [
       vim-gitgutter
       vim-fugitive
+      neo-tree-nvim
       nnn-vim
       fzf-vim
     ];

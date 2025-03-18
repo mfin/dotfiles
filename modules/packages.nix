@@ -48,6 +48,7 @@
     socat
     sops
     stow
+    thefuck
     tldr
     tmux
     tree

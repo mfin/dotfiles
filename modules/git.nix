@@ -37,7 +37,7 @@
       };
 
       push = {
-        default = "simple";
+        default = "current";
       };
 
       color = {
