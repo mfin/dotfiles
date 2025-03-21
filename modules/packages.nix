@@ -37,6 +37,7 @@
     mr
     mtr
     nodejs
+    noti
     pass
     pinentry_mac
     pluto
