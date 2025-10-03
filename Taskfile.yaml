@@ -39,10 +39,10 @@ tasks:
     silent: true
     cmds:
       - curl -L https://nixos.org/nix/install | sh
-      - source $HOME/.nix-profile/etc/profile.d/nix.sh
+      - source /nix/var/nix/profiles/default/etc/profile.d/nix.sh
       - export NIX_PATH=${NIX_PATH:+$NIX_PATH:}$HOME/.nix-defexpr/channels:/nix/var/nix/profiles/per-user/root/channels
-      - nix-channel --add https://channels.nixos.org/nixpkgs-24.05-darwin nixpkgs
-      - nix-channel --add https://github.com/nix-community/home-manager/archive/release-24.05.tar.gz home-manager
+      - nix-channel --add https://channels.nixos.org/nixpkgs-25.05-darwin nixpkgs
+      - nix-channel --add https://github.com/nix-community/home-manager/archive/release-25.05.tar.gz home-manager
       - task: update
       - nix-shell '<home-manager>' -A install
       - task: switch
