@@ -17,7 +17,6 @@
     shellAliases = {
       a = "ansible";
       ap = "ansible-playbook";
-      av = "aws-vault";
       cat = "bat";
       f = "vim .";
       g = "git";
