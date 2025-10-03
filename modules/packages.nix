@@ -6,7 +6,6 @@
     ansible-lint
     argocd
     autorestic
-    aws-vault
     awscli
     bash
     bat
@@ -16,6 +15,7 @@
     fzf
     gnumake
     go-task
+    glab
     grc
     grpcurl
     htop
@@ -49,6 +49,7 @@
     socat
     sops
     stow
+    tenv
     thefuck
     tldr
     tmux
