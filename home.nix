@@ -30,10 +30,12 @@ in
     ./modules/gitui.nix
     ./modules/go.nix
     ./modules/gpg-agent.nix
+    ./modules/granted.nix
     ./modules/lazygit.nix
     ./modules/neovim.nix
     ./modules/nnn.nix
     ./modules/packages.nix
+    ./modules/pyenv.nix
     ./modules/skhd.nix
     ./modules/wsl.nix
     ./modules/yabai.nix
