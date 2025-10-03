@@ -41,7 +41,6 @@ fi
 
 source <(helm completion zsh)
 source <(kind completion zsh)
-eval "$(aws-vault --completion-script-zsh)"
 
 if (( $+WSL_DISTRO_NAME )); then
     # WSL-specific aliases
