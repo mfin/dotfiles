@@ -38,11 +38,18 @@ function eks_config {
 
     cluster=$(echo $clusters | jq -r '.clusters[]' | fzf)
 
+    export CLUSTER_NAME=$cluster
+
     if [[ $cluster == "" ]]; then
         return 0
     fi
 
     aws --region $region eks update-kubeconfig --name $cluster --alias $cluster --kubeconfig $HOME/.private/clusters/$cluster
+
+    yq -i '.users[0].user.exec.command = "assume"' $HOME/.private/clusters/$cluster
+    yq -i '.users[0].user.exec.args = [strenv(AWS_PROFILE), "--exec", "aws --region " + strenv(AWS_REGION) + " eks get-token --cluster-name " + strenv(CLUSTER_NAME)]' $HOME/.private/clusters/$cluster
+    yq -i '.users[0].user.exec.env = [{"name": "GRANTED_QUIET", "value": "true"}, {"name": "FORCE_NO_ALIAS", "value": "true"}]' $HOME/.private/clusters/$cluster
+
 }
 
 function kc {
