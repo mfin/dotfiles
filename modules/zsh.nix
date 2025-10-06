@@ -18,6 +18,7 @@
       a = "ansible";
       ap = "ansible-playbook";
       cat = "bat";
+      ditch = "assume --unset";
       f = "vim .";
       g = "git";
       h = "helm";
