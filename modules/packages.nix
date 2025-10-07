@@ -10,6 +10,7 @@
     bash
     bat
     cilium-cli
+    colima
     docker-client
     fd
     fzf

@@ -18,9 +18,11 @@
       a = "ansible";
       ap = "ansible-playbook";
       cat = "bat";
+      d = "docker";
       ditch = "assume --unset";
       f = "vim .";
       g = "git";
+      gl = "glab";
       h = "helm";
       hm = "home-manager";
       lg = "lazygit";
