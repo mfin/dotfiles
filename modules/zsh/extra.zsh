@@ -53,8 +53,8 @@ if [ -f $HOME/.private/zsh/functions ]; then
     . $HOME/.private/zsh/functions
 fi
 
-if [ -f $HOME/.env/${HOSTNAME:l}.env ]; then
-    eval $(cat $HOME/.env/${HOSTNAME:l}.env)
+if [ -f $HOME/.env/$(hostname).env ]; then
+    eval $(cat $HOME/.env/$(hostname).env)
 fi
 
 eval $(thefuck --alias)

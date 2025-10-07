@@ -31,6 +31,7 @@
     kubent
     kubernetes-helm
     kubepug
+    kubie
     lima
     locale
     minio-client
