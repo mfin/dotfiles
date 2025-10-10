@@ -7,6 +7,7 @@
     argocd
     autorestic
     awscli
+    aws-sso-util
     bash
     bat
     cilium-cli
@@ -15,6 +16,7 @@
     fd
     fzf
     gnumake
+    gnused
     go-task
     glab
     grc
