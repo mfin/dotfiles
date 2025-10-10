@@ -33,6 +33,9 @@ path+=("$HOME/.krew/bin")
 # unset WSL2_SSH_PAGEANT
 # unset WINDOWS_CONFIG
 
+# Use Strongbox as SSH agent
+export SSH_AUTH_SOCK="$HOME/.strongbox/agent.sock"
+
 # fzf autocomplete
 if [ -n "${commands[fzf-share]}" ]; then
     source "$(fzf-share)/key-bindings.zsh"
