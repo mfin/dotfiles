@@ -16,6 +16,7 @@
 
     shellAliases = {
       a = "ansible";
+      activate = "source .venv/bin/activate";
       ap = "ansible-playbook";
       cat = "bat";
       d = "docker";
