@@ -13,6 +13,7 @@
     cilium-cli
     colima
     docker-client
+    dive
     fd
     fzf
     gnumake
