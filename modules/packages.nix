@@ -28,6 +28,7 @@
     k9s
     kind
     krew
+    kubelogin
     kube-prompt
     kubeconform
     kubectl
