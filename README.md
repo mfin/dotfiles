@@ -20,6 +20,11 @@ The setup is split between purely declarative Nix/Home Manager settings (this re
 
 This repository includes a `Taskfile.yaml` with helper tasks for bootstrapping and maintenance. Typical steps to get started:
 
+1. Clone this repository to `$HOME/.config/home-manager`:
+```bash
+git clone https://github.com/mfin/dotfiles $HOME/.config/home-manager
+```
+
 2. Download Task. I usually just download the binary from a Github Release and make it executable. Task gets properly installed after bootstrap with Home Manager.
 
 ```bash
