@@ -37,7 +37,6 @@ in
     ./modules/packages.nix
     ./modules/pyenv.nix
     ./modules/skhd.nix
-    ./modules/wsl.nix
     ./modules/yabai.nix
     ./modules/zellij.nix
     ./modules/zsh.nix

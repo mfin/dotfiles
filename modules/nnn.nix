@@ -10,7 +10,6 @@
       src = ./nnn/plugins;
 
       mappings = {
-        "w" = "wsl-open";
         "e" = "edit-in-code";
       };
     };

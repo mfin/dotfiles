@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-wsl-open "$1"
