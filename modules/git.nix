@@ -4,9 +4,6 @@
   programs.git = {
     enable = true;
 
-    userName = "Matjaž Finžgar";
-    userEmail = "matjaz@finzgar.net";
-
     signing.signByDefault = true;
     signing.key = null;
 
