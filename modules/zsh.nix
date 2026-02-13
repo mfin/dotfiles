@@ -19,6 +19,7 @@
       activate = "source .venv/bin/activate";
       ap = "ansible-playbook";
       cat = "bat";
+      create-mr = "glab mr create -f -y --remove-source-branch";
       d = "docker";
       ditch = "assume --unset";
       f = "vim .";
@@ -30,6 +31,7 @@
       k = "kubectl";
       kp = "kube-prompt";
       ku = "unset KUBECONFIG";
+      kd = "export KUBECONFIG=$HOME/.kube/config";
       ns = "kubens";
       my_ip = "http -p b http://ipinfo.io/ip";
       n = "nnn -deHiUx";

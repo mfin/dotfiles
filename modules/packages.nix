@@ -12,6 +12,7 @@
     bat
     cilium-cli
     colima
+    conftest
     docker-client
     dive
     fd
