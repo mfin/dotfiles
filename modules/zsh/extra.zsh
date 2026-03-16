@@ -1,9 +1,10 @@
 unsetopt PATH_DIRS
 
 path+=("$HOME/.krew/bin")
+path+=("/Applications/Obsidian.app/Contents/MacOS")
 
 # Use Strongbox as SSH agent
-export SSH_AUTH_SOCK="$HOME/.strongbox/agent.sock"
+export SSH_AUTH_SOCK="$HOME/.bitwarden-ssh-agent.sock"
 
 # fzf autocomplete
 if [ -n "${commands[fzf-share]}" ]; then
